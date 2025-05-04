@@ -7,8 +7,8 @@ on:
     inputs:
       container:
         description: "Container image to use"
-        required: false
-        default: "PEPE" # "catthehacker/ubuntu:act-latest"
+        required: true
+        # default: "PEPE" # "catthehacker/ubuntu:act-latest"
   issues:
   #schedule:
     #- cron: "59 23 * * *" # Cada dia a les 23:59 (UTC)
