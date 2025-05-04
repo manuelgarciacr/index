@@ -7,6 +7,11 @@ on:
     inputs:
       container:
         description: "Container image to use"
+        type: choice
+        options:
+          - default
+          - catthehacker/ubuntu:act-latest
+        default: aaa
         required: true
         # default: "PEPE" # "catthehacker/ubuntu:act-latest"
   issues:
