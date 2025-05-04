@@ -5,6 +5,8 @@
 //require("dotenv").config();
 
 const https = require("https");
+const fs = require("fs");
+
 const $GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const $USER = process.env.GITHUB_REPOSITORY.split("/")[0];
 const connectApiHost = "api.github.com"
@@ -65,8 +67,7 @@ const getRepo = async (strData) => {
 
         data.push(repo);
     }
-    console.log("DATA", data);
-    pepe();
+    createFile(data);
 }
 
 const getLanguages = url => {
@@ -89,4 +90,13 @@ const getLanguages = url => {
       )
 };
 
-const pepe = () => {console.log("PEPEEEEEEEEEE")}
+const createFile = (data) => {
+
+    fs.writeFile("./src/assets/data.json", JSON.stringify(data), err => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log("Data written to file successfully.");
+    });
+}
