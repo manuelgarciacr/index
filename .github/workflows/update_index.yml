@@ -1,32 +1,36 @@
 name: Index Update
-
 on:
   push:
     branches: ["main"]
-  workflow_dispatch: # Permet activació manual
+  workflow_dispatch:
+  #workflow_dispatch: # Permet activació manual
     inputs:
       container:
-        description: If image is 'null' it will execute directly on the runner.
-        type: string
-        required: true
-        default: "pepe"
+        description: "Container image to use"
+        required: false
+        default: "PEPE" # "catthehacker/ubuntu:act-latest"
+  issues:
   #schedule:
     #- cron: "59 23 * * *" # Cada dia a les 23:59 (UTC)
 
 
 jobs:
+
   update-index:
     runs-on: ubuntu-latest
+
     container:
-      image: ${{inputs.container}} # catthehacker/ubuntu:act-latest
+      image: "${{github.event.inputs.container}}" # catthehacker/ubuntu:act-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
     steps:
       - name: Add Mask
         run: |
+          echo "${{github.event.inputs.container}}"
           echo "::add-mask::$GITHUB_TOKEN"
-          echo "CONTAINER: ${{inputs.container}}"
+          echo "CONTAINER: ${{github.event.inputs.container}}"
+        shell: bash
 
       - name: Checkout code
         uses: actions/checkout@v3
