@@ -7,13 +7,8 @@ on:
     inputs:
       container:
         description: "Container image to use"
-        type: choice
-        options:
-          - default
-          - catthehacker/ubuntu:act-latest
-        default: aaa
-        required: true
-        # default: "PEPE" # "catthehacker/ubuntu:act-latest"
+        default: null
+        # for local execution use: "catthehacker/ubuntu:act-latest"
   issues:
   #schedule:
     #- cron: "59 23 * * *" # Cada dia a les 23:59 (UTC)
@@ -25,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: "${{github.event.inputs.container}}" # catthehacker/ubuntu:act-latest
+      image: "${{github.event.inputs.container}}"
     env:
       GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
@@ -64,8 +59,9 @@ jobs:
 
           # Debug: Listar archivos en assets/
           echo "--- Archivos en assets/ ---"
-          ls -la
-
+          ls ./src/assets -la
+          cat ./src/assets/data.json
+        shell: bash
       #     # Solo commitea si hay cambios
       #     if [ -n "$(find log/ -type f -name 'commits_*.txt')" ]; then
       #       git add log/
