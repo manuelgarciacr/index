@@ -50,6 +50,7 @@ jobs:
 
           # Debug: List files in assets/
           echo "--- Files in assets/ ---"
+
           ls ./src/assets -la
 
           # Only commits on changes
