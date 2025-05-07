@@ -25,10 +25,7 @@ let options = {
     method: "GET",
     headers
 };
-//console.log("ENV:", process.env);
-console.log("HEADERS:", headers);
-console.log("OPTIONS:", options)
-console.log("TOKEN:", $GITHUB_TOKEN.length)
+
 https.request(options, res => {
     let strData = "";
 
