@@ -2,6 +2,7 @@ name: Index Update
 on:
   push:
     branches: ["main"]
+  label:
   workflow_dispatch:
   #workflow_dispatch: # Autorizes manual execution
     inputs:
@@ -9,9 +10,8 @@ on:
         description: "Container image to use"
         default: null
         # for local execution use: "catthehacker/ubuntu:act-latest"
-  issues:
-  #schedule:
-    #- cron: "59 23 * * *" # Cada dia a les 23:59 (UTC)
+  schedule:
+    - cron: "59 23 * * 6" # Every Saturday on 23:59 (UTC)
 
 
 jobs:
@@ -21,12 +21,10 @@ jobs:
 
     container:
       image: "${{github.event.inputs.container}}"
-    env:
-      GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
     steps:
-      - name: Add Mask
-        run: echo "::add-mask::$GITHUB_TOKEN"
+      # - name: Add Mask
+      #   run: echo "::add-mask::$GITHUB_TOKEN"
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -37,11 +35,25 @@ jobs:
       #   uses: actions/setup-node@v4
       #   with:
       #     node-version: "latest"
+      - name: Use GITHUB_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Using GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
 
       - name: Find repositories data
         run: |
           node
+          echo ANTES
+          echo $GITHUB_TOKEN
+          echo $PATH
+          echo EE${{ github.token }}EE
+          echo EE${{ secrets.GITHUB_TOKEN }}EE
+          echo $GITHUB_TOKEN
+          echo EEEEEEEEEEEEEE
           ./scripts/update_index.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and push if changes
         run: |

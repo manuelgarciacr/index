@@ -8,7 +8,8 @@ const https = require("https");
 const fs = require("fs");
 
 const $GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const $USER = process.env.GITHUB_REPOSITORY.split("/")[0];
+const $USER = process.env.GITHUB_REPOSITORY_OWNER;
+//const $REPOSITORY = process.env.GITHUB_REPOSITORY;
 const connectApiHost = "api.github.com"
 const connectApiPath = `/users/${$USER}/repos`
 const headers = {
@@ -24,7 +25,10 @@ let options = {
     method: "GET",
     headers
 };
-
+//console.log("ENV:", process.env);
+console.log("HEADERS:", headers);
+console.log("OPTIONS:", options)
+console.log("TOKEN:", $GITHUB_TOKEN.length)
 https.request(options, res => {
     let strData = "";
 
@@ -34,10 +38,16 @@ https.request(options, res => {
     res.on("data", chunk => {
         strData += chunk.toString();
     });
-    res.on("end", async () => await getRepo.bind(this, strData)())
+    // res.on("end", async () => await getRepo.bind(this, strData)())
+    res.on("end", () => {
+        if (res.statusCode !== 200) {
+            throw "ERROR: " + strData
+        }
+        async () => await getRepos($USER, strData);
+    })
 }).end();
 
-const getRepo = async (strData) => {
+const getRepos = async (user, strData) => {
     const body = JSON.parse(strData);
 
     for (const ele  of body) {
@@ -47,6 +57,7 @@ const getRepo = async (strData) => {
             topics: ele.topics || []
         };
         const languagesPromise = getLanguages(ele.languages_url);
+        getSubtopics(ele.name);
 
         await languagesPromise
             .then(res => {
@@ -62,7 +73,8 @@ const getRepo = async (strData) => {
             .catch(err => console.error(err));
 
         if (ele.has_pages) {
-            repo.page = "https://$USER.github.io/" + ele.name;
+            // repo.page = "https://$USER.github.io/" + ele.name;
+            repo.page = `https://${ user }.github.io/${ ele.name }`;
         }
 
         data.push(repo);
@@ -88,6 +100,27 @@ const getLanguages = url => {
         })
         .end()
       )
+};
+
+const getSubtopics = (repo) => {
+    const url = `https://api.github.com/repos/$USE/${ repo }/contents/README.md`;
+    console.log("URL", url)
+    return new Promise((response, reject) => https
+        .request(url, { headers }, res => {
+            let strData = "";
+
+            res.on("error", err => {
+                reject(err);
+            });
+
+            res.on("data", chunk => {
+                strData += chunk.toString();
+            });
+
+            res.on("end", () => response(JSON.parse(strData)));
+        })
+        .end()
+    );
 };
 
 const createFile = (data) => {

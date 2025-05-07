@@ -1,1 +1,66 @@
-<button (click)="ngOnInit()">LOAD</button>
+<div> <!-- needed for sticky -->
+    <mat-toolbar color="primary" style="position: sticky; top: 0; width: 100%; z-index: 1000;">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Repositories index</span>
+        <span class="spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+    <form>
+        <mat-form-field class="chip-list">
+            <mat-label>Topics filter</mat-label>
+            <mat-chip-grid #chipGrid aria-label="Topics filter selection">
+                @for (topic of selectedTopics(); track $index) {
+                <mat-chip-row (removed)="remove(topic)">
+                    {{topic}}
+                    <button matChipRemove [attr.aria-label]="'remove ' + topic">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </mat-chip-row>
+                }
+                <input name="currentTopic" placeholder="New topic..." #topicInput [(ngModel)]="currentTopic"
+                    [matChipInputFor]="chipGrid" [matAutocomplete]="auto" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)" />
+            </mat-chip-grid>
+
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event); topicInput.value = ''">
+                @for (topic of filteredTopics(); track topic) {
+                <mat-option [value]="topic">{{topic}}</mat-option>
+                }
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+
+    @for (item of data(); track $index) {
+    <mat-card class="m-2">
+        <mat-card-header>
+            <mat-card-title>{{ item.name }}</mat-card-title>
+            <mat-card-subtitle class="ms-4 my-2">
+                <mat-chip-set>
+                    @for (topic of item.topics; track $index) {
+                    <mat-chip>
+                        {{topic}}
+                        <button matChipRemove (click) = "openDialog(topic, '')" aria-label="Add  to filter">
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                    </mat-chip>
+                    }
+                </mat-chip-set>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="my-2">
+            <p>{{ item.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+    }
+</div>
