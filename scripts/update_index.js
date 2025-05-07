@@ -121,7 +121,7 @@ const getSubtopics = (repo) => {
 };
 
 const createFile = (data) => {
-
+console.log(data)
     fs.writeFile("./src/assets/data.json", JSON.stringify(data), err => {
         if (err) {
             console.error(err);
