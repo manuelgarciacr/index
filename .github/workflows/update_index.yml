@@ -48,6 +48,11 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          git remote -v
+
+          git add .
+          git commit -m "Updates data.json on ${{ github.event_name }} event"
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
 
           # Debug: List files in assets/
           echo "--- Files in assets/ ---"
@@ -59,7 +64,7 @@ jobs:
           if [ -n "$(git diff ./src/assets/data.json)" ]; then
             git add ./src/assets/data.json
             git commit -m "Updates data.json on ${{ github.event_name }} event"
-            git push
+            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
           else
             echo "No changes"
           fi
