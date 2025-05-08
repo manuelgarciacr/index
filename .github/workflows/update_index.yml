@@ -36,8 +36,8 @@ jobs:
       #  with:
       #    node-version: "latest"
 
-    #   - name: Install @actions/core data
-    #     run: npm i @actions/core
+      - name: Install @actions/core data
+        run: npm i @actions/core
 
       - name: Find repositories data
         run: ./scripts/update_index.js
