@@ -27,6 +27,8 @@ let options = {
     headers
 };
 
+core.notice("ESTO ES UNA PRUEBA")
+
 https.request(options, res => {
     let strData = "";
 
@@ -37,11 +39,15 @@ https.request(options, res => {
         strData += chunk.toString();
     });
     // res.on("end", async () => await getRepo.bind(this, strData)())
-    res.on("end", () => {
+    res.on("end", async () => {
         if (res.statusCode !== 200) {
             throw "ERROR: " + strData
         }
-        async () => await getRepos($USER, strData);
+        const data = await getRepos($USER, strData);
+        core.notice(data);
+        //core.notice(JSON.stringify(JSON.parse(strData), null, 4));
+        createFile(data);
+        core.notice(fs.readdirSync("./src/assets").join("\n"));
     })
 }).end();
 
@@ -77,8 +83,7 @@ const getRepos = async (user, strData) => {
 
         data.push(repo);
     }
-    createFile(data);
-    core.notice(fs.readdirSync("./src/assets").join("\n"))
+    return data
 }
 
 const getLanguages = url => {
