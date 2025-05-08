@@ -10,9 +10,14 @@ on:
         description: "Container image to use"
         default: null
         # for local execution use: "catthehacker/ubuntu:act-latest"
+
+      local:
+        description: "Using Github local actions"
+        type: boolean
+        default: false
+
   schedule:
     - cron: "59 23 * * 6" # Every Saturday on 23:59 (UTC)
-
 
 jobs:
 
@@ -50,15 +55,15 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote -v
 
-          git add .
-          git commit -m "Updates data.json on ${{ github.event_name }} event"
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+          #git add .
+          #git commit -m "Updates data.json on ${{ github.event_name }} event"
+          echo git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
 
           # Debug: List files in assets/
           echo "--- Files in assets/ ---"
-          ls ./src/assets -la
+          #ls ./src/assets -la
 
-          cat ./src/assets/data.json
+          #cat ./src/assets/data.json
 
           # Only commits on changes
           if [ -n "$(git diff ./src/assets/data.json)" ]; then
