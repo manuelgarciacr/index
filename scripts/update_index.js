@@ -122,15 +122,14 @@ const getSubtopics = (repo) => {
 
 const createFile = (data) => {
     //process.stdout.write(JSON.stringify(data, null, 4));
-    fs.writeFile(
-        "./src/assets/data.json",
-        JSON.stringify(data, null, 4),
-        err => {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            console.log("Data written to file successfully.");
-        }
-    );
+    try {
+        fs.writeFileSync(
+            "./src/assets/data.json",
+            JSON.stringify(data, null, 4),
+        );
+        console.log("Data written to file successfully.")
+    } catch(err) {
+        console.error(err);
+        throw err
+    }
 }

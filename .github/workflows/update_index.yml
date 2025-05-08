@@ -31,10 +31,10 @@ jobs:
       #   with:
       #     fetch-depth: 5 # Descarga más commits si es necesario
 
-      # - name: Set up Node
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: "latest"
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
 
       - name: Find repositories data
         run: |
