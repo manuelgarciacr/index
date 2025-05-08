@@ -6,6 +6,7 @@
 
 const https = require("https");
 const fs = require("fs");
+const core = require("@actions/core");
 
 const $GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const $USER = process.env.GITHUB_REPOSITORY_OWNER;
@@ -30,7 +31,7 @@ https.request(options, res => {
     let strData = "";
 
     res.on("error", err => {
-        console.error("Request error:", err.message);
+        core.error("Request error:", err.message);
     });
     res.on("data", chunk => {
         strData += chunk.toString();
@@ -67,7 +68,7 @@ const getRepos = async (user, strData) => {
                     repo.languages[entry[0]] = Math.round(entry[1] * 1000 / total) / 10
                 )
             })
-            .catch(err => console.error(err));
+            .catch(err => core.error(err));
 
         if (ele.has_pages) {
             // repo.page = "https://$USER.github.io/" + ele.name;
@@ -77,6 +78,7 @@ const getRepos = async (user, strData) => {
         data.push(repo);
     }
     createFile(data);
+    core.notice(fs.readdirSync("./src/assets").join("\n"))
 }
 
 const getLanguages = url => {
@@ -101,7 +103,7 @@ const getLanguages = url => {
 
 const getSubtopics = (repo) => {
     const url = `https://api.github.com/repos/$USE/${ repo }/contents/README.md`;
-    console.log("URL", url)
+    core.notice(`URL: ${url}`)
     return new Promise((response, reject) => https
         .request(url, { headers }, res => {
             let strData = "";
@@ -127,9 +129,9 @@ const createFile = (data) => {
             "./src/assets/data.json",
             JSON.stringify(data, null, 4),
         );
-        console.log("Data written to file successfully.")
+        core.notice("Data written to file successfully.")
     } catch(err) {
-        console.error(err);
+        core.error(err);
         throw err
     }
 }
