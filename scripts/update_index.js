@@ -122,7 +122,6 @@ const getSubtopics = (repo) => {
 
 const createFile = (data) => {
     //process.stdout.write(JSON.stringify(data, null, 4));
-
     fs.writeFile(
         "./src/assets/data.json",
         JSON.stringify(data, null, 4),
