@@ -1,1 +1,310 @@
-[{"name":"-nuwe-summer21-ch03","description":"Map Search","topics":[],"languages":{"CSS":69.5,"TypeScript":20.7,"JavaScript":8.7,"HTML":1.1}},{"name":"alumnes-api","description":"","topics":[],"languages":{}},{"name":"android_bug_2022","description":"Error while Launching activity when it is not enabled with a bool value of false","topics":[],"languages":{"Kotlin":100}},{"name":"angular-tutorial","description":"Angular 17 tutorial","topics":[],"languages":{"TypeScript":73.9,"SCSS":17.8,"HTML":8.3}},{"name":"angularjs-jhu","description":"Single Page Web Applications with AngularJS por Universidad Johns Hopkins","topics":["angularjs"],"languages":{"HTML":100},"page":"https://$USER.github.io/angularjs-jhu"},{"name":"angularjs-jhu-assignment1","description":"Assignment 1","topics":[],"languages":{"HTML":50.2,"JavaScript":49.8},"page":"https://$USER.github.io/angularjs-jhu-assignment1"},{"name":"angularjs-jhu-assignment2","description":"Assignment 2","topics":[],"languages":{"HTML":55.1,"JavaScript":44.9},"page":"https://$USER.github.io/angularjs-jhu-assignment2"},{"name":"angularjs-jhu-assignment3","description":"Assignment 3","topics":[],"languages":{"JavaScript":46.9,"CSS":26.9,"HTML":26.2},"page":"https://$USER.github.io/angularjs-jhu-assignment3"},{"name":"angularjs-jhu-assignment4","description":"Assignment 4","topics":[],"languages":{"JavaScript":72.7,"HTML":23.4,"CSS":3.9},"page":"https://$USER.github.io/angularjs-jhu-assignment4"},{"name":"angularjs-jhu-assignment5","description":"Assignment 5","topics":[],"languages":{"JavaScript":94.5,"HTML":3.4,"CSS":2.1},"page":"https://$USER.github.io/angularjs-jhu-assignment5"},{"name":"api-design-node-v3","description":"[Course] API design in Node with Express v3","topics":[],"languages":{"JavaScript":100}},{"name":"Bootstrap","description":"","topics":[],"languages":{"HTML":78.3,"SCSS":21.7}},{"name":"bs4","description":"","topics":[],"languages":{"HTML":57.4,"SCSS":35.7,"JavaScript":6.9}},{"name":"bs5","description":"","topics":[],"languages":{"HTML":47.8,"SCSS":28.9,"TypeScript":9.2,"JavaScript":7.6,"Vue":6.4,"CSS":0.1}},{"name":"charactercreator","description":"","topics":[],"languages":{"HTML":47,"JavaScript":45.2,"SCSS":7.8,"Shell":0}},{"name":"curs2022_frontVue","description":"Curs Vue UOC Anna","topics":[],"languages":{"HTML":72.2,"JavaScript":12.5,"CSS":11.4,"Vue":3.9,"GLSL":0.1}},{"name":"cursgit","description":"","topics":[],"languages":{}},{"name":"docman","description":"Document Manager. ITA Angular S9. Final project","topics":[],"languages":{"TypeScript":69.5,"HTML":15.9,"SCSS":13.8,"JavaScript":0.8}},{"name":"docman-backend","description":"Document Manager. ITA Angular S9. Final project backend","topics":[],"languages":{"JavaScript":85.7,"CSS":11,"Handlebars":3.3,"Batchfile":0}},{"name":"fullstack-course5","description":"All of the source code for the Single Page Web Applications with AngularJS course.","topics":[],"languages":{"HTML":73.4,"CSS":26.6}},{"name":"git-exercici","description":"Exercici Git IT Academy Barcelona Activa","topics":[],"languages":{}},{"name":"gitactionex","description":"Github actions example","topics":[],"languages":{"Go":100}},{"name":"gloriabier","description":"UOC Project","topics":["bootstrap5","html5","javascript","sass","vue"],"languages":{"HTML":83.6,"JavaScript":8.7,"CSS":7.7},"page":"https://$USER.github.io/gloriabier"},{"name":"index","description":"Repositories index","topics":["angular-18","angular-material","github-actions"],"languages":{"JavaScript":49.5,"TypeScript":42.5,"HTML":6.4,"SCSS":1.5}},{"name":"ita-ang-jsts","description":"Sprint 3. JavaScript / TypeScript","topics":[],"languages":{"CSS":87.1,"HTML":7.7,"JavaScript":5.2}},{"name":"ITA-Angular-First-delivery","description":"Public  IT Academy. Angular course. First delivery","topics":[],"languages":{"SCSS":39.2,"HTML":30.5,"CSS":30.3}},{"name":"ita-angular-intro","description":"IT Academy Angular. Sprint 6 Intro Angular","topics":[],"languages":{"TypeScript":79.7,"SCSS":14.1,"HTML":6.2}},{"name":"ita-angular-js","description":"IT Academy. Angular course. Third sprint","topics":[],"languages":{"HTML":56.7,"JavaScript":41,"CSS":2.4}},{"name":"ita-angular-jses6","description":"Sprint 4. JavaScript ECMA6 - 13","topics":[],"languages":{"JavaScript":99.1,"HTML":0.9}},{"name":"ita-angular-s7","description":"IT Academy Angular. Sprint 7 Pressupost","topics":[],"languages":{"TypeScript":60.4,"HTML":34.7,"SCSS":4.9}}]
+[
+    {
+        "name": "-nuwe-summer21-ch03",
+        "description": "Map Search",
+        "topics": [],
+        "languages": {
+            "CSS": 69.5,
+            "TypeScript": 20.7,
+            "JavaScript": 8.7,
+            "HTML": 1.1
+        }
+    },
+    {
+        "name": "alumnes-api",
+        "description": "",
+        "topics": [],
+        "languages": {}
+    },
+    {
+        "name": "android_bug_2022",
+        "description": "Error while Launching activity when it is not enabled with a bool value of false",
+        "topics": [],
+        "languages": {
+            "Kotlin": 100
+        }
+    },
+    {
+        "name": "angular-tutorial",
+        "description": "Angular 17 tutorial",
+        "topics": [],
+        "languages": {
+            "TypeScript": 73.9,
+            "SCSS": 17.8,
+            "HTML": 8.3
+        }
+    },
+    {
+        "name": "angularjs-jhu",
+        "description": "Single Page Web Applications with AngularJS por Universidad Johns Hopkins",
+        "topics": [
+            "angularjs"
+        ],
+        "languages": {
+            "HTML": 100
+        },
+        "page": "https://manuelgarciacr.github.io/angularjs-jhu"
+    },
+    {
+        "name": "angularjs-jhu-assignment1",
+        "description": "Assignment 1",
+        "topics": [],
+        "languages": {
+            "HTML": 50.2,
+            "JavaScript": 49.8
+        },
+        "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment1"
+    },
+    {
+        "name": "angularjs-jhu-assignment2",
+        "description": "Assignment 2",
+        "topics": [],
+        "languages": {
+            "HTML": 55.1,
+            "JavaScript": 44.9
+        },
+        "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment2"
+    },
+    {
+        "name": "angularjs-jhu-assignment3",
+        "description": "Assignment 3",
+        "topics": [],
+        "languages": {
+            "JavaScript": 46.9,
+            "CSS": 26.9,
+            "HTML": 26.2
+        },
+        "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment3"
+    },
+    {
+        "name": "angularjs-jhu-assignment4",
+        "description": "Assignment 4",
+        "topics": [],
+        "languages": {
+            "JavaScript": 72.7,
+            "HTML": 23.4,
+            "CSS": 3.9
+        },
+        "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment4"
+    },
+    {
+        "name": "angularjs-jhu-assignment5",
+        "description": "Assignment 5",
+        "topics": [],
+        "languages": {
+            "JavaScript": 94.5,
+            "HTML": 3.4,
+            "CSS": 2.1
+        },
+        "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment5"
+    },
+    {
+        "name": "api-design-node-v3",
+        "description": "[Course] API design in Node with Express v3",
+        "topics": [],
+        "languages": {
+            "JavaScript": 100
+        }
+    },
+    {
+        "name": "Bootstrap",
+        "description": "",
+        "topics": [],
+        "languages": {
+            "HTML": 78.3,
+            "SCSS": 21.7
+        }
+    },
+    {
+        "name": "bs4",
+        "description": "",
+        "topics": [],
+        "languages": {
+            "HTML": 57.4,
+            "SCSS": 35.7,
+            "JavaScript": 6.9
+        }
+    },
+    {
+        "name": "bs5",
+        "description": "",
+        "topics": [],
+        "languages": {
+            "HTML": 47.8,
+            "SCSS": 28.9,
+            "TypeScript": 9.2,
+            "JavaScript": 7.6,
+            "Vue": 6.4,
+            "CSS": 0.1
+        }
+    },
+    {
+        "name": "charactercreator",
+        "description": "",
+        "topics": [],
+        "languages": {
+            "HTML": 47,
+            "JavaScript": 45.2,
+            "SCSS": 7.8,
+            "Shell": 0
+        }
+    },
+    {
+        "name": "curs2022_frontVue",
+        "description": "Curs Vue UOC Anna",
+        "topics": [],
+        "languages": {
+            "HTML": 72.2,
+            "JavaScript": 12.5,
+            "CSS": 11.4,
+            "Vue": 3.9,
+            "GLSL": 0.1
+        }
+    },
+    {
+        "name": "cursgit",
+        "description": "",
+        "topics": [],
+        "languages": {}
+    },
+    {
+        "name": "docman",
+        "description": "Document Manager. ITA Angular S9. Final project",
+        "topics": [],
+        "languages": {
+            "TypeScript": 69.5,
+            "HTML": 15.9,
+            "SCSS": 13.8,
+            "JavaScript": 0.8
+        }
+    },
+    {
+        "name": "docman-backend",
+        "description": "Document Manager. ITA Angular S9. Final project backend",
+        "topics": [],
+        "languages": {
+            "JavaScript": 85.7,
+            "CSS": 11,
+            "Handlebars": 3.3,
+            "Batchfile": 0
+        }
+    },
+    {
+        "name": "fullstack-course5",
+        "description": "All of the source code for the Single Page Web Applications with AngularJS course.",
+        "topics": [],
+        "languages": {
+            "HTML": 73.4,
+            "CSS": 26.6
+        }
+    },
+    {
+        "name": "git-exercici",
+        "description": "Exercici Git IT Academy Barcelona Activa",
+        "topics": [],
+        "languages": {}
+    },
+    {
+        "name": "gitactionex",
+        "description": "Github actions example",
+        "topics": [],
+        "languages": {
+            "Go": 100
+        }
+    },
+    {
+        "name": "gloriabier",
+        "description": "UOC Project",
+        "topics": [
+            "bootstrap5",
+            "html5",
+            "javascript",
+            "sass",
+            "vue"
+        ],
+        "languages": {
+            "HTML": 83.6,
+            "JavaScript": 8.7,
+            "CSS": 7.7
+        },
+        "page": "https://manuelgarciacr.github.io/gloriabier"
+    },
+    {
+        "name": "index",
+        "description": "Repositories index",
+        "topics": [
+            "angular-18",
+            "angular-material",
+            "github-actions",
+            "mat-autocomplete",
+            "mat-chips",
+            "mat-dialog"
+        ],
+        "languages": {
+            "TypeScript": 44.1,
+            "HTML": 24.7,
+            "JavaScript": 22.3,
+            "SCSS": 8.9,
+            "CSS": 0.2
+        }
+    },
+    {
+        "name": "ita-ang-jsts",
+        "description": "Sprint 3. JavaScript / TypeScript",
+        "topics": [],
+        "languages": {
+            "CSS": 87.1,
+            "HTML": 7.7,
+            "JavaScript": 5.2
+        }
+    },
+    {
+        "name": "ITA-Angular-First-delivery",
+        "description": "Public  IT Academy. Angular course. First delivery",
+        "topics": [],
+        "languages": {
+            "SCSS": 39.2,
+            "HTML": 30.5,
+            "CSS": 30.3
+        }
+    },
+    {
+        "name": "ita-angular-intro",
+        "description": "IT Academy Angular. Sprint 6 Intro Angular",
+        "topics": [],
+        "languages": {
+            "TypeScript": 79.7,
+            "SCSS": 14.1,
+            "HTML": 6.2
+        }
+    },
+    {
+        "name": "ita-angular-js",
+        "description": "IT Academy. Angular course. Third sprint",
+        "topics": [],
+        "languages": {
+            "HTML": 56.7,
+            "JavaScript": 41,
+            "CSS": 2.4
+        }
+    },
+    {
+        "name": "ita-angular-jses6",
+        "description": "Sprint 4. JavaScript ECMA6 - 13",
+        "topics": [],
+        "languages": {
+            "JavaScript": 99.1,
+            "HTML": 0.9
+        }
+    },
+    {
+        "name": "ita-angular-s7",
+        "description": "IT Academy Angular. Sprint 7 Pressupost",
+        "topics": [],
+        "languages": {
+            "TypeScript": 60.4,
+            "HTML": 34.7,
+            "SCSS": 4.9
+        }
+    }
+]
