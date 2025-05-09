@@ -270,7 +270,11 @@
             "SCSS": 8.2,
             "CSS": 0.2
         },
-        "subtopics": []
+        "subtopics": [
+            "mat-dialog",
+            "mat-chips",
+            "mat-autocomplete"
+        ]
     },
     {
         "name": "ita-ang-jsts",
