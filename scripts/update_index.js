@@ -32,7 +32,7 @@ https.request(options, res => {
     let strData = "";
 
     res.on("error", err => {
-        core.setFailed(`Request for repos failed: ${err}`);
+        core.setFailed(`Request for repos failed: ${JSON.stringify(err, null, 4)}`);
     });
 
     res.on("data", chunk => {
@@ -41,9 +41,15 @@ https.request(options, res => {
 
     res.on("end", async () => {
         if (res.statusCode !== 200) {
-            throw "ERROR: " + strData
+            core.setFailed(
+                `Request for repos failed: ${JSON.stringify(err, null, 4)}`
+            );
+            return
         }
         const data = await getRepos($USER, strData);
+
+        if (process.exitCode ?? 0) return;
+
         core.notice(data);
         //core.notice(JSON.stringify(JSON.parse(strData), null, 4));
         createFile(data);
@@ -66,26 +72,51 @@ const getRepos = async (user, strData) => {
         await languagesPromise
             .then(res => {
                 const entries = Object.entries(res).sort((a, b) => b[1] - a[1]);
-                const total = entries.reduce((prev, curr) => prev += curr[1], 0);
+                const total = entries.reduce(
+                    (prev, curr) => (prev += curr[1]),
+                    0
+                );
 
-                repo.languages = {}
+                repo.languages = {};
 
-                entries.forEach(entry =>
-                    repo.languages[entry[0]] = Math.round(entry[1] * 1000 / total) / 10
-                )
+                entries.forEach(
+                    entry =>
+                        (repo.languages[entry[0]] =
+                            Math.round((entry[1] * 1000) / total) / 10)
+                );
             })
-            .catch(err => core.setFailed(`Request for languages failed: ${err}`));
+            .catch(err =>
+                core.setFailed(
+                    `Request for languages failed: ${JSON.stringify(
+                        err,
+                        null,
+                        4
+                    )}`
+                )
+            );
+
+        if (process.exitCode ?? 0) return;
 
         await subtopicsPromise
             .then(res => {
-                core.info(typeof res)
-                core.notice(JSON.stringify(JSON.parse(res), null, 4))
+                core.info(typeof res);
+                core.notice(JSON.stringify(JSON.parse(res), null, 4));
             })
-            .catch(err => core.setFailed(`Request for subtopics failed: ${err}`));
+            .catch(err =>
+                core.setFailed(
+                    `Request for subtopics failed: ${JSON.stringify(
+                        err,
+                        null,
+                        4
+                    )}`
+                )
+            );
+
+        if (process.exitCode ?? 0) return;
 
         if (ele.has_pages) {
             // repo.page = "https://$USER.github.io/" + ele.name;
-            repo.page = `https://${ user }.github.io/${ ele.name }`;
+            repo.page = `https://${ user }.github.io/${ ele.name }`
         }
 
         data.push(repo);
@@ -94,8 +125,6 @@ const getRepos = async (user, strData) => {
 }
 
 const getLanguages = url => {
-    const err = {"error": 36, message: "Error message"};
-    core.setFailed(`Test of failed: ${err}`);
     return new Promise((response, reject) => https
         .request(url, {headers}, res => {
             let strData = "";
@@ -108,7 +137,8 @@ const getLanguages = url => {
                 strData += chunk.toString();
             });
 
-            res.on("end", () => response(JSON.parse(strData)));
+            //res.on("end", () => response(JSON.parse(strData)));
+            res.on("end", () => reject({err: 36, message: "Error 36"}));
         })
         .end()
       )
@@ -144,6 +174,8 @@ const createFile = (data) => {
         );
         core.notice("Data written to file successfully.")
     } catch(err) {
-        core.setFailed(`Write data.json file failed: ${err}`);
+        core.setFailed(
+            `Write data.json file failed: ${JSON.stringify(err, null, 4)}`
+        );
      }
 }
