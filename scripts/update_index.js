@@ -108,7 +108,8 @@ const getRepos = async (user, strData) => {
                 core.info(typeof res);
                 core.info(JSON.stringify(JSON.parse(res), null, 4));
             })
-            .catch(err =>
+            .catch(err => {
+                core.error(err);
                 core.setFailed(
                     `Request for subtopics failed: ${JSON.stringify(
                         err,
@@ -116,7 +117,7 @@ const getRepos = async (user, strData) => {
                         4
                     )}`
                 )
-            );
+            });
 
         if (process.exitCode ?? 0) return;
 
