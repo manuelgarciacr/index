@@ -94,8 +94,8 @@ const getRepos = async (user, strData) => {
 }
 
 const getLanguages = url => {
-    // const err = {"error": 36, message: "Error message"};
-    // core.setFailed(`Test of failed: ${err}`);
+    const err = {"error": 36, message: "Error message"};
+    core.setFailed(`Test of failed: ${err}`);
     return new Promise((response, reject) => https
         .request(url, {headers}, res => {
             let strData = "";
