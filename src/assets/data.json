@@ -8,13 +8,15 @@
             "TypeScript": 20.7,
             "JavaScript": 8.7,
             "HTML": 1.1
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "alumnes-api",
         "description": "",
         "topics": [],
-        "languages": {}
+        "languages": {},
+        "subtopics": []
     },
     {
         "name": "android_bug_2022",
@@ -22,7 +24,8 @@
         "topics": [],
         "languages": {
             "Kotlin": 100
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "angular-tutorial",
@@ -32,7 +35,8 @@
             "TypeScript": 73.9,
             "SCSS": 17.8,
             "HTML": 8.3
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "angularjs-jhu",
@@ -43,6 +47,7 @@
         "languages": {
             "HTML": 100
         },
+        "subtopics": [],
         "page": "https://manuelgarciacr.github.io/angularjs-jhu"
     },
     {
@@ -53,6 +58,7 @@
             "HTML": 50.2,
             "JavaScript": 49.8
         },
+        "subtopics": [],
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment1"
     },
     {
@@ -63,6 +69,7 @@
             "HTML": 55.1,
             "JavaScript": 44.9
         },
+        "subtopics": [],
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment2"
     },
     {
@@ -74,6 +81,7 @@
             "CSS": 26.9,
             "HTML": 26.2
         },
+        "subtopics": [],
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment3"
     },
     {
@@ -85,6 +93,7 @@
             "HTML": 23.4,
             "CSS": 3.9
         },
+        "subtopics": [],
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment4"
     },
     {
@@ -96,6 +105,7 @@
             "HTML": 3.4,
             "CSS": 2.1
         },
+        "subtopics": [],
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment5"
     },
     {
@@ -104,7 +114,8 @@
         "topics": [],
         "languages": {
             "JavaScript": 100
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "Bootstrap",
@@ -113,7 +124,8 @@
         "languages": {
             "HTML": 78.3,
             "SCSS": 21.7
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "bs4",
@@ -123,7 +135,8 @@
             "HTML": 57.4,
             "SCSS": 35.7,
             "JavaScript": 6.9
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "bs5",
@@ -136,7 +149,8 @@
             "JavaScript": 7.6,
             "Vue": 6.4,
             "CSS": 0.1
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "charactercreator",
@@ -147,7 +161,8 @@
             "JavaScript": 45.2,
             "SCSS": 7.8,
             "Shell": 0
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "curs2022_frontVue",
@@ -159,13 +174,15 @@
             "CSS": 11.4,
             "Vue": 3.9,
             "GLSL": 0.1
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "cursgit",
         "description": "",
         "topics": [],
-        "languages": {}
+        "languages": {},
+        "subtopics": []
     },
     {
         "name": "docman",
@@ -176,7 +193,8 @@
             "HTML": 15.9,
             "SCSS": 13.8,
             "JavaScript": 0.8
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "docman-backend",
@@ -187,7 +205,8 @@
             "CSS": 11,
             "Handlebars": 3.3,
             "Batchfile": 0
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "fullstack-course5",
@@ -196,13 +215,15 @@
         "languages": {
             "HTML": 73.4,
             "CSS": 26.6
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "git-exercici",
         "description": "Exercici Git IT Academy Barcelona Activa",
         "topics": [],
-        "languages": {}
+        "languages": {},
+        "subtopics": []
     },
     {
         "name": "gitactionex",
@@ -210,7 +231,8 @@
         "topics": [],
         "languages": {
             "Go": 100
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "gloriabier",
@@ -227,6 +249,7 @@
             "JavaScript": 8.7,
             "CSS": 7.7
         },
+        "subtopics": [],
         "page": "https://manuelgarciacr.github.io/gloriabier"
     },
     {
@@ -246,7 +269,12 @@
             "HTML": 23.2,
             "SCSS": 8.3,
             "CSS": 0.2
-        }
+        },
+        "subtopics": [
+            "mat-dialog",
+            "mat-chips",
+            "mat-autocomplete"
+        ]
     },
     {
         "name": "ita-ang-jsts",
@@ -256,7 +284,8 @@
             "CSS": 87.1,
             "HTML": 7.7,
             "JavaScript": 5.2
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "ITA-Angular-First-delivery",
@@ -266,7 +295,8 @@
             "SCSS": 39.2,
             "HTML": 30.5,
             "CSS": 30.3
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "ita-angular-intro",
@@ -276,7 +306,8 @@
             "TypeScript": 79.7,
             "SCSS": 14.1,
             "HTML": 6.2
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "ita-angular-js",
@@ -286,7 +317,8 @@
             "HTML": 56.7,
             "JavaScript": 41,
             "CSS": 2.4
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "ita-angular-jses6",
@@ -295,7 +327,8 @@
         "languages": {
             "JavaScript": 99.1,
             "HTML": 0.9
-        }
+        },
+        "subtopics": []
     },
     {
         "name": "ita-angular-s7",
@@ -305,6 +338,7 @@
             "TypeScript": 60.4,
             "HTML": 34.7,
             "SCSS": 4.9
-        }
+        },
+        "subtopics": []
     }
 ]
