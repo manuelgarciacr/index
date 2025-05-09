@@ -6,15 +6,15 @@ on:
   workflow_dispatch:
   #workflow_dispatch: # Autorizes manual execution
     inputs:
-      container:
-        description: "Container image to use"
-        default: null
-        # for local execution use: "catthehacker/ubuntu:act-latest"
-
       local:
         description: "Using Github local actions"
         type: boolean
         default: false
+        # for local execution use: true
+      container:
+        description: "Container image to use"
+        default: null
+        # for local execution use: "catthehacker/ubuntu:act-latest"
 
   schedule:
     - cron: "59 23 * * 6" # Every Saturday on 23:59 (UTC)
@@ -28,8 +28,8 @@ jobs:
       image: "${{github.event.inputs.container}}"
 
     steps:
-      # - name: Add Mask
-      #   run: echo "::add-mask::$GITHUB_TOKEN"
+      - name: Add Mask
+        run: echo "::add-mask::$GITHUB_TOKEN"
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -55,10 +55,6 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote -v
 
-          #git add .
-          #git commit -m "Updates data.json on ${{ github.event_name }} event"
-          echo git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
-
           # Debug: List files in assets/
           echo "--- Files in assets/ ---"
           #ls ./src/assets -la
@@ -69,7 +65,13 @@ jobs:
           if [ -n "$(git diff ./src/assets/data.json)" ]; then
             git add ./src/assets/data.json
             git commit -m "Updates data.json on ${{ github.event_name }} event"
-            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+            if [ ${{ github.event.inputs.local }} ]; then
+                echo "LOCAL PUSH"
+                git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+            else
+                echo "HOSTED PUSH"
+                git push https://github.com/manuelgarciacr/index.git
+            fi
           else
             echo "No changes"
           fi

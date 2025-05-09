@@ -10,7 +10,6 @@ const core = require("@actions/core");
 
 const $GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const $USER = process.env.GITHUB_REPOSITORY_OWNER;
-//const $REPOSITORY = process.env.GITHUB_REPOSITORY;
 const connectApiHost = "api.github.com"
 const connectApiPath = `/users/${$USER}/repos`
 const headers = {
@@ -27,18 +26,19 @@ let options = {
     headers
 };
 
-core.notice("ESTO ES UNA PRUEBA")
+core.notice(headers)
 
 https.request(options, res => {
     let strData = "";
 
     res.on("error", err => {
-        core.error("Request error:", err.message);
+        core.setFailed(`Request for repos failed: ${err}`);
     });
+
     res.on("data", chunk => {
         strData += chunk.toString();
     });
-    // res.on("end", async () => await getRepo.bind(this, strData)())
+
     res.on("end", async () => {
         if (res.statusCode !== 200) {
             throw "ERROR: " + strData
@@ -61,7 +61,7 @@ const getRepos = async (user, strData) => {
             topics: ele.topics || []
         };
         const languagesPromise = getLanguages(ele.languages_url);
-        getSubtopics(ele.name);
+        const subtopicsPromise = getSubtopics(ele.name);
 
         await languagesPromise
             .then(res => {
@@ -74,7 +74,14 @@ const getRepos = async (user, strData) => {
                     repo.languages[entry[0]] = Math.round(entry[1] * 1000 / total) / 10
                 )
             })
-            .catch(err => core.error(err));
+            .catch(err => core.setFailed(`Request for languages failed: ${err}`));
+
+        await subtopicsPromise
+            .then(res => {
+                core.info(typeof res)
+                core.notice(JSON.stringify(JSON.parse(res), null, 4))
+            })
+            .catch(err => core.setFailed(`Request for subtopics failed: ${err}`));
 
         if (ele.has_pages) {
             // repo.page = "https://$USER.github.io/" + ele.name;
@@ -87,7 +94,8 @@ const getRepos = async (user, strData) => {
 }
 
 const getLanguages = url => {
-
+    // const err = {"error": 36, message: "Error message"};
+    // core.setFailed(`Test of failed: ${err}`);
     return new Promise((response, reject) => https
         .request(url, {headers}, res => {
             let strData = "";
@@ -107,7 +115,7 @@ const getLanguages = url => {
 };
 
 const getSubtopics = (repo) => {
-    const url = `https://api.github.com/repos/$USE/${ repo }/contents/README.md`;
+    const url = `https://api.github.com/repos/${ $USER }/${ repo }/contents/README.md`;
     core.notice(`URL: ${url}`)
     return new Promise((response, reject) => https
         .request(url, { headers }, res => {
@@ -121,7 +129,7 @@ const getSubtopics = (repo) => {
                 strData += chunk.toString();
             });
 
-            res.on("end", () => response(JSON.parse(strData)));
+            res.on("end", () => response(strData));
         })
         .end()
     );
@@ -136,7 +144,6 @@ const createFile = (data) => {
         );
         core.notice("Data written to file successfully.")
     } catch(err) {
-        core.error(err);
-        throw err
-    }
+        core.setFailed(`Write data.json file failed: ${err}`);
+     }
 }
