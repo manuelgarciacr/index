@@ -100,7 +100,7 @@ const getRepos = async (user, strData) => {
         await subtopicsPromise
             .then(res => {
                 const variables = JSON.parse(res).variables
-                const subtopicsVar =  variables.find(v => v.name === "SUBTOPICS");
+                const subtopicsVar =  variables?.find(v => v.name === "SUBTOPICS");
                 const subtopics =  JSON.parse(subtopicsVar?.value ?? "[]");
 
                 repo.subtopics = subtopics.sort((a, b) => a - b);
