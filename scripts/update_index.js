@@ -99,8 +99,14 @@ const getRepos = async (user, strData) => {
 
         await subtopicsPromise
             .then(res => {
+                const variables = JSON.parse(res).variables
+                const subtopicsVar =  variables.find(v => v.name === "SUBTOPICS");
+                const subtopics =  JSON.parse(subtopicsVar?.value ?? "[]");
+
+                repo.subtopics = subtopics.sort((a, b) => a - b);
+
                 core.info(typeof res);
-                core.notice(JSON.stringify(JSON.parse(res), null, 4));
+                core.info(JSON.stringify(JSON.parse(res), null, 4));
             })
             .catch(err =>
                 core.setFailed(
@@ -137,15 +143,14 @@ const getLanguages = url => {
                 strData += chunk.toString();
             });
 
-            //res.on("end", () => response(JSON.parse(strData)));
-            res.on("end", () => reject({err: 36, message: "Error 36"}));
+            res.on("end", () => response(JSON.parse(strData)));
         })
         .end()
       )
 };
 
 const getSubtopics = (repo) => {
-    const url = `https://api.github.com/repos/${ $USER }/${ repo }/contents/README.md`;
+    const url = `https://api.github.com/repos/${ $USER }/${ repo }/actions/variables`;
     core.notice(`URL: ${url}`)
     return new Promise((response, reject) => https
         .request(url, { headers }, res => {

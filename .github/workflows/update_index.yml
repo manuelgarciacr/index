@@ -17,7 +17,7 @@ on:
         # for local execution use: "catthehacker/ubuntu:act-latest"
 
   schedule:
-    - cron: "59 23 * * 6" # Every Saturday on 23:59 (UTC)
+    - cron: "59 23 * * *" # Every Saturday on 23:59 (UTC)
 
 jobs:
 

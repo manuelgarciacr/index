@@ -1,0 +1,22 @@
+[
+    {
+        "topic": "mat-chips",
+        "text": "Angular Material: MatChipsModule",
+        "type": "element"
+    },
+    {
+        "topic": "mat-autocomplete",
+        "text": "Angular Material: MatAutocompleteModule",
+        "type": "element"
+    },
+    {
+        "topic": "mat-dialog",
+        "text": "Angular Material: MatDialog",
+        "type": "element"
+    },
+    {
+        "topic": "update-control",
+        "text": "Update html control. Sometimes ngModel doesn't works properly.",
+        "type": ""
+    }
+]

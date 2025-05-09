@@ -106,20 +106,5 @@
         "topic": "angular-material",
         "text": "Angular Material",
         "type": "base"
-    },
-    {
-        "topic": "mat-chips",
-        "text": "Angular Material: MatChipsModule",
-        "type": "element"
-    },
-    {
-        "topic": "mat-autocomplete",
-        "text": "Angular Material: MatAutocompleteModule",
-        "type": "element"
-    },
-    {
-        "topic": "mat-dialog",
-        "text": "Angular Material: MatDialog",
-        "type": "element"
     }
 ]
