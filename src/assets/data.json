@@ -241,10 +241,10 @@
             "mat-dialog"
         ],
         "languages": {
-            "TypeScript": 44.1,
-            "HTML": 24.7,
-            "JavaScript": 22.3,
-            "SCSS": 8.9,
+            "TypeScript": 43.2,
+            "HTML": 24.2,
+            "JavaScript": 23.7,
+            "SCSS": 8.7,
             "CSS": 0.2
         }
     },
