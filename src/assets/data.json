@@ -258,8 +258,7 @@
         "topics": [
             "angular-18",
             "angular-material",
-            "github-actions",
-            "mat-dialog"
+            "github-actions"
         ],
         "languages": {
             "TypeScript": 40.7,
