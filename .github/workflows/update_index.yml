@@ -26,8 +26,6 @@ jobs:
     container:
       image: "${{github.event.inputs.container}}"
 
-    permissions:
-        actions: read
     steps:
     #   - name: Add Mask
     #     run: echo "::add-mask::$GITHUB_TOKEN"
