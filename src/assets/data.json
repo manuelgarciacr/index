@@ -264,13 +264,17 @@
             "mat-dialog"
         ],
         "languages": {
-            "TypeScript": 40.9,
-            "JavaScript": 27.9,
-            "HTML": 22.9,
+            "TypeScript": 40.7,
+            "JavaScript": 28.1,
+            "HTML": 22.8,
             "SCSS": 8.2,
             "CSS": 0.2
         },
-        "subtopics": []
+        "subtopics": [
+            "mat-dialog",
+            "mat-chips",
+            "mat-autocomplete"
+        ]
     },
     {
         "name": "ita-ang-jsts",
