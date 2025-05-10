@@ -69,6 +69,7 @@ jobs:
           if [ -n "$(git diff ./src/assets/data.json)" ]; then
             git add ./src/assets/data.json
             git commit -m "Updates data.json on ${{ github.event_name }} event"
+            echo "LOCAL ${{ github.event.inputs.local }}"
             if [ ${{ github.event.inputs.local }} ]; then
                 echo "LOCAL PUSH"
                 git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
