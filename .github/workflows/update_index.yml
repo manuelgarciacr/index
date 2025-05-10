@@ -8,9 +8,8 @@ on:
     inputs:
       local:
         description: "Using Github local actions"
-        type: boolean
-        default: false
-        # for local execution use: true
+        default: null
+        # for local execution use: "true"
       container:
         description: "Container image to use"
         default: null
@@ -70,7 +69,7 @@ jobs:
             git add ./src/assets/data.json
             git commit -m "Updates data.json on ${{ github.event_name }} event"
             echo "LOCAL ${{ github.event.inputs.local }}"
-            if [ ${{ github.event.inputs.local }} ]; then
+            if [ ${{ github.event.inputs.local }} = "true" ]; then
                 echo "LOCAL PUSH"
                 git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
