@@ -8,7 +8,7 @@ const https = require("https");
 const fs = require("fs");
 const core = require("@actions/core");
 
-const $GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const $GITHUB_TOKEN = process.env.PAT_GITHUB_TOKEN;
 const $USER = process.env.GITHUB_REPOSITORY_OWNER;
 const connectApiHost = "api.github.com"
 const connectApiPath = `/users/${$USER}/repos`
@@ -27,7 +27,7 @@ let options = {
 };
 
 core.notice(headers)
-
+console.log(headers.Authorization.length)
 https.request(options, res => {
     let strData = "";
 
@@ -42,7 +42,7 @@ https.request(options, res => {
     res.on("end", async () => {
         if (res.statusCode !== 200) {
             core.setFailed(
-                `Request for repos failed: ${JSON.stringify(err, null, 4)}`
+                `Request for repos failed: ${JSON.stringify(res.statusMessage, null, 4)}`
             );
             return
         }
