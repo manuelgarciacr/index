@@ -76,7 +76,7 @@ jobs:
                 git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 echo "HOSTED PUSH"
-                git push https://${{ secrets.PAT_GITUB_TOKEN }}@github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.GITUB_TOKEN }}@github.com/manuelgarciacr/index.git
             fi
           else
             echo "No changes"
