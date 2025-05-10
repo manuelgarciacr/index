@@ -69,12 +69,12 @@ jobs:
             git add ./src/assets/data.json
             git commit -m "Updates data.json on ${{ github.event_name }} event"
             echo "LOCAL ${{ github.event.inputs.local }}"
-            if [ ${{ github.event.inputs.local }} = "true" ]; then
+            if [ "${{ github.event.inputs.local }}" = "true" ]; then
                 echo "LOCAL PUSH"
                 git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 echo "HOSTED PUSH"
-                git push https://github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.PAT_GITUB_TOKEN }}@github.com/manuelgarciacr/index.git
             fi
           else
             echo "No changes"
