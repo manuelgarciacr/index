@@ -259,7 +259,6 @@
             "angular-18",
             "angular-material",
             "github-actions",
-            "mat-autocomplete",
             "mat-dialog"
         ],
         "languages": {
