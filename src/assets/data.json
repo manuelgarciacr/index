@@ -260,7 +260,6 @@
             "angular-material",
             "github-actions",
             "mat-autocomplete",
-            "mat-chips",
             "mat-dialog"
         ],
         "languages": {
