@@ -64,9 +64,11 @@ const getRepos = async (user, strData) => {
         const repo = {
             name: ele.name,
             description: (ele.description || "").trim(),
-            repository: ele.has_pages ? `https://manuelgarciacr.github.io/${ele.name}` : "s",
-            webpage: ele.html_url,
-            topics: ele.topics || []
+            repository: ele.html_url,
+            webpage: ele.has_pages
+                ? `https://manuelgarciacr.github.io/${ele.name}`
+                : "",
+            topics: ele.topics || [],
         };
         const languagesPromise = getLanguages(ele.languages_url);
         const subtopicsPromise = getSubtopics(ele.name);

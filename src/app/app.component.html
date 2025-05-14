@@ -64,11 +64,11 @@
             <p>{{ item.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <a [href]="item.repository" class="ms-3">
+            <a [href]="item.repository" target="_blank" class="ms-3">
                 <mat-icon svgIcon="github" class="icon-size overflow-visible"></mat-icon>
                 Repository
             </a>
-            <a [href]="item.webpage" [hidden]="item.webpage === ''">
+            <a [href]="item.webpage" target="_blank" [hidden]="item.webpage === ''">
                 <mat-icon svgIcon="web" class="icon-size overflow-visible">web</mat-icon>
                 Webpage
             </a>
