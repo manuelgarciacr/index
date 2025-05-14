@@ -68,6 +68,8 @@ const getRepos = async (user, strData) => {
             webpage: ele.has_pages
                 ? `https://manuelgarciacr.github.io/${ele.name}`
                 : "",
+            created: "ele.created_at".substring(0, 7).replace("-", "/"),
+            pushed: "ele.pushed_at".substring(0, 7).replace("-", "/"),
             topics: ele.topics || [],
         };
         const languagesPromise = getLanguages(ele.languages_url);

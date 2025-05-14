@@ -1,9 +1,9 @@
 <div> <!-- needed for sticky -->
-    <mat-toolbar color="primary" style="position: sticky; top: 0; width: 100%; z-index: 1000;">
+    <mat-toolbar color="primary" style="position: sticky; top: 0; z-index: 1000;">
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
             <mat-icon>menu</mat-icon>
         </button>
-        <span>Repositories index</span>
+        <span>Repositories</span>
         <span class="spacer"></span>
         <button mat-icon-button (click)="undefinedTopics()"class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>favorite</mat-icon>
@@ -47,6 +47,7 @@
         <mat-card-header>
             <mat-card-title>{{ item.name }}</mat-card-title>
             <mat-card-subtitle class="ms-4 my-2">
+                {{item.created}}-{{item.pushed}}
                 <mat-chip-set>
                     @for (topic of item.topics; track $index) {
                     <mat-chip>
@@ -64,12 +65,12 @@
             <p>{{ item.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <a [href]="item.repository" target="_blank" class="ms-3">
-                <mat-icon svgIcon="github" class="icon-size overflow-visible"></mat-icon>
+            <a [href]="item.repository" target="_blank">
+                <mat-icon svgIcon="github" class="repo-size overflow-visible"></mat-icon>
                 Repository
             </a>
-            <a [href]="item.webpage" target="_blank" [hidden]="item.webpage === ''">
-                <mat-icon svgIcon="web" class="icon-size overflow-visible">web</mat-icon>
+            <a [href]="item.webpage" target="_blank" class="ms-3" [hidden]="item.webpage === ''">
+                <mat-icon svgIcon="web" class="web-size overflow-visible">web</mat-icon>
                 Webpage
             </a>
         </mat-card-actions>
