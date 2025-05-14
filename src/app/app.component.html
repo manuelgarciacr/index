@@ -5,40 +5,45 @@
         </button>
         <span>Repositories index</span>
         <span class="spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <button mat-icon-button (click)="undefinedTopics()"class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>favorite</mat-icon>
         </button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
             <mat-icon>share</mat-icon>
         </button>
     </mat-toolbar>
-    <form>
-        <mat-form-field class="chip-list">
+    <form class="w-100 cls-1">
+        <mat-form-field [floatLabel]="'always'" appearance="outline" class="w-100 p-2">
             <mat-label>Topics filter</mat-label>
-            <mat-chip-grid #chipGrid aria-label="Topics filter selection">
+            <mat-chip-grid class="justify-content-evenly" #chipGrid aria-label="Topics filter selection">
                 @for (topic of selectedTopics(); track $index) {
-                <mat-chip-row (removed)="remove(topic)">
+                <mat-chip (removed)="remove(topic)">
                     {{topic}}
                     <button matChipRemove [attr.aria-label]="'remove ' + topic">
                         <mat-icon>cancel</mat-icon>
                     </button>
-                </mat-chip-row>
+                </mat-chip>
                 }
                 <input name="currentTopic" placeholder="New topic..." #topicInput [(ngModel)]="currentTopic"
                     [matChipInputFor]="chipGrid" [matAutocomplete]="auto" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                    (matChipInputTokenEnd)="add($event)" />
+                    (matChipInputTokenEnd)="add($event)"/>
+                <button mat-icon-button matSuffix (click)="clearFilter()" title="Clear filter tags" [attr.aria-label]="'Clear filter tags'">
+                    <mat-icon>backspace</mat-icon>
+                </button>
             </mat-chip-grid>
+            <mat-autocomplete (optionActivated)="topicInput.placeholder = 'New topic...'" (closed)="topicInput.placeholder = 'New topic...'" #auto="matAutocomplete" (optionSelected)="selected($event); topicInput.value = ''">
 
-            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event); topicInput.value = ''">
                 @for (topic of filteredTopics(); track topic) {
                 <mat-option [value]="topic">{{topic}}</mat-option>
                 }
             </mat-autocomplete>
         </mat-form-field>
     </form>
-
-    @for (item of data(); track $index) {
-    <mat-card class="m-2">
+    @for (item of data(); let first = $first; track $index) {
+    <mat-card class="m-2" [class.first-element]="first">
+        @if (first) {
+            <div #container (window:scroll)="onScroll()"></div>
+        }
         <mat-card-header>
             <mat-card-title>{{ item.name }}</mat-card-title>
             <mat-card-subtitle class="ms-4 my-2">
@@ -46,8 +51,9 @@
                     @for (topic of item.topics; track $index) {
                     <mat-chip>
                         {{topic}}
-                        <button matChipRemove (click) = "openDialog(topic, '')" aria-label="Add  to filter">
-                            <mat-icon>visibility</mat-icon>
+                        <button matChipRemove [hidden]="!notInFilter(topic) && !withDescription(topic)" (click) = "openDialog(topic, '')"
+                            [attr.aria-label]="notInFilter(topic) ? 'Add to filter' : 'Show information'">
+                            <mat-icon>{{ notInFilter(topic) ? 'filter_list' : withDescription(topic) ? 'visibility' : ''}}</mat-icon>
                         </button>
                     </mat-chip>
                     }
@@ -55,12 +61,25 @@
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="my-2">
-            <p>{{ item.description }}</p>
+            <p>{{ item.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <a [href]="item.repository" class="ms-3">
+                <mat-icon svgIcon="github" class="icon-size overflow-visible"></mat-icon>
+                Repository
+            </a>
+            <a [href]="item.webpage" [hidden]="item.webpage === ''">
+                <mat-icon svgIcon="web" class="icon-size overflow-visible">web</mat-icon>
+                Webpage
+            </a>
         </mat-card-actions>
     </mat-card>
     }
+    <div class="my-4 invisible">margin bottom</div>
+    <div class="my-4 invisible">margin bottom</div>
+    <div [class.invisible]="!goTopBtn()" class="position-fixed bottom-0 end-0 m-4">
+        <button mat-fab (click)="goTop()" aria-label="Go top button">
+            <mat-icon>publish</mat-icon>
+        </button>
+    </div>
 </div>
