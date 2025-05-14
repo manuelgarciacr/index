@@ -2,6 +2,8 @@
     {
         "name": "-nuwe-summer21-ch03",
         "description": "Map Search",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/-nuwe-summer21-ch03",
         "topics": [],
         "languages": {
             "CSS": 69.5,
@@ -14,6 +16,8 @@
     {
         "name": "alumnes-api",
         "description": "",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/alumnes-api",
         "topics": [],
         "languages": {},
         "subtopics": []
@@ -21,6 +25,8 @@
     {
         "name": "android_bug_2022",
         "description": "Error while Launching activity when it is not enabled with a bool value of false",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/android_bug_2022",
         "topics": [],
         "languages": {
             "Kotlin": 100
@@ -30,6 +36,8 @@
     {
         "name": "angular-tutorial",
         "description": "Angular 17 tutorial",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/angular-tutorial",
         "topics": [],
         "languages": {
             "TypeScript": 73.9,
@@ -41,6 +49,8 @@
     {
         "name": "angularjs-jhu",
         "description": "Single Page Web Applications with AngularJS por Universidad Johns Hopkins",
+        "repository": "https://manuelgarciacr.github.io/angularjs-jhu",
+        "webpage": "https://github.com/manuelgarciacr/angularjs-jhu",
         "topics": [
             "angularjs"
         ],
@@ -53,6 +63,8 @@
     {
         "name": "angularjs-jhu-assignment1",
         "description": "Assignment 1",
+        "repository": "https://manuelgarciacr.github.io/angularjs-jhu-assignment1",
+        "webpage": "https://github.com/manuelgarciacr/angularjs-jhu-assignment1",
         "topics": [],
         "languages": {
             "HTML": 50.2,
@@ -64,6 +76,8 @@
     {
         "name": "angularjs-jhu-assignment2",
         "description": "Assignment 2",
+        "repository": "https://manuelgarciacr.github.io/angularjs-jhu-assignment2",
+        "webpage": "https://github.com/manuelgarciacr/angularjs-jhu-assignment2",
         "topics": [],
         "languages": {
             "HTML": 55.1,
@@ -75,6 +89,8 @@
     {
         "name": "angularjs-jhu-assignment3",
         "description": "Assignment 3",
+        "repository": "https://manuelgarciacr.github.io/angularjs-jhu-assignment3",
+        "webpage": "https://github.com/manuelgarciacr/angularjs-jhu-assignment3",
         "topics": [],
         "languages": {
             "JavaScript": 46.9,
@@ -87,6 +103,8 @@
     {
         "name": "angularjs-jhu-assignment4",
         "description": "Assignment 4",
+        "repository": "https://manuelgarciacr.github.io/angularjs-jhu-assignment4",
+        "webpage": "https://github.com/manuelgarciacr/angularjs-jhu-assignment4",
         "topics": [],
         "languages": {
             "JavaScript": 72.7,
@@ -99,6 +117,8 @@
     {
         "name": "angularjs-jhu-assignment5",
         "description": "Assignment 5",
+        "repository": "https://manuelgarciacr.github.io/angularjs-jhu-assignment5",
+        "webpage": "https://github.com/manuelgarciacr/angularjs-jhu-assignment5",
         "topics": [],
         "languages": {
             "JavaScript": 94.5,
@@ -111,6 +131,8 @@
     {
         "name": "api-design-node-v3",
         "description": "[Course] API design in Node with Express v3",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/api-design-node-v3",
         "topics": [],
         "languages": {
             "JavaScript": 100
@@ -120,6 +142,8 @@
     {
         "name": "Bootstrap",
         "description": "",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/Bootstrap",
         "topics": [],
         "languages": {
             "HTML": 78.3,
@@ -130,6 +154,8 @@
     {
         "name": "bs4",
         "description": "",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/bs4",
         "topics": [],
         "languages": {
             "HTML": 57.4,
@@ -141,6 +167,8 @@
     {
         "name": "bs5",
         "description": "",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/bs5",
         "topics": [],
         "languages": {
             "HTML": 47.8,
@@ -155,6 +183,8 @@
     {
         "name": "charactercreator",
         "description": "",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/charactercreator",
         "topics": [],
         "languages": {
             "HTML": 47,
@@ -167,6 +197,8 @@
     {
         "name": "curs2022_frontVue",
         "description": "Curs Vue UOC Anna",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/curs2022_frontVue",
         "topics": [],
         "languages": {
             "HTML": 72.2,
@@ -180,6 +212,8 @@
     {
         "name": "cursgit",
         "description": "",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/cursgit",
         "topics": [],
         "languages": {},
         "subtopics": []
@@ -187,6 +221,8 @@
     {
         "name": "docman",
         "description": "Document Manager. ITA Angular S9. Final project",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/docman",
         "topics": [],
         "languages": {
             "TypeScript": 69.5,
@@ -199,6 +235,8 @@
     {
         "name": "docman-backend",
         "description": "Document Manager. ITA Angular S9. Final project backend",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/docman-backend",
         "topics": [],
         "languages": {
             "JavaScript": 85.7,
@@ -211,6 +249,8 @@
     {
         "name": "fullstack-course5",
         "description": "All of the source code for the Single Page Web Applications with AngularJS course.",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/fullstack-course5",
         "topics": [],
         "languages": {
             "HTML": 73.4,
@@ -221,6 +261,8 @@
     {
         "name": "git-exercici",
         "description": "Exercici Git IT Academy Barcelona Activa",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/git-exercici",
         "topics": [],
         "languages": {},
         "subtopics": []
@@ -228,6 +270,8 @@
     {
         "name": "gitactionex",
         "description": "Github actions example",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/gitactionex",
         "topics": [],
         "languages": {
             "Go": 100
@@ -237,6 +281,8 @@
     {
         "name": "gloriabier",
         "description": "UOC Project",
+        "repository": "https://manuelgarciacr.github.io/gloriabier",
+        "webpage": "https://github.com/manuelgarciacr/gloriabier",
         "topics": [
             "bootstrap5",
             "html5",
@@ -255,17 +301,19 @@
     {
         "name": "index",
         "description": "Repositories index",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/index",
         "topics": [
             "angular-18",
             "angular-material",
             "github-actions"
         ],
         "languages": {
-            "TypeScript": 40.7,
-            "JavaScript": 28.1,
-            "HTML": 22.8,
-            "SCSS": 8.2,
-            "CSS": 0.2
+            "TypeScript": 46.5,
+            "HTML": 23.9,
+            "JavaScript": 22.6,
+            "SCSS": 6.8,
+            "CSS": 0.1
         },
         "subtopics": [
             "mat-dialog",
@@ -276,6 +324,8 @@
     {
         "name": "ita-ang-jsts",
         "description": "Sprint 3. JavaScript / TypeScript",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/ita-ang-jsts",
         "topics": [],
         "languages": {
             "CSS": 87.1,
@@ -287,6 +337,8 @@
     {
         "name": "ITA-Angular-First-delivery",
         "description": "Public  IT Academy. Angular course. First delivery",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/ITA-Angular-First-delivery",
         "topics": [],
         "languages": {
             "SCSS": 39.2,
@@ -298,6 +350,8 @@
     {
         "name": "ita-angular-intro",
         "description": "IT Academy Angular. Sprint 6 Intro Angular",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/ita-angular-intro",
         "topics": [],
         "languages": {
             "TypeScript": 79.7,
@@ -309,6 +363,8 @@
     {
         "name": "ita-angular-js",
         "description": "IT Academy. Angular course. Third sprint",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/ita-angular-js",
         "topics": [],
         "languages": {
             "HTML": 56.7,
@@ -320,6 +376,8 @@
     {
         "name": "ita-angular-jses6",
         "description": "Sprint 4. JavaScript ECMA6 - 13",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/ita-angular-jses6",
         "topics": [],
         "languages": {
             "JavaScript": 99.1,
@@ -330,6 +388,8 @@
     {
         "name": "ita-angular-s7",
         "description": "IT Academy Angular. Sprint 7 Pressupost",
+        "repository": "s",
+        "webpage": "https://github.com/manuelgarciacr/ita-angular-s7",
         "topics": [],
         "languages": {
             "TypeScript": 60.4,
