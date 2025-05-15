@@ -259,14 +259,22 @@
         "webpage": "",
         "created": "2023/12",
         "pushed": "2024/04",
-        "topics": [],
+        "topics": [
+            "angular-17",
+            "angular-material",
+            "it-academy",
+            "theming"
+        ],
         "languages": {
             "TypeScript": 69.5,
             "HTML": 15.9,
             "SCSS": 13.8,
             "JavaScript": 0.8
         },
-        "subtopics": []
+        "subtopics": [
+            "tsconfig-paths",
+            "custom-control"
+        ]
     },
     {
         "name": "docman-backend",
@@ -354,7 +362,8 @@
         "topics": [
             "angular-18",
             "angular-material",
-            "github-actions"
+            "github-actions",
+            "theming"
         ],
         "languages": {
             "TypeScript": 46,
@@ -366,7 +375,9 @@
         "subtopics": [
             "mat-dialog",
             "mat-chips",
-            "mat-autocomplete"
+            "mat-autocomplete",
+            "tsconfig-paths",
+            "custom-control"
         ]
     },
     {
