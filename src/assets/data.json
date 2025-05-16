@@ -367,10 +367,10 @@
             "theming"
         ],
         "languages": {
-            "TypeScript": 46,
-            "HTML": 23.8,
-            "JavaScript": 22.9,
-            "SCSS": 7.2,
+            "TypeScript": 44.9,
+            "SCSS": 26.2,
+            "HTML": 16.6,
+            "JavaScript": 12.2,
             "CSS": 0.1
         },
         "subtopics": [
