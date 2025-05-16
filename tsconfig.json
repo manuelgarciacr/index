@@ -22,7 +22,16 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "./src", // Needed for paths
+    "paths": {
+        "@domain": [
+            "domain/index.ts"
+        ],
+        "@infrastructure": [
+            "infrastructure/index.ts"
+        ],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

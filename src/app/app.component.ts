@@ -12,6 +12,7 @@ import {
 } from "@angular/core";
 //import { materialize } from 'rxjs';
 import { MatButtonModule } from "@angular/material/button";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
@@ -27,10 +28,12 @@ import {
 import { LiveAnnouncer } from "@angular/cdk/a11y";
 import { ENTER, COMMA } from "@angular/cdk/keycodes";
 import { MatLabel } from "@angular/material/form-field";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { catchError, forkJoin, of, tap } from "rxjs";
 import { DomSanitizer } from "@angular/platform-browser";
+import { ToggleThemeComponent } from "@infrastructure";
+import { ConfigurationService } from "@domain";
 
 type Repo = {
     name: string;
@@ -43,6 +46,12 @@ type Repo = {
     topics: string[];
     subtopics: string[]
 };
+
+type Order = {
+    created: string,
+    pushed: string,
+    name: string
+}
 
 type Topic = {
     topic: string;
@@ -65,8 +74,8 @@ type Topic = {
         FormsModule,
         MatFormFieldModule,
         ReactiveFormsModule,
-        // Ensure SafeHtmlPipe is imported or defined before using it
-        // SafeHtmlPipe
+        MatButtonToggleModule,
+        ToggleThemeComponent
     ],
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.scss"],
@@ -76,6 +85,7 @@ export class AppComponent implements OnInit {
     @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;
     @ViewChild("topicInput") input!: ElementRef;
     private readonly http = inject(HttpClient);
+    protected readonly cfg = inject(ConfigurationService);
     protected readonly data = signal<Repo[]>([]);
     protected readonly topics = signal<Topic[]>([]);
     protected readonly subtopics = signal<Topic[]>([]);
@@ -97,19 +107,63 @@ export class AppComponent implements OnInit {
     protected readonly separatorKeysCodes: number[] = [ENTER, COMMA];
     protected readonly dialog = inject(MatDialog);
     protected readonly goTopBtn = signal(false);
+    protected readonly orderControl = new FormControl("created");
+    protected readonly sort01 = signal("created");
+    protected readonly sort02 = signal("name");
+    protected readonly order = signal({created: "up", pushed: "up", name: "down"});
 
     constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
         iconRegistry.addSvgIcon(
             "github",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/github-mark.svg")
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/github.svg")
         );
         iconRegistry.addSvgIcon(
             "web",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/web-svgrepo-com.svg")
+            sanitizer.bypassSecurityTrustResourceUrl(
+                "/icons/web.svg"
+            )
+        );
+        iconRegistry.addSvgIcon(
+            "github-white",
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/github-white.svg")
+        );
+        iconRegistry.addSvgIcon(
+            "web-white",
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/web-white.svg")
         );
     }
 
     ngOnInit(): void {
+        const cookies = document.cookie
+            .split(";")
+            .map(c => c.split("=").map(str => str.trim()));
+        const sort01 = cookies.find(c => c[0] === "sort01")?.[1] ?? "created";
+        const sort02 = cookies.find(c => c[0] === "sort02")?.[1] ?? "name";
+        const order = {
+            created: cookies.find(c => c[0] === "created")?.[1] ?? "up",
+            pushed: cookies.find(c => c[0] === "pushed")?.[1] ?? "up",
+            name: cookies.find(c => c[0] === "name")?.[1] ?? "down",
+        };
+
+        this.sort01.set(sort01);
+        this.sort02.set(sort02);
+        this.order.set(order);
+        this.orderControl.setValue(sort01);
+
+        document.cookie = `sort01=${this.sort01()}`
+        document.cookie = `sort02=${this.sort02()}`;
+        document.cookie = `created=${this.order().created}`;
+        document.cookie = `pushed=${this.order().pushed}`;
+        document.cookie = `name=${this.order().name}`;
+
+        this.orderControl.valueChanges.subscribe(value => {
+            this.sort02.set(this.sort01());
+            this.sort01.set(value!);
+            document.cookie = `sort01=${this.sort01()}`;
+            document.cookie = `sort02=${this.sort02()}`;
+            this.sortData()
+        });
+
         const req1 = this.http.get<[]>("data.json").pipe(
             catchError(error => {
                 console.error(error);
@@ -131,10 +185,12 @@ export class AppComponent implements OnInit {
             }),
             tap(data => this.subtopics.set(data))
         );
+
         forkJoin([req1, req2, req3]).subscribe(() => {
             // results is an array of responses from the HTTP requests
             // Execute your function here
             this.undefinedTopics();
+            this.sortData()
         });
     }
 
@@ -245,7 +301,40 @@ export class AppComponent implements OnInit {
 
     protected notInFilter = (topic: string) =>
         this.selectedTopics().indexOf(topic) < 0;
+
     protected withDescription = (topic: string) =>
         this.topics().findIndex(v => v.topic === topic && v.text.length) >= 0;
+
+    protected sortOrder = (sort: 'created' | 'pushed' | 'name') => {
+        if (this.orderControl.value === sort) {
+            this.order.update(v => ({ ...v, [sort]: v[sort] === "up" ? "down" : "up" }));
+            document.cookie = `sort=${this.order()[sort]}`
+            this.sortData()
+        }
+    }
+
+    private sortData = () => {
+        const sort01 = this.sort01() as keyof Order;
+        const sort02 = this.sort02() as keyof Order;
+        const order01 = this.order()[sort01];
+        const order02 = this.order()[sort02];
+
+        this.data.update(v =>
+            v.sort((a, b) => {
+                if (order02 === "down") [a, b] = [b, a];
+                return a[sort02].localeCompare(
+                    b[sort02]
+                )
+            })
+        );
+        this.data.update(v =>
+            v.sort((a, b) => {
+                if (order01 === "down") [a, b] = [b, a];
+                return a[sort01].localeCompare(
+                    b[sort01]
+                )
+            })
+        );
+    }
 }
 

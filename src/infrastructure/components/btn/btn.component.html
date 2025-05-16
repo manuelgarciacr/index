@@ -1,0 +1,10 @@
+<button mat-raised-button
+    [type]="type"
+    [style.transform]="skew()"
+    [routerLink]="routerLink"
+    [disabled]="disabled"
+    color="primary"
+    (click)="!disabled && onClickButton($event)"
+    class="w-100">
+    <ng-content></ng-content>
+</button>

@@ -1,8 +1,9 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
+@use "./infrastructure/components/btn/btn-theme" as btn;
+@use "./app/styles/m3-theme";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -10,22 +11,85 @@
 @include mat.core();
 
 // Define the theme object.
-$index-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
-  ),
-  density: (
-    scale: 0,
-  )
-));
+// $index-theme: mat.define-theme(
+//     (
+//         color: (
+//             theme-type: light,
+//             primary: mat.$azure-palette,
+//             tertiary: mat.$blue-palette,
+//         ),
+//         density: (
+//             scale: 0,
+//         ),
+//     )
+// );
+
+// Define the dark theme object.
+// $dark-theme: mat.define-theme(
+//     (
+//         color: (
+//             theme-type: dark,
+//             primary: mat.$azure-palette,
+//             tertiary: mat.$blue-palette,
+//         ),
+//         density: (
+//             scale: 0,
+//         ),
+//     )
+// );
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
+
+
 :root {
-  @include mat.all-component-themes($index-theme);
+    @include mat.system-level-colors(m3-theme.$light-theme);
+    @include mat.core-theme(m3-theme.$light-theme);
+    @include mat.all-component-themes(m3-theme.$light-theme);
+    //@include mat.card-theme(m3-theme.$light-theme);
+    @include btn.theme(m3-theme.$light-theme);
+    .dark-theme {
+        @include mat.system-level-colors(m3-theme.$dark-theme);
+        @include mat.core-color(m3-theme.$dark-theme);
+        @include mat.all-component-colors(m3-theme.$dark-theme);
+        //@include mat.card-color(m3-theme.$dark-theme);
+        @include btn.theme(m3-theme.$dark-theme);
+        //$accent: mat.get-theme-color(m3-theme.$dark-theme, secondary);
+    }
+    --system-preference: undefined;
+}
+
+
+.mat-mdc-card {
+    background-color: #D5E6E7;
+}
+
+.dark-theme {
+    a {
+        color: #18c0d8;
+        &:visited {
+            color: #b18fcb;
+        }
+    }
+    .mat-mdc-card {
+        background-color: #485556;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+
+    :root {
+        --system-preference: light
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --system-preference: dark
+    }
+
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
@@ -36,5 +100,11 @@ $index-theme: mat.define-theme((
 // @include mat.color-variants-backwards-compatibility($index-theme);
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100% }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

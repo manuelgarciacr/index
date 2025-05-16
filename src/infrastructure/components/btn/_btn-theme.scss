@@ -1,0 +1,69 @@
+@use "SASS:map";
+@use "@angular/material" as mat;
+
+@mixin color($theme) {
+    @debug "";
+    // $color-config: mat.get-color-config($theme);
+    // $primary-palette: map.get($color-config, "primary");
+    // $warn-palette: map.get($color-config, "warn");
+    // $primary-palette: mat.get-theme-color($theme, primary, 50);
+    $primary-palette: mat.get-theme-color($theme, primary);
+    $warn-palette: mat.get-theme-color($theme, error);
+    //$is-dark-theme: map.get($color-config, "is-dark");
+    // $is-dark-theme: mat.get-theme-type($theme);
+    // $background-color: if($is-dark-theme,
+    //     mat.get-color-from-palette($primary-palette, 400),
+    //     mat.get-color-from-palette($primary-palette, A400));
+    // $background-light-color: if($is-dark-theme,
+    //     mat.get-color-from-palette($primary-palette, 200),
+    //     mat.get-color-from-palette($primary-palette, A100));
+    // $color: if($is-dark-theme,
+    //     mat.get-color-from-palette($primary-palette, 400-contrast),
+    //     mat.get-color-from-palette($primary-palette, A400-contrast));
+    $background-color: mat.get-theme-color($theme, surface-dim);
+    $background-light-color: mat.get-theme-color($theme, surface);
+    @debug COLOR $background-color;
+    @debug $background-light-color;
+    btn-component {
+        &[type=button][ng-reflect-disabled=true] {
+            cursor: default;
+        }
+        button {
+            // background: linear-gradient(
+            //     90deg,
+            //     rgba(82, 224, 224, 1) 68%,
+            //     rgba(160, 237, 235, 1) 100%
+            // )!important;
+            background: linear-gradient(
+                90deg,
+                $background-color 68%,
+                $background-light-color 100%
+            )!important;
+            //color: $color!important;
+            @if mat.get-theme-type($theme) == dark {
+                color: mat.get-theme-color($theme, primary, 20) !important;
+            } @else {
+                color: mat.get-theme-color($theme, primary, 80) !important;
+            }
+            &.mat-mdc-raised-button[disabled] {
+                opacity: .3;
+                // background: linear-gradient(
+                //     90deg,
+                //     gray 68%,
+                //     lightgray 100%
+                // )!important;
+                cursor: default!important;
+            }
+        }
+    }
+}
+
+@mixin theme($theme) {
+    @if mat.theme-has($theme, color) {
+        @include color($theme);
+    }
+
+    // @if mat.theme-has($theme, typography) {
+    //     @include typography($theme);
+    // }
+}

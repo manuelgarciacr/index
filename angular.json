@@ -36,7 +36,9 @@
               }
              ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/styles/bootstrap.css",
+              "src/app/styles/bootstrap-grid.css"
             ],
             "scripts": []
           },
