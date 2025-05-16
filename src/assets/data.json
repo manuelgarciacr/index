@@ -362,6 +362,7 @@
         "topics": [
             "angular-18",
             "angular-material",
+            "bs5-classes",
             "github-actions",
             "theming"
         ],
@@ -377,7 +378,8 @@
             "mat-chips",
             "mat-autocomplete",
             "tsconfig-paths",
-            "custom-control"
+            "mat-custom-control",
+            "mat-app-background"
         ]
     },
     {
