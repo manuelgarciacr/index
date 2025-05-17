@@ -379,7 +379,9 @@
             "mat-autocomplete",
             "tsconfig-paths",
             "mat-custom-control",
-            "mat-app-background"
+            "mat-app-background",
+            "host-context",
+            "hex-architecture"
         ]
     },
     {
