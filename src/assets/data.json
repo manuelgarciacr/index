@@ -362,16 +362,15 @@
         "topics": [
             "angular-18",
             "angular-material",
-            "bs5-classes",
             "github-actions",
             "theming"
         ],
         "languages": {
-            "TypeScript": 44.9,
-            "SCSS": 26.2,
-            "HTML": 16.6,
-            "JavaScript": 12.2,
-            "CSS": 0.1
+            "TypeScript": 56.3,
+            "SCSS": 21,
+            "HTML": 13.8,
+            "JavaScript": 8.9,
+            "CSS": 0
         },
         "subtopics": [
             "mat-dialog",
@@ -381,7 +380,8 @@
             "mat-custom-control",
             "mat-app-background",
             "host-context",
-            "hex-architecture"
+            "hex-architecture",
+            "bs5-classes"
         ]
     },
     {
