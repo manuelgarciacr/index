@@ -3,9 +3,9 @@ import { MatDialogContent, MatDialogTitle, MatDialogActions, MatDialogClose, Mat
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
 
-export interface DialogData {
+export interface TopicDlgData {
     topic: string;
-    text: string;
+    text: string[];
     inFilter: boolean
 }
 
@@ -21,7 +21,7 @@ export interface DialogData {
         MatDialogContent,
         MatDialogActions,
         MatDialogClose,
-        NgIf
+        NgIf,
     ],
     templateUrl: `./topic-dlg.component.html`,
     styleUrl: "./topic-dlg.component.css",
@@ -29,7 +29,7 @@ export interface DialogData {
 })
 export class TopicDlgComponent {
     readonly dialogRef = inject(MatDialogRef<TopicDlgComponent>);
-    readonly data = inject<DialogData>(MAT_DIALOG_DATA);
+    readonly data = inject<TopicDlgData>(MAT_DIALOG_DATA);
     readonly inFilter = model(this.data.inFilter);
 
     onNoClick(): void {

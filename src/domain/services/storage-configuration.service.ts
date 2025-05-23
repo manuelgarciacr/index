@@ -7,10 +7,11 @@ type Config = {
     isDark: boolean;
     syspref: string;
 };
+
 @Injectable({
     providedIn: "root",
 })
-export class ConfigurationService {
+export class StorageConfigurationService {
     private _config: Config = { theme: "system", isDark: false, syspref: "" };
 
     constructor() {
@@ -44,7 +45,7 @@ export class ConfigurationService {
     getSyspref() {
         return getComputedStyle(document.documentElement).getPropertyValue(
             "--system-preference"
-        );
+        ).trim();
     }
 
     setTheme = (theme: "light" | "dark" | "system") => {

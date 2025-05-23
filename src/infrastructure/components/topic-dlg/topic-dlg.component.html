@@ -1,6 +1,12 @@
 <h2 mat-dialog-title>{{ data.topic }}</h2>
 <mat-dialog-content>
-    <p>{{ data.text }}</p>
+    <ul>
+    @for (line of data.text; track $index) {
+        <li>
+            {{ line }}
+        </li>
+    }
+    </ul>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button *ngIf="!inFilter()" mat-button (click)="onNoClick()">No Thanks</button>

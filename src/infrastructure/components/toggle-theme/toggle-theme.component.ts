@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 // import { CommonModule } from '@angular/common';
-import { ConfigurationService } from '@domain';
+import { StorageConfigurationService } from '@domain';
 import { BtnComponent } from '@infrastructure';
 
 @Component({
@@ -13,7 +13,7 @@ import { BtnComponent } from '@infrastructure';
 })
 export class ToggleThemeComponent implements OnInit {
     @Output() collapseNavbar = new EventEmitter<boolean>();
-    private conf = inject(ConfigurationService);
+    private conf = inject(StorageConfigurationService);
     protected themeState = {
         svg: ["devices-fill", "moon-stars-fill", "sun-fill"],
         alt: ["Devices icon", "Moon icon", "Sun icon"],

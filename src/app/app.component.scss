@@ -16,4 +16,50 @@
     font-size: 1.7rem !important;
     width: 1.7rem !important;
     height: 1.7rem !important;
-  }
+}
+
+button.display-none {
+    visibility: hidden;
+    width: 0;
+}
+
+.card {
+    padding: 1rem;
+    width: 100%;
+    .mat-mdc-card {
+        background-color: #D5E6E7 !important;
+        // Moded to styles.css.
+        // .mat-mdc-card-header-text {
+        //     width: 100%;
+        // }
+        mat-card-title {
+            border-bottom: 1px solid var(--mat-app-text-color, var(--mat-app-on-background, inherit));
+        }
+        mat-card-content {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
+// If :host-context() have issues, use the styles.scss
+:host-context(.dark-theme) .card {
+    .mat-mdc-card {
+        background-color: #485556 !important;
+    }
+}
+
+// lg
+@media (min-width: 992px) {
+    .card {
+        width: 46% !important;
+    }
+}
+
+// xxl
+@media (min-width: 1400px) {
+    .cls-app {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

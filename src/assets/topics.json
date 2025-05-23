@@ -104,7 +104,9 @@
     },
     {
         "topic": "angular-material",
-        "text": "Angular Material",
+        "text": [
+            "Angular Material"
+        ],
         "type": "base"
     }
 ]

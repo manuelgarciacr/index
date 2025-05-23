@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="title" [class]="data.type">{{ data.title }}</h2>
+<mat-dialog-content>
+    <p>{{ data.text }}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button *ngIf="!inFilter()" mat-button mat-dialog-close>No Thanks</button>
+    <button mat-button [mat-dialog-close]="!inFilter()" cdkFocusInitial>{{ inFilter() ? "Ok" : "Add to filter" }}</button>
+</mat-dialog-actions>

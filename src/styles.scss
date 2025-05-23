@@ -62,7 +62,9 @@
 
 
 .mat-mdc-card {
-    background-color: #D5E6E7;
+    .mat-mdc-card-header-text {
+        width: 100%;
+    }
 }
 
 .dark-theme {
@@ -72,9 +74,9 @@
             color: #b18fcb;
         }
     }
-    .mat-mdc-card {
-        background-color: #485556;
-    }
+    // .mat-mdc-card {
+    //     background-color: #485556;
+    // }
 }
 
 @media (prefers-color-scheme: light) {
@@ -92,6 +94,21 @@
 
 }
 
+// @media (min-width: 576px) {
+//     .cls-app {
+//         max-width: 576px;
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
+// }
+// @media (min-width: 576px) {
+//     .cls-app {
+//         max-width: 576px;
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
+// }
+
 // Comment out the line below if you want to use the pre-defined typography utility classes.
 // For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
 // @include mat.typography-hierarchy($index-theme);
@@ -100,11 +117,8 @@
 // @include mat.color-variants-backwards-compatibility($index-theme);
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
-    height: 100%;
-}
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    min-height: 100vh;
 }
