@@ -110,7 +110,7 @@ const getRepos = async (user, strData) => {
                 const variables = JSON.parse(res).variables
                 const subtopicsVar =  variables?.find(v => v.name === "SUBTOPICS");
                 const subtopics =  JSON.parse(subtopicsVar?.value ?? "[]");
-                const showIdx = subtopics.findIndex("show-private");
+                const showIdx = subtopics.indexOf("show-private");
                 repo.subtopics = subtopics.sort((a, b) => a - b);
 
                 if (!repo.private || showIdx >= 0) {
