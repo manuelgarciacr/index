@@ -11,7 +11,8 @@ const core = require("@actions/core");
 const $GITHUB_TOKEN = process.env.PAT_GITHUB_TOKEN;
 const $USER = process.env.GITHUB_REPOSITORY_OWNER;
 const connectApiHost = "api.github.com"
-const connectApiPath = `/users/${$USER}/repos`
+//const connectApiPath = `/users/${$USER}/repos`
+const connectApiPath = `/user/repos`;
 const headers = {
     "User-Agent": "request",
     "Authorization": `token ${$GITHUB_TOKEN}`
