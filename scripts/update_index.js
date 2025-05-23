@@ -12,7 +12,7 @@ const $GITHUB_TOKEN = process.env.PAT_GITHUB_TOKEN;
 const $USER = process.env.GITHUB_REPOSITORY_OWNER;
 const connectApiHost = "api.github.com"
 //const connectApiPath = `/users/${$USER}/repos`
-const connectApiPath = `/user/repos`;
+const connectApiPath = `/user/repos?per_page=100`;
 const headers = {
     "User-Agent": "request",
     "Authorization": `token ${$GITHUB_TOKEN}`
@@ -50,8 +50,8 @@ https.request(options, res => {
         const data = await getRepos($USER, strData);
 
         if (process.exitCode ?? 0) return;
-
         core.notice(data);
+        console.log("RES", res.headers);
         //core.notice(JSON.stringify(JSON.parse(strData), null, 4));
         createFile(data);
         core.notice(fs.readdirSync("./src/assets").join("\n"));
