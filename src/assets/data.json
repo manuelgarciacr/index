@@ -27,21 +27,6 @@
         "subtopics": []
     },
     {
-        "name": "android-uoc-pac1",
-        "description": "Android UOC PAC1",
-        "repository": "https://github.com/manuelgarciacr/android-uoc-pac1",
-        "webpage": "",
-        "created": "2022/06",
-        "pushed": "2022/07",
-        "topics": [],
-        "languages": {
-            "Java": 99.3,
-            "Batchfile": 0.5,
-            "Shell": 0.3
-        },
-        "subtopics": []
-    },
-    {
         "name": "android_bug_2022",
         "description": "Error while Launching activity when it is not enabled with a bool value of false",
         "repository": "https://github.com/manuelgarciacr/android_bug_2022",
@@ -177,47 +162,6 @@
         "subtopics": []
     },
     {
-        "name": "BarAdmin",
-        "description": "BarAdmin app",
-        "repository": "https://github.com/manuelgarciacr/BarAdmin",
-        "webpage": "",
-        "created": "2023/07",
-        "pushed": "2023/08",
-        "topics": [],
-        "languages": {
-            "Kotlin": 100
-        },
-        "subtopics": []
-    },
-    {
-        "name": "BarAdminNode",
-        "description": "Node Express Server with Mongo Atlas.",
-        "repository": "https://github.com/manuelgarciacr/BarAdminNode",
-        "webpage": "",
-        "created": "2023/08",
-        "pushed": "2023/08",
-        "topics": [],
-        "languages": {
-            "JavaScript": 99.6,
-            "Batchfile": 0.4
-        },
-        "subtopics": []
-    },
-    {
-        "name": "BarAdminNodeDebug",
-        "description": "Node Express Server with Mongo Atlas. Debug.",
-        "repository": "https://github.com/manuelgarciacr/BarAdminNodeDebug",
-        "webpage": "",
-        "created": "2023/08",
-        "pushed": "2023/08",
-        "topics": [],
-        "languages": {
-            "JavaScript": 99.7,
-            "Batchfile": 0.3
-        },
-        "subtopics": []
-    },
-    {
         "name": "Bootstrap",
         "description": "",
         "repository": "https://github.com/manuelgarciacr/Bootstrap",
@@ -298,23 +242,6 @@
         "subtopics": []
     },
     {
-        "name": "cursfront",
-        "description": "Curs Front Web Developer",
-        "repository": "https://github.com/manuelgarciacr/cursfront",
-        "webpage": "",
-        "created": "2022/01",
-        "pushed": "2022/04",
-        "topics": [],
-        "languages": {
-            "HTML": 52,
-            "JavaScript": 24.8,
-            "Vue": 13,
-            "CSS": 9.5,
-            "TypeScript": 0.7
-        },
-        "subtopics": []
-    },
-    {
         "name": "cursgit",
         "description": "",
         "repository": "https://github.com/manuelgarciacr/cursgit",
@@ -323,20 +250,6 @@
         "pushed": "2025/04",
         "topics": [],
         "languages": {},
-        "subtopics": []
-    },
-    {
-        "name": "curso-aws",
-        "description": "Cibernarium. Barcelona Activa. Curso de AWS para principiantes",
-        "repository": "https://github.com/manuelgarciacr/curso-aws",
-        "webpage": "",
-        "created": "2025/05",
-        "pushed": "2025/05",
-        "topics": [],
-        "languages": {
-            "HTML": 100,
-            "Python": 0
-        },
         "subtopics": []
     },
     {
@@ -470,5 +383,96 @@
             "hex-architecture",
             "bs5-classes"
         ]
+    },
+    {
+        "name": "ita-ang-jsts",
+        "description": "Sprint 3. JavaScript / TypeScript",
+        "repository": "https://github.com/manuelgarciacr/ita-ang-jsts",
+        "webpage": "",
+        "created": "2023/07",
+        "pushed": "2023/07",
+        "topics": [],
+        "languages": {
+            "CSS": 87.1,
+            "HTML": 7.7,
+            "JavaScript": 5.2
+        },
+        "subtopics": []
+    },
+    {
+        "name": "ITA-Angular-First-delivery",
+        "description": "IT Academy. Angular bootcamp. First delivery. HTML5, SCSS.",
+        "repository": "https://github.com/manuelgarciacr/ITA-Angular-First-delivery",
+        "webpage": "",
+        "created": "2023/06",
+        "pushed": "2023/06",
+        "topics": [
+            "itacademy"
+        ],
+        "languages": {
+            "SCSS": 39.2,
+            "HTML": 30.5,
+            "CSS": 30.3
+        },
+        "subtopics": []
+    },
+    {
+        "name": "ita-angular-intro",
+        "description": "IT Academy Angular. Sprint 6 Intro Angular",
+        "repository": "https://github.com/manuelgarciacr/ita-angular-intro",
+        "webpage": "",
+        "created": "2023/07",
+        "pushed": "2023/07",
+        "topics": [],
+        "languages": {
+            "TypeScript": 79.7,
+            "SCSS": 14.1,
+            "HTML": 6.2
+        },
+        "subtopics": []
+    },
+    {
+        "name": "ita-angular-js",
+        "description": "IT Academy. Angular course. Third sprint",
+        "repository": "https://github.com/manuelgarciacr/ita-angular-js",
+        "webpage": "",
+        "created": "2023/07",
+        "pushed": "2023/07",
+        "topics": [],
+        "languages": {
+            "HTML": 56.7,
+            "JavaScript": 41,
+            "CSS": 2.4
+        },
+        "subtopics": []
+    },
+    {
+        "name": "ita-angular-jses6",
+        "description": "Sprint 4. JavaScript ECMA6 - 13",
+        "repository": "https://github.com/manuelgarciacr/ita-angular-jses6",
+        "webpage": "",
+        "created": "2023/07",
+        "pushed": "2023/07",
+        "topics": [],
+        "languages": {
+            "JavaScript": 99.1,
+            "HTML": 0.9
+        },
+        "subtopics": []
+    },
+    {
+        "name": "ita-angular-s7",
+        "description": "IT Academy Angular. Sprint 7 Pressupost",
+        "repository": "https://github.com/manuelgarciacr/ita-angular-s7",
+        "webpage": "",
+        "created": "2023/07",
+        "pushed": "2023/08",
+        "topics": [],
+        "languages": {
+            "TypeScript": 60.4,
+            "HTML": 34.7,
+            "SCSS": 4.9
+        },
+        "subtopics": []
     }
 ]
