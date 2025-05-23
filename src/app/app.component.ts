@@ -81,6 +81,10 @@ export class AppComponent implements OnInit {
     protected readonly filteredData = computed(() =>
         this.data().filter(
             r => {
+                if (!r.show) {
+                    return false
+                }
+
                 let filter = !this.hasSelections();
 
                 filter ||= r.topics.some(t =>
@@ -95,6 +99,7 @@ export class AppComponent implements OnInit {
                 filter ||= r.topics.some(t =>
                     this.selectedTopics().some(st => t.startsWith(`${st}-`))
                 );
+
                 return filter
             }
         )
@@ -299,7 +304,7 @@ export class AppComponent implements OnInit {
         const order01 = this.order()[sort01];
         const order02 = this.order()[sort02];
 
-        this.data.update(v =>
+        this.data.update(v => {
             v
                 .sort((a, b) => {
                     if (order02 === "down") [a, b] = [b, a];
@@ -308,8 +313,11 @@ export class AppComponent implements OnInit {
                 .sort((a, b) => {
                     if (order01 === "down") [a, b] = [b, a];
                     return a[sort01].localeCompare(b[sort01]);
-                })
-        );
+                });
+            //  Sort in place does not trigger changes detection on signals
+            return [...v]
+        });
+
     };
 
     private loadData = (resp: unknown[]) => {

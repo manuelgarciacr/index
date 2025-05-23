@@ -72,6 +72,7 @@ const getRepos = async (user, strData) => {
             created: ele.created_at.substring(0, 7).replace("-", "/"),
             pushed: ele.pushed_at.substring(0, 7).replace("-", "/"),
             topics: ele.topics || [],
+            private: ele.visibility === "private"
         };
         const languagesPromise = getLanguages(ele.languages_url);
         const subtopicsPromise = getSubtopics(ele.name);
@@ -109,9 +110,14 @@ const getRepos = async (user, strData) => {
                 const variables = JSON.parse(res).variables
                 const subtopicsVar =  variables?.find(v => v.name === "SUBTOPICS");
                 const subtopics =  JSON.parse(subtopicsVar?.value ?? "[]");
-
+                const showIdx = subtopics.findIndex("show-private");
                 repo.subtopics = subtopics.sort((a, b) => a - b);
 
+                if (!repo.private || showIdx >= 0) {
+                    repo.show = true;
+                } else {
+                    repo.show = false
+                }
                 core.info(typeof res);
                 core.info(JSON.stringify(JSON.parse(res), null, 4));
             })
