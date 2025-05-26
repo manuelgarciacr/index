@@ -405,8 +405,10 @@
         "languages": {
             "PHP": 100
         },
-        "subtopics": [],
-        "show": false
+        "subtopics": [
+            "show-private"
+        ],
+        "show": true
     },
     {
         "name": "docman",
