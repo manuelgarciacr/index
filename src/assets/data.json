@@ -376,7 +376,10 @@
         "webpage": "",
         "created": "2025/05",
         "pushed": "2025/05",
-        "topics": [],
+        "topics": [
+            "cibernarium",
+            "curso-aws"
+        ],
         "private": true,
         "languages": {
             "HTML": 100,
@@ -386,6 +389,24 @@
             "show-private"
         ],
         "show": true
+    },
+    {
+        "name": "curso-github",
+        "description": "Cibernarium. Barcelona Activa. GIT and GITHUB for programming persons. Preparation for the official Github Foundation certificate.",
+        "repository": "https://github.com/manuelgarciacr/curso-github",
+        "webpage": "",
+        "created": "2025/05",
+        "pushed": "2025/05",
+        "topics": [
+            "cibernarium",
+            "curso-github"
+        ],
+        "private": true,
+        "languages": {
+            "PHP": 100
+        },
+        "subtopics": [],
+        "show": false
     },
     {
         "name": "docman",
