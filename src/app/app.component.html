@@ -66,7 +66,7 @@
             <mat-card-header>
                 <mat-card-title class="pb-3 mb-3">{{ item.name }}</mat-card-title>
                 <mat-card-subtitle class="ms-4 my-2">
-                    {{item.created}} - {{item.pushed}}
+                    {{item.created.substring(0, 7)}} - {{item.pushed.substring(0, 7)}}
                     <mat-chip-set class="mt-2">
                         @for (topic of item.topics; track $index) {
                         <mat-chip>
@@ -87,10 +87,10 @@
                 <p>{{ item.description}}</p>
             </mat-card-content>
             <mat-card-actions class="bottom-0 position-absolute">
-                <a [href]="item.repository" target="_blank" class="accent-color">
+                <a [attr.href]="item.private ? null : item.repository" target="_blank" class="accent-color" [class.red-color]="item.private">
                     <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'github-white' : 'github'"
                         class="repo-size overflow-visible"></mat-icon>
-                    Repository
+                    {{ item.private ? 'PRIVATE REPOSITORY' : 'Repository'}}
                 </a>
                 <a [href]="item.webpage" target="_blank" class="ms-3" [hidden]="item.webpage === ''">
                     <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'web-white' : 'web'"

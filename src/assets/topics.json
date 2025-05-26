@@ -57,6 +57,31 @@
         "type": "base"
     },
     {
+        "topic": "curso-aws",
+        "text": [
+            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
+            "Tema 1 - Introducció a AWS",
+            "Tema 2 - Desenvolupament amb AWS",
+            "Tema 3 - Arquitectura Serverless amb AWS",
+            "Tema 4 - CI\\CD i DevOps amb AWS",
+            "Pràctica extra CRUD API"
+        ],
+        "type": "base"
+    },
+    {
+        "topic": "curso-github",
+        "text": [
+            "Tema 1 - Introducció a Git i Github",
+            "Tema 2 - Treballant amb Github Repository",
+            "Tema 3 - Funcions de col·laboració",
+            "Tema 4 - Desenvolupament modern",
+            "Tema 5 - Project Management",
+            "Tema 6 - Privacitat, Seguretat i Administració",
+            "Tema 7 - Beneficis de GitHub Community"
+        ],
+        "type":  "base"
+    },
+    {
         "topic": "mysql",
         "text": [
             "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
@@ -104,9 +129,7 @@
     },
     {
         "topic": "angular-material",
-        "text": [
-            "Angular Material"
-        ],
+        "text": ["Angular Material"],
         "type": "base"
     }
 ]

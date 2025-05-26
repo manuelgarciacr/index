@@ -38,6 +38,9 @@ button.display-none {
         mat-card-content {
             margin-bottom: 4rem;
         }
+        .red-color {
+            color: red;
+        }
     }
 }
 
@@ -45,6 +48,9 @@ button.display-none {
 :host-context(.dark-theme) .card {
     .mat-mdc-card {
         background-color: #485556 !important;
+        .red-color {
+            color: pink;
+        }
     }
 }
 
