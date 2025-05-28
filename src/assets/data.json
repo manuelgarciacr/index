@@ -357,21 +357,8 @@
         "show": false
     },
     {
-        "name": "cursgit",
-        "description": "",
-        "repository": "https://github.com/manuelgarciacr/cursgit",
-        "webpage": "",
-        "created": "2025/04-09T17:31:40Z",
-        "pushed": "2025/04-09T17:31:41Z",
-        "topics": [],
-        "private": false,
-        "languages": {},
-        "subtopics": [],
-        "show": true
-    },
-    {
         "name": "curso-aws",
-        "description": "Cibernarium. Barcelona Activa. Curso de AWS para principiantes",
+        "description": "Cibernarium. Barcelona Activa. Cloud Computing with AWS for Beginners",
         "repository": "https://github.com/manuelgarciacr/curso-aws",
         "webpage": "",
         "created": "2025/05-23T14:58:34Z",
@@ -404,6 +391,26 @@
         "private": true,
         "languages": {
             "PHP": 100
+        },
+        "subtopics": [
+            "show-private"
+        ],
+        "show": true
+    },
+    {
+        "name": "curso-nodejs",
+        "description": "Cibernarium. Barcelona Activa. Nodejs course",
+        "repository": "https://github.com/manuelgarciacr/curso-nodejs",
+        "webpage": "",
+        "created": "2025/04-14T14:41:51Z",
+        "pushed": "2025/04-14T14:54:28Z",
+        "topics": [
+            "cibernarium",
+            "curso-nodejs"
+        ],
+        "private": false,
+        "languages": {
+            "JavaScript": 100
         },
         "subtopics": [
             "show-private"
@@ -485,15 +492,37 @@
     },
     {
         "name": "gitactionex",
-        "description": "Github actions example",
+        "description": "Cibernarium. Barcelona Activa. GIT and GITHUB for programming persons. Github actions example",
         "repository": "https://github.com/manuelgarciacr/gitactionex",
         "webpage": "",
         "created": "2025/04-16T16:15:28Z",
         "pushed": "2025/05-24T00:43:17Z",
-        "topics": [],
+        "topics": [
+            "cibernarium",
+            "curso-github",
+            "github-actions"
+        ],
         "private": false,
         "languages": {
             "Go": 100
+        },
+        "subtopics": [],
+        "show": true
+    },
+    {
+        "name": "github-submodule",
+        "description": "Cibernarium. Barcelona Activa. GIT and GITHUB for programming persons. Github submodule example",
+        "repository": "https://github.com/manuelgarciacr/github-submodule",
+        "webpage": "",
+        "created": "2025/04-07T13:45:12Z",
+        "pushed": "2025/04-09T15:20:32Z",
+        "topics": [
+            "cibernarium",
+            "curso-github"
+        ],
+        "private": false,
+        "languages": {
+            "HTML": 100
         },
         "subtopics": [],
         "show": true
@@ -528,19 +557,20 @@
         "repository": "https://github.com/manuelgarciacr/index",
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2025/05-27T01:11:20Z",
+        "pushed": "2025/05-28T07:09:15Z",
         "topics": [
             "angular-18",
             "angular-material",
             "github-actions",
+            "testing",
             "theming"
         ],
         "private": false,
         "languages": {
-            "TypeScript": 55.8,
-            "SCSS": 20.7,
-            "HTML": 14.2,
-            "JavaScript": 9.3,
+            "TypeScript": 61.4,
+            "SCSS": 18.2,
+            "HTML": 12.2,
+            "JavaScript": 8.1,
             "CSS": 0
         },
         "subtopics": [
@@ -552,7 +582,8 @@
             "mat-app-background",
             "host-context",
             "hex-architecture",
-            "bs5-classes"
+            "bs5-classes",
+            "testing-protected-elements"
         ],
         "show": true
     },
@@ -832,21 +863,6 @@
         "show": true
     },
     {
-        "name": "meu-projecte",
-        "description": "Curs Git i GitHub per programadors",
-        "repository": "https://github.com/manuelgarciacr/meu-projecte",
-        "webpage": "",
-        "created": "2025/04-07T13:45:12Z",
-        "pushed": "2025/04-09T15:20:32Z",
-        "topics": [],
-        "private": false,
-        "languages": {
-            "HTML": 100
-        },
-        "subtopics": [],
-        "show": true
-    },
-    {
         "name": "mgc",
         "description": "Programing resources",
         "repository": "https://github.com/manuelgarciacr/mgc",
@@ -939,21 +955,6 @@
         "subtopics": [],
         "show": true,
         "page": "https://manuelgarciacr.github.io/ngx-oauth2-oidc"
-    },
-    {
-        "name": "nodejs",
-        "description": "Curs Git i Github",
-        "repository": "https://github.com/manuelgarciacr/nodejs",
-        "webpage": "",
-        "created": "2025/04-14T14:41:51Z",
-        "pushed": "2025/04-14T14:54:28Z",
-        "topics": [],
-        "private": false,
-        "languages": {
-            "JavaScript": 100
-        },
-        "subtopics": [],
-        "show": true
     },
     {
         "name": "nuwe-summer21-ch01",
@@ -1055,19 +1056,6 @@
         },
         "subtopics": [],
         "show": false
-    },
-    {
-        "name": "pepe-repolocal",
-        "description": "Curs GIT i GITHUB preparació certificació",
-        "repository": "https://github.com/manuelgarciacr/pepe-repolocal",
-        "webpage": "",
-        "created": "2025/04-06T17:47:28Z",
-        "pushed": "2025/04-16T14:51:40Z",
-        "topics": [],
-        "private": false,
-        "languages": {},
-        "subtopics": [],
-        "show": true
     },
     {
         "name": "PresentacionGithubTinder",
@@ -1229,12 +1217,15 @@
     },
     {
         "name": "skills-communicate-using-markdown",
-        "description": "My clone repository",
+        "description": "Cibernarium. Barcelona Activa. GIT and GITHUB for programming persons. Communicate using markdown",
         "repository": "https://github.com/manuelgarciacr/skills-communicate-using-markdown",
         "webpage": "https://manuelgarciacr.github.io/skills-communicate-using-markdown",
         "created": "2025/04-05T18:42:49Z",
         "pushed": "2025/04-06T00:56:55Z",
-        "topics": [],
+        "topics": [
+            "cibernarium",
+            "curso-github"
+        ],
         "private": false,
         "languages": {},
         "subtopics": [],
@@ -1243,12 +1234,15 @@
     },
     {
         "name": "skills-review-pull-requests",
-        "description": "My clone repository",
+        "description": "Cibernarium. Barcelona Activa. GIT and GITHUB for programming persons. Review pull requests",
         "repository": "https://github.com/manuelgarciacr/skills-review-pull-requests",
         "webpage": "",
         "created": "2025/04-14T14:23:13Z",
         "pushed": "2025/04-14T14:31:08Z",
-        "topics": [],
+        "topics": [
+            "cibernarium",
+            "curso-github"
+        ],
         "private": false,
         "languages": {
             "HTML": 100
@@ -1258,12 +1252,15 @@
     },
     {
         "name": "template",
-        "description": "",
+        "description": "Cibernarium. Barcelona Activa. GIT and GITHUB for programming persons. Template example",
         "repository": "https://github.com/manuelgarciacr/template",
         "webpage": "",
         "created": "2025/04-12T17:21:27Z",
         "pushed": "2025/04-12T17:21:29Z",
-        "topics": [],
+        "topics": [
+            "cibernarium",
+            "curso-github"
+        ],
         "private": false,
         "languages": {},
         "subtopics": [],
