@@ -105,53 +105,6 @@ export class DataService {
             });
     }
 
-    // readonly call = () =>
-    //     this.joinReq("data", "topics", "subtopics").pipe(
-    //         map(resp => [...resp, [], []]),
-    //         this.pipeif(
-    //             v =>
-    //                 Array.isArray(v[0]) &&
-    //                 Array.isArray(v[1]) &&
-    //                 Array.isArray(v[2]),
-    //             // converts "text": string to "text": string[]
-    //             map(v => {
-    //                 (v[1] as ITopic[]).forEach(
-    //                     t =>
-    //                         (t.text = Array.isArray(t.text) ? t.text : [t.text])
-    //                 );
-    //                 (v[2] as ITopic[]).forEach(
-    //                     t =>
-    //                         (t.text = Array.isArray(t.text) ? t.text : [t.text])
-    //                 );
-    //                 return [v[0], v[1], v[2], v[3], v[4]];
-    //             }),
-    //             tap(v => {
-    //                 this._data.set(v[0] as IRepo[]);
-    //             }),
-    //             map(v => {
-    //                 (v[0] as IRepo[]).forEach(r => {
-    //                     this.udefTopicsService(r.topics, v[1], v[3]);
-    //                     r.topics.forEach(t => {
-    //                         const some = (v[1] as ITopic[]).some(
-    //                             v => v.name === t
-    //                         );
-    //                         if (!some) {
-    //                             v[1].push({ name: t, text: [], type: "" });
-    //                         }
-    //                     });
-    //                 });
-    //                 return v;
-    //             }),
-    //             map(v => {
-    //                 (v[0] as IRepo[]).forEach(r =>
-    //                     this.udefTopicsService(r.subtopics, v[2], v[4])
-    //                 );
-    //                 return v;
-    //             }),
-    //             tap(v => console.log(v))
-    //         )
-    //     );
-
     readonly sortData = (
         sort01: keyof IOrder,
         sort02: keyof IOrder,

@@ -205,7 +205,7 @@ const sortTopics = (name) => {
     try {
         const topics = JSON.parse(
             fs.readFileSync(`./src/assets/${name}.json`, { encoding: null })
-        ).sort((a, b) => a.localeCompare(b));
+        ).sort((a, b) => a.name.localeCompare(b.name));
 
         fs.writeFileSync(
             `./src/assets/${name}.json`,
@@ -213,8 +213,9 @@ const sortTopics = (name) => {
         );
         core.notice(`${name}.json written to file successfully.`);
     } catch (err) {
+        core.info(err);
         core.setFailed(
-            `Sort ${name}.json file failed: ${JSON.stringify(err, null, 4)}`
+            `Sort ${name}.json file failed`
         );
     }
 }
