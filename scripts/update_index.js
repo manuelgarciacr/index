@@ -27,7 +27,6 @@ let options = {
     headers
 };
 
-core.notice(headers)
 console.log(headers.Authorization.length)
 https.request(options, res => {
     let strData = "";
@@ -50,13 +49,14 @@ https.request(options, res => {
         const data = await getRepos($USER, strData);
 
         if (process.exitCode ?? 0) return;
-        core.notice(data);
+
         console.log("RES", res.headers);
-        //core.notice(JSON.stringify(JSON.parse(strData), null, 4));
+
         createFile(data);
         sortTopics("topics");
         sortTopics("subtopics");
-        core.notice(fs.readdirSync("./src/assets").join("\n"));
+
+        core.info(fs.readdirSync("./src/assets").join("\n"));
     })
 }).end();
 
@@ -167,7 +167,8 @@ const getLanguages = url => {
 
 const getSubtopics = (repo) => {
     const url = `https://api.github.com/repos/${ $USER }/${ repo }/actions/variables`;
-    core.notice(`URL: ${url}`)
+    core.info(`URL: ${url}`)
+
     return new Promise((response, reject) => https
         .request(url, { headers }, res => {
             let strData = "";
@@ -193,7 +194,7 @@ const createFile = (data) => {
             "./src/assets/data.json",
             JSON.stringify(data, null, 4),
         );
-        core.notice("Data written to file successfully.")
+        core.info("Data written to file successfully.")
     } catch(err) {
         core.setFailed(
             `Write data.json file failed: ${JSON.stringify(err, null, 4)}`
@@ -211,7 +212,7 @@ const sortTopics = (name) => {
             `./src/assets/${name}.json`,
             JSON.stringify(topics, null, 4)
         );
-        core.notice(`${name}.json written to file successfully.`);
+        core.info(`${name}.json written to file successfully.`);
     } catch (err) {
         core.info(err);
         core.setFailed(
