@@ -31,7 +31,7 @@
     {
         "name": "angular-material",
         "text": [
-            "Angular Material"
+            "Material Design components for Angular. Internationalized and accessible components for everyone. Well tested to ensure performance and reliability. Straightforward APIs with consistent cross platform behaviour. Provide tools that help developers build their own custom components with common interaction patterns. Customizable within the bounds of the Material Design specification. Built by the Angular team to integrate seamlessly with Angular. Start from scratch or drop into your existing applications."
         ],
         "type": "base"
     },
@@ -124,6 +124,26 @@
             "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
         "type": "base"
+    },
+    {
+        "name": "theming",
+        "text": [
+            "Thematization of an application with resources such as Sass, material angular, bootstrap, etc."
+        ],
+        "type": "base"
+    },
+    {
+        "name": "testing",
+        "text": [
+            "Test an application with the Jasmine testing framework and the Karma test runner."
+        ],
+        "type": "base"
+    },
+    {
+        "name": "curso-nodejs",
+        "text": [
+            "Cibernarium. Barcelona Activa. Nodejs course material"
+        ]
     },
     {
         "name": "mysql",
