@@ -29,9 +29,40 @@
         "type": "version"
     },
     {
-        "name": "it-academy",
+        "name": "angular-material",
         "text": [
-            "Angular 17: Bootcamp of Angular at the IT Academy of Barcelona Activa. Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, Rxjs, etc. June-January 2023-2024. 100% final note (excellent)."
+            "Angular Material"
+        ],
+        "type": "base"
+    },
+    {
+        "name": "asedem",
+        "text": [
+            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
+        ],
+        "type": "base"
+    },
+    {
+        "name": "aws",
+        "text": [
+            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)"
+        ],
+        "type": "base"
+    },
+    {
+        "name": "cibernarium",
+        "text": [
+            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)",
+            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
+            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)",
+            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)"
+        ],
+        "type": "base"
+    },
+    {
+        "name": "cifo-la-violeta",
+        "text": [
+            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
         "type": "base"
     },
@@ -39,25 +70,6 @@
         "name": "coursera",
         "text": [
             "Angular 2: Online course 'Front-End JavaScript Frameworks: Angular' (38h) taught by The Hong Kong University of Science and Technology on Coursera. Scholarship from the Generalitat de Catalunya. Angular Material, Flex-Layout, RxJS, etc. November-December 2020. Final grade 100%."
-        ],
-        "type": "base"
-    },
-    {
-        "name": "github",
-        "text": [
-            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)"
-        ],
-        "type": "base"
-    },
-    {
-        "name": "github-actions",
-        "text": ["GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production. GitHub Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository. For example, you can run a workflow to automatically add the appropriate labels whenever someone creates a new issue in your repository. GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure."],
-        "type": ""
-    },
-    {
-        "name": "aws",
-        "text": [
-            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
         "type": "base"
     },
@@ -83,22 +95,26 @@
             "Tema 6 - Privacitat, Seguretat i Administració",
             "Tema 7 - Beneficis de GitHub Community"
         ],
-        "type":  "curso"
+        "type": "curso"
     },
     {
-        "name": "mysql",
+        "name": "github",
         "text": [
-            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
+            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)"
         ],
         "type": "base"
     },
     {
-        "name": "cibernarium",
+        "name": "github-actions",
         "text": [
-            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)",
-            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
-            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)",
-            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)"
+            "GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production. GitHub Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository. For example, you can run a workflow to automatically add the appropriate labels whenever someone creates a new issue in your repository. GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure."
+        ],
+        "type": ""
+    },
+    {
+        "name": "it-academy",
+        "text": [
+            "Angular 17: Bootcamp of Angular at the IT Academy of Barcelona Activa. Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, Rxjs, etc. June-January 2023-2024. 100% final note (excellent)."
         ],
         "type": "base"
     },
@@ -110,9 +126,9 @@
         "type": "base"
     },
     {
-        "name": "cifo-la-violeta",
+        "name": "mysql",
         "text": [
-            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
+            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
         "type": "base"
     },
@@ -122,18 +138,6 @@
             "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)",
             "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
         ],
-        "type": "base"
-    },
-    {
-        "name": "asedem",
-        "text": [
-            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
-        ],
-        "type": "base"
-    },
-    {
-        "name": "angular-material",
-        "text": ["Angular Material"],
         "type": "base"
     }
 ]
