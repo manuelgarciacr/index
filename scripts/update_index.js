@@ -54,6 +54,8 @@ https.request(options, res => {
         console.log("RES", res.headers);
         //core.notice(JSON.stringify(JSON.parse(strData), null, 4));
         createFile(data);
+        sortTopics("topics");
+        sortTopics("subtopics");
         core.notice(fs.readdirSync("./src/assets").join("\n"));
     })
 }).end();
@@ -196,5 +198,23 @@ const createFile = (data) => {
         core.setFailed(
             `Write data.json file failed: ${JSON.stringify(err, null, 4)}`
         );
-     }
+    }
+}
+
+const sortTopics = (name) => {
+    try {
+        const topics = JSON.parse(
+            fs.readFileSync(`./src/assets/${name}.json`, { encoding: null })
+        ).sort((a, b) => a.localeCompare(b));
+
+        fs.writeFileSync(
+            `./src/assets/${name}.json`,
+            JSON.stringify(topics, null, 4)
+        );
+        core.notice(`${name}.json written to file successfully.`);
+    } catch (err) {
+        core.setFailed(
+            `Sort ${name}.json file failed: ${JSON.stringify(err, null, 4)}`
+        );
+    }
 }

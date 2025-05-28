@@ -214,7 +214,7 @@ export class AppComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (!result) return;
 
-            this.selectedTopics.update(v => [...v, ...topics]);
+            this.selectedTopics.update(v => [...new Set([...v, ...topics])]);
             this.currentTopic.set("");
             // Update input control
             this.input.nativeElement.value = "";
