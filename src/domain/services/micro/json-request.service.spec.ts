@@ -1,16 +1,26 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { JsonRequestService } from './json-request.service';
+import { JsonRequestService } from "./json-request.service";
+import {
+    provideHttpClientTesting,
+} from "@angular/common/http/testing";
+import { provideHttpClient } from "@angular/common/http";
 
-describe('RequestService', () => {
-  let service: JsonRequestService;
+describe("RequestService", () => {
+    //let httpTesting = TestBed.inject(HttpTestingController);
+    let service: JsonRequestService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(JsonRequestService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            providers: [
+                provideHttpClient(),
+                provideHttpClientTesting(),
+            ],
+        });
+        service = TestBed.inject(JsonRequestService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it("should be created", () => {
+        expect(service).toBeTruthy();
+    });
 });

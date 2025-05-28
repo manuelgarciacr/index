@@ -8,6 +8,7 @@ import {
     ViewChild,
     ElementRef,
 } from "@angular/core";
+import { toObservable } from "@angular/core/rxjs-interop";
 import { MatButtonModule } from "@angular/material/button";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -36,10 +37,10 @@ import {
     StorageConfigurationService,
     DataService,
     IOrder,
-    IRepo,
-    ITopic,
 } from "@domain";
 import { CokiesConfigurationService } from "domain/services/cokies-configuration.service";
+import { GetTopicBasesService } from "domain/services/get-topic-bases.service";
+import { tap } from "rxjs";
 
 @Component({
     selector: "app-root",
@@ -67,48 +68,55 @@ export class AppComponent implements OnInit {
     @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;
     @ViewChild("topicInput") input!: ElementRef;
     private readonly dataService = inject(DataService);
+    private readonly getTopicText = inject(GetTopicBasesService);
     protected readonly storageCfg = inject(StorageConfigurationService);
     protected readonly cookiesCfg = inject(CokiesConfigurationService);
-    protected readonly data = signal<IRepo[]>([]);
-    protected readonly topics = signal<ITopic[]>([]);
-    protected readonly subtopics = signal<ITopic[]>([]);
-    protected readonly udefTopics = signal<string[]>([]);
-    protected readonly udefSubTopics = signal<string[]>([]);
+    //protected readonly data = signal<IRepo[]>([]);
+    protected readonly data = this.dataService.data;
+    protected readonly datachanged = toObservable(this.dataService.data)
+    .pipe(
+        tap(v => v.length > 0 && this.getSortConfiguration()),
+        tap(v => v.length > 0 && this.logUndefinedTopics()))
+    .subscribe({
+            next: v => v.length > 0 && this.datachanged.unsubscribe()
+        });
+    //protected readonly topics = signal<ITopic[]>([]);
+    protected readonly topics = this.dataService.topics;
+    //protected readonly subtopics = signal<ITopic[]>([]);
+    protected readonly subtopics = this.dataService.subtopics;
+    protected readonly udefTopics = this.dataService.udefTopics;
+    protected readonly udefSubtopics = this.dataService.udefSubtopics;
     protected readonly selectedTopics = signal<string[]>([]);
     protected readonly hasSelections = computed(
         () => !!this.selectedTopics().length
     );
     protected readonly filteredData = computed(() =>
-        this.data().filter(
-            r => {
-                if (!r.show) {
-                    return false
-                }
-
-                let filter = !this.hasSelections();
-
-                filter ||= r.topics.some(t =>
-                    this.selectedTopics().includes(t)
-                );
-                filter ||= r.topics.some(t =>
-                    this.selectedTopics().some(st => t.includes(`-${st}-`))
-                );
-                filter ||= r.topics.some(t =>
-                    this.selectedTopics().some(st => t.endsWith(`-${st}`))
-                );
-                filter ||= r.topics.some(t =>
-                    this.selectedTopics().some(st => t.startsWith(`${st}-`))
-                );
-
-                return filter
+        this.data().filter(r => {
+            if (!r.show) {
+                // return false;
             }
-        )
+
+            let filter = !this.hasSelections();
+
+            filter ||= r.topics.some(t => this.selectedTopics().includes(t));
+            filter ||= r.topics.some(t =>
+                this.selectedTopics().some(st => t.includes(`-${st}-`))
+            );
+            filter ||= r.topics.some(t =>
+                this.selectedTopics().some(st => t.endsWith(`-${st}`))
+            );
+            filter ||= r.topics.some(t =>
+                this.selectedTopics().some(st => t.startsWith(`${st}-`))
+            );
+
+            return filter;
+        })
     );
     protected readonly currentTopic = signal("");
     protected readonly filteredTopics = computed(() => {
         const currentTopic = this.currentTopic().toLowerCase();
         const remainingTopics = this.topics()
-            .map(topic => topic.topic)
+            .map(topic => topic.name)
             .filter(topic => !this.selectedTopics().includes(topic))
             .sort((a, b) => a.localeCompare(b));
         return currentTopic
@@ -121,10 +129,10 @@ export class AppComponent implements OnInit {
     protected readonly separatorKeysCodes: number[] = [ENTER, COMMA];
     protected readonly dialog = inject(MatDialog);
     protected readonly goTopBtn = signal(false);
-    protected readonly orderControl = new FormControl("created");
-    protected readonly sort01 = signal("created");
-    protected readonly sort02 = signal("name");
-    protected readonly order = signal({
+    protected readonly orderControl = new FormControl<keyof IOrder>("created");
+    protected readonly sort01 = signal<keyof IOrder>("created");
+    protected readonly sort02 = signal<keyof IOrder>("name");
+    protected readonly order = signal<IOrder>({
         created: "up",
         pushed: "up",
         name: "down",
@@ -135,17 +143,12 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.dataService.call().subscribe({
-            next: resp => {
-                this.loadData(resp);
-                this.getSortConfiguration();
-                this.logUndefinedTopics();
-            },
-            error: err => {
-                console.error(err);
-                this.openDialog("DATA SERVICE ERROR", err, "alert");
-            },
+        this.dataService.error$.subscribe({
+            error: err => console.error(err),
+            next: err =>
+                this.openDialog("DATA SERVICE ERROR", err.message, "alert"),
         });
+
     }
 
     add(event: MatChipInputEvent): void {
@@ -186,26 +189,32 @@ export class AppComponent implements OnInit {
     }
 
     openTopicDialog(topic: string): void {
-        const itopic = this.topics().find(v => v.topic === topic);
-        const text = [...(itopic?.text ?? [])];
-        const bases = itopic?.topic?.split("-") ?? [];
-        const type = itopic?.type ?? "";
+        const itopic = this.topics().find(v => v.name === topic);
+        // const text = [...(itopic?.text ?? [])];
+        // const bases: string[] = [];
+        // const type = itopic?.type ?? "";
         const inFilter = this.selectedTopics().includes(topic);
 
-        if (type !== "base") {
-            bases.forEach(base => {
-                const baseTopic = this.topics().find(t => t.topic === base);
-                baseTopic && text.push(...baseTopic.text);
-            });
-        }
+        // if (type !== "base") {
+        //     const basesArray = topic.split("-") ?? [];
+        //     const topics = basesArray
+        //         .map(base => this.topics().find(t => t.name === base))
+        //         .filter(t => t !== undefined);
+        //     const topicsText = topics.flatMap(t => t.text);
 
+        //     bases.push(...topics.map(t => t.name));
+        //     text.unshift(...topicsText)
+        // }
+
+        const { topics, text } = this.getTopicText.call(itopic!);
         const dialogRef = this.dialog.open(TopicDlgComponent, {
             data: { topic, text, inFilter },
         });
 
         dialogRef.afterClosed().subscribe(result => {
             if (!result) return;
-            this.selectedTopics.update(topics => [...topics, topic]);
+
+            this.selectedTopics.update(v => [...v, ...topics]);
             this.currentTopic.set("");
             // Update input control
             this.input.nativeElement.value = "";
@@ -219,9 +228,6 @@ export class AppComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe(result => {
             console.log("The dialog was closed", result);
-            // if (result !== undefined) {
-            //     this.animal.set(result);
-            // }
         });
     }
 
@@ -245,7 +251,7 @@ export class AppComponent implements OnInit {
         this.selectedTopics().indexOf(topic) < 0;
 
     protected withDescription = (topic: string) =>
-        this.topics().findIndex(v => v.topic === topic && v.text.length) >= 0;
+        this.topics().findIndex(v => v.name === topic && v.text.length) >= 0;
 
     protected sortOrder = (sort: "created" | "pushed" | "name") => {
         if (this.orderControl.value === sort) {
@@ -254,7 +260,11 @@ export class AppComponent implements OnInit {
                 [sort]: v[sort] === "up" ? "down" : "up",
             }));
             document.cookie = `${sort}=${this.order()[sort]}`;
-            this.sortData();
+            this.dataService.sortData(
+                this.sort01(),
+                this.sort02(),
+                this.order()
+            );
         }
     };
 
@@ -278,6 +288,14 @@ export class AppComponent implements OnInit {
             "web-white",
             sanitizer.bypassSecurityTrustResourceUrl("/icons/web-white.svg")
         );
+        iconRegistry.addSvgIcon(
+            "favicon",
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon.svg")
+        );
+        iconRegistry.addSvgIcon(
+            "favicon-dark",
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon-dark.svg")
+        );
     };
 
     private getSortConfiguration = () => {
@@ -287,53 +305,18 @@ export class AppComponent implements OnInit {
         this.sort02.set(cfg.sort02);
         this.order.set(cfg.order);
         this.orderControl.setValue(cfg.sort01);
-        this.sortData();
-
+        this.dataService.sortData(this.sort01(), this.sort02(), this.order());
+        console.log(this.sort01(), this.sort02(), this.order());
         this.orderControl.valueChanges.subscribe(value => {
             this.sort02.set(this.sort01());
             this.sort01.set(value!);
             document.cookie = `sort01=${this.sort01()}`;
             document.cookie = `sort02=${this.sort02()}`;
-            this.sortData();
-        });
-    };
-
-    private sortData = () => {
-        const sort01 = this.sort01() as keyof IOrder;
-        const sort02 = this.sort02() as keyof IOrder;
-        const order01 = this.order()[sort01];
-        const order02 = this.order()[sort02];
-
-        this.data.update(v => {
-            v
-                .sort((a, b) => {
-                    if (order02 === "down") [a, b] = [b, a];
-                    return a[sort02].localeCompare(b[sort02]);
-                })
-                .sort((a, b) => {
-                    if (order01 === "down") [a, b] = [b, a];
-                    return a[sort01].localeCompare(b[sort01]);
-                });
-            //  Sort in place does not trigger changes detection on signals
-            return [...v]
-        });
-
-    };
-
-    private loadData = (resp: unknown[]) => {
-        resp.forEach(
-            v =>
-                v instanceof Error &&
-                this.openDialog("DATA SERVICE ERROR", v.message, "alert")
-        );
-        resp.forEach((v, idx) => {
-            if (Array.isArray(v)) {
-                if (idx === 0) this.data.set(v);
-                if (idx === 1) this.topics.set(v);
-                if (idx === 2) this.subtopics.set(v);
-                if (idx === 3) this.udefTopics.set(v);
-                if (idx === 4) this.udefSubTopics.set(v);
-            }
+            this.dataService.sortData(
+                this.sort01(),
+                this.sort02(),
+                this.order()
+            );
         });
     };
 
@@ -342,7 +325,7 @@ export class AppComponent implements OnInit {
             if (i === 0) console.error("Undefined topics:");
             console.log(v);
         });
-        this.udefSubTopics().forEach((v, i) => {
+        this.udefSubtopics().forEach((v, i) => {
             if (i === 0) console.error("Undefined subtopics:");
             console.log(v);
         });

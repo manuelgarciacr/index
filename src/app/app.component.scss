@@ -28,10 +28,9 @@ button.display-none {
     width: 100%;
     .mat-mdc-card {
         background-color: #D5E6E7 !important;
-        // Moded to styles.css.
-        // .mat-mdc-card-header-text {
-        //     width: 100%;
-        // }
+        &.private {
+            background-color: palevioletred !important;
+        }
         mat-card-title {
             border-bottom: 1px solid var(--mat-app-text-color, var(--mat-app-on-background, inherit));
         }
@@ -48,6 +47,9 @@ button.display-none {
 :host-context(.dark-theme) .card {
     .mat-mdc-card {
         background-color: #485556 !important;
+        &.private {
+            background-color: palevioletred !important;
+        }
         .red-color {
             color: pink;
         }

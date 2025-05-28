@@ -1,5 +1,5 @@
 export interface ITopic {
-    topic: string;
+    name: string;
     text: string[] | string;
     type: string;
 }

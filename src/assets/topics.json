@@ -1,6 +1,6 @@
 [
     {
-        "topic": "angular",
+        "name": "angular",
         "text": [
             "Angular 17: Bootcamp of Angular at the IT Academy of Barcelona Activa. Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, Rxjs, etc. June-January 2023-2024. 100% final note (excellent).",
             "Angular 2: Online course 'Front-End JavaScript Frameworks: Angular' (38h) taught by The Hong Kong University of Science and Technology on Coursera. Scholarship from the Generalitat de Catalunya. Angular Material, Flex-Layout, RxJS, etc. November-December 2020. Final grade 100%."
@@ -8,68 +8,67 @@
         "type": "base"
     },
     {
-        "topic": "angular-17",
+        "name": "angular-17",
         "text": [
             "Released: 2023-11-08  Active end: 2024-05-08  LTS end: 2025-05-15"
         ],
         "type": "version"
     },
     {
-        "topic": "angular-18",
+        "name": "angular-18",
         "text": [
             "Released: 2024-05-22  Active end: 2024-11-19  LTS end: 2025-11-19"
         ],
         "type": "version"
     },
     {
-        "topic": "angular-19",
+        "name": "angular-19",
         "text": [
             "Released: 2024-11-19  Active end: 2025-05-19  LTS end: 2026-05-19"
         ],
         "type": "version"
     },
     {
-        "topic": "it-academy",
+        "name": "it-academy",
         "text": [
             "Angular 17: Bootcamp of Angular at the IT Academy of Barcelona Activa. Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, Rxjs, etc. June-January 2023-2024. 100% final note (excellent)."
         ],
         "type": "base"
     },
     {
-        "topic": "coursera",
+        "name": "coursera",
         "text": [
             "Angular 2: Online course 'Front-End JavaScript Frameworks: Angular' (38h) taught by The Hong Kong University of Science and Technology on Coursera. Scholarship from the Generalitat de Catalunya. Angular Material, Flex-Layout, RxJS, etc. November-December 2020. Final grade 100%."
         ],
         "type": "base"
     },
     {
-        "topic": "github-actions",
+        "name": "github",
         "text": [
             "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)"
         ],
         "type": "base"
     },
     {
-        "topic": "aws",
+        "name": "aws",
         "text": [
             "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
         "type": "base"
     },
     {
-        "topic": "curso-aws",
+        "name": "curso-aws",
         "text": [
-            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
             "Tema 1 - Introducció a AWS",
             "Tema 2 - Desenvolupament amb AWS",
             "Tema 3 - Arquitectura Serverless amb AWS",
             "Tema 4 - CI\\CD i DevOps amb AWS",
             "Pràctica extra CRUD API"
         ],
-        "type": "base"
+        "type": "curso"
     },
     {
-        "topic": "curso-github",
+        "name": "curso-github",
         "text": [
             "Tema 1 - Introducció a Git i Github",
             "Tema 2 - Treballant amb Github Repository",
@@ -79,17 +78,17 @@
             "Tema 6 - Privacitat, Seguretat i Administració",
             "Tema 7 - Beneficis de GitHub Community"
         ],
-        "type":  "base"
+        "type":  "curso"
     },
     {
-        "topic": "mysql",
+        "name": "mysql",
         "text": [
             "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
         "type": "base"
     },
     {
-        "topic": "cibernarium",
+        "name": "cibernarium",
         "text": [
             "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)",
             "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
@@ -99,21 +98,21 @@
         "type": "base"
     },
     {
-        "topic": "lopdgdd",
+        "name": "lopdgdd",
         "text": [
             "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
         "type": "base"
     },
     {
-        "topic": "cifo-la-violeta",
+        "name": "cifo-la-violeta",
         "text": [
             "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
         "type": "base"
     },
     {
-        "topic": "seo",
+        "name": "seo",
         "text": [
             "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)",
             "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
@@ -121,14 +120,14 @@
         "type": "base"
     },
     {
-        "topic": "asedem",
+        "name": "asedem",
         "text": [
             "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
         ],
         "type": "base"
     },
     {
-        "topic": "angular-material",
+        "name": "angular-material",
         "text": ["Angular Material"],
         "type": "base"
     }

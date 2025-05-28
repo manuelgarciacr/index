@@ -13,7 +13,7 @@ export class UndefinedTopicsService {
             return;
         }
 
-        const def = definitions.find(topic => topic.topic === t);
+        const def = definitions.find(topic => topic.name === t);
         const hasText = !!def && !!def?.text.length && typeof def.text[0] === "string" && def.text[0].length > 2;
 
         if (def && hasText) {

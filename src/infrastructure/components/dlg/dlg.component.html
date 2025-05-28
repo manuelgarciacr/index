@@ -3,6 +3,5 @@
     <p>{{ data.text }}</p>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button *ngIf="!inFilter()" mat-button mat-dialog-close>No Thanks</button>
-    <button mat-button [mat-dialog-close]="!inFilter()" cdkFocusInitial>{{ inFilter() ? "Ok" : "Add to filter" }}</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
 </mat-dialog-actions>

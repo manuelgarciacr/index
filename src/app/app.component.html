@@ -2,17 +2,11 @@
 <div class="cls-app">
     <mat-toolbar color="primary" style="position: sticky; top: 0; z-index: 1000;">
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
+            <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'favicon-dark' : 'favicon'"></mat-icon>
         </button>
-        <span>Repositories</span>
+        <span><h1>Repositories</h1></span>
         <span class="spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-        </button>
-        <toggle-theme class="ms-auto"></toggle-theme>
+         <toggle-theme class="ms-auto"></toggle-theme>
     </mat-toolbar>
     <form class="d-flex flex-column cls-1 p-2">
         <mat-form-field [floatLabel]="'always'" appearance="outline" class="w-100">
@@ -59,7 +53,7 @@
     <div class="d-flex flex-wrap justify-content-around w-100">
         @for (item of filteredData(); let first = $first; track $index) {
         <div class="card">
-        <mat-card [class.first-element]="first" class="h-100">
+        <mat-card [class.first-element]="first" [class.private]="!item.show" class="h-100">
             @if (first) {
             <div #container (window:scroll)="onScroll()" class="float-none"></div>
             }

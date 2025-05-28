@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatDialogContent, MatDialogTitle, MatDialogActions, MatDialogClose, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf } from '@angular/common';
 
 export interface DlgData {
     title: string;
@@ -17,8 +16,7 @@ export interface DlgData {
         MatDialogTitle,
         MatDialogContent,
         MatDialogActions,
-        MatDialogClose,
-        NgIf
+        MatDialogClose
     ],
     templateUrl: `./dlg.component.html`,
     styleUrl: "./dlg.component.scss",
@@ -27,5 +25,4 @@ export interface DlgData {
 export class DlgComponent {
     readonly dialogRef = inject(MatDialogRef<DlgComponent>);
     readonly data = inject<DlgData>(MAT_DIALOG_DATA);
-    readonly inFilter = signal(false);
 }
