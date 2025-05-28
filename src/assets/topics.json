@@ -98,6 +98,12 @@
         "type": "curso"
     },
     {
+        "name": "curso-nodejs",
+        "text": [
+            "Cibernarium. Barcelona Activa. Nodejs course material"
+        ]
+    },
+    {
         "name": "github",
         "text": [
             "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)"
@@ -126,26 +132,6 @@
         "type": "base"
     },
     {
-        "name": "theming",
-        "text": [
-            "Thematization of an application with resources such as Sass, material angular, bootstrap, etc."
-        ],
-        "type": "base"
-    },
-    {
-        "name": "testing",
-        "text": [
-            "Test an application with the Jasmine testing framework and the Karma test runner."
-        ],
-        "type": "base"
-    },
-    {
-        "name": "curso-nodejs",
-        "text": [
-            "Cibernarium. Barcelona Activa. Nodejs course material"
-        ]
-    },
-    {
         "name": "mysql",
         "text": [
             "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
@@ -157,6 +143,20 @@
         "text": [
             "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)",
             "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
+        ],
+        "type": "base"
+    },
+    {
+        "name": "testing",
+        "text": [
+            "Test an application with the Jasmine testing framework and the Karma test runner."
+        ],
+        "type": "base"
+    },
+    {
+        "name": "theming",
+        "text": [
+            "Thematization of an application with resources such as Sass, material angular, bootstrap, etc."
         ],
         "type": "base"
     }
