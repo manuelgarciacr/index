@@ -1,12 +1,12 @@
 [
     {
-        "name": "mat-chips",
-        "text": "Angular Material: MatChipsModule",
+        "name": "mat-autocomplete",
+        "text": "Angular Material: MatAutocompleteModule",
         "type": "element"
     },
     {
-        "name": "mat-autocomplete",
-        "text": "Angular Material: MatAutocompleteModule",
+        "name": "mat-chips",
+        "text": "Angular Material: MatChipsModule",
         "type": "element"
     },
     {
