@@ -557,7 +557,7 @@
         "repository": "https://github.com/manuelgarciacr/index",
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2025/06-04T01:14:00Z",
+        "pushed": "2025/06-05T01:13:02Z",
         "topics": [
             "angular-18",
             "angular-material",
@@ -942,19 +942,33 @@
         "repository": "https://github.com/manuelgarciacr/ngx-oauth2-oidc",
         "webpage": "https://manuelgarciacr.github.io/ngx-oauth2-oidc",
         "created": "2024/06-03T06:18:24Z",
-        "pushed": "2025/03-13T23:19:10Z",
+        "pushed": "2025/06-05T17:25:06Z",
         "topics": [],
         "private": false,
         "languages": {
-            "TypeScript": 84.1,
-            "HTML": 15.1,
-            "SCSS": 0.6,
+            "TypeScript": 84,
+            "HTML": 15.2,
+            "SCSS": 0.7,
             "JavaScript": 0.1,
             "CSS": 0.1
         },
         "subtopics": [],
         "show": true,
         "page": "https://manuelgarciacr.github.io/ngx-oauth2-oidc"
+    },
+    {
+        "name": "ngx-oauth2-oidc-demo",
+        "description": "ngx-oauth2-oidc demo project",
+        "repository": "https://github.com/manuelgarciacr/ngx-oauth2-oidc-demo",
+        "webpage": "https://manuelgarciacr.github.io/ngx-oauth2-oidc-demo",
+        "created": "2025/06-05T14:54:37Z",
+        "pushed": "2025/06-05T16:55:46Z",
+        "topics": [],
+        "private": false,
+        "languages": {},
+        "subtopics": [],
+        "show": true,
+        "page": "https://manuelgarciacr.github.io/ngx-oauth2-oidc-demo"
     },
     {
         "name": "nuwe-summer21-ch01",
