@@ -378,6 +378,22 @@
         "show": true
     },
     {
+        "name": "curso-docker",
+        "description": "Cibernarium. Barcelona Activa. Docker for beginners: virtualization, containers and cloud orchestration",
+        "repository": "https://github.com/manuelgarciacr/curso-docker",
+        "webpage": "",
+        "created": "2025/07-01T19:04:43Z",
+        "pushed": "2025/07-01T19:04:44Z",
+        "topics": [
+            "cibernarium",
+            "curso-docker"
+        ],
+        "private": true,
+        "languages": {},
+        "subtopics": [],
+        "show": false
+    },
+    {
         "name": "curso-github",
         "description": "Cibernarium. Barcelona Activa. GIT and GITHUB for programming persons. Preparation for the official Github Foundation certificate.",
         "repository": "https://github.com/manuelgarciacr/curso-github",
@@ -415,6 +431,23 @@
         "subtopics": [
             "show-private"
         ],
+        "show": true
+    },
+    {
+        "name": "docker-files",
+        "description": "Cibernarium. Barcelona Activa. Docker for beginners. Class jobs and notes",
+        "repository": "https://github.com/manuelgarciacr/docker-files",
+        "webpage": "",
+        "created": "2025/07-01T19:07:13Z",
+        "pushed": "2025/07-01T19:12:09Z",
+        "topics": [],
+        "private": false,
+        "languages": {
+            "Dockerfile": 63.5,
+            "JavaScript": 35.7,
+            "HTML": 0.8
+        },
+        "subtopics": [],
         "show": true
     },
     {
@@ -557,7 +590,7 @@
         "repository": "https://github.com/manuelgarciacr/index",
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2025/06-30T01:19:00Z",
+        "pushed": "2025/07-01T01:22:33Z",
         "topics": [
             "angular-18",
             "angular-material",
