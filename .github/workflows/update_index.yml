@@ -54,7 +54,7 @@ jobs:
         env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # GITHUB_TOKEN has not Variables permission.
-          PAT_GITHUB_TOKEN: ${{ secrets.PAT_GITUB_TOKEN }}
+          PAT_GITHUB_TOKEN: ${{ secrets.PAT_GITHUB_TOKEN }}
 
       - name: Commit and push data.json if changes
         id: data_id
@@ -158,3 +158,4 @@ jobs:
           echo "::notice::DATA.JSON: $DATA_JSON"
           echo "::notice::TOPICS.JSON: $TOPICS_JSON"
           echo "::notice::SUBTOPICS.JSON: $SUBTOPICS_JSON"
+
