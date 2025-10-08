@@ -334,6 +334,19 @@
         "show": true
     },
     {
+        "name": "ciscopackettracer",
+        "description": "Curso Cisco Packet Tracer",
+        "repository": "https://github.com/manuelgarciacr/ciscopackettracer",
+        "webpage": "",
+        "created": "2025/10-07T14:28:20Z",
+        "pushed": "2025/10-07T16:52:18Z",
+        "topics": [],
+        "private": false,
+        "languages": {},
+        "subtopics": [],
+        "show": true
+    },
+    {
         "name": "curs2022_frontVue",
         "description": "Curs Vue UOC Anna",
         "repository": "https://github.com/manuelgarciacr/curs2022_frontVue",
@@ -606,7 +619,7 @@
         "repository": "https://github.com/manuelgarciacr/index",
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2025/10-06T01:07:52Z",
+        "pushed": "2025/10-07T01:06:45Z",
         "topics": [
             "angular-18",
             "angular-material",
