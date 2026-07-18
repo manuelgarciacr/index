@@ -164,4 +164,3 @@ jobs:
           echo "::notice::DATA.JSON: $DATA_JSON"
           echo "::notice::TOPICS.JSON: $TOPICS_JSON"
           echo "::notice::SUBTOPICS.JSON: $SUBTOPICS_JSON"
-
