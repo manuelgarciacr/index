@@ -37,6 +37,15 @@ button.display-none {
         mat-card-content {
             margin-bottom: 4rem;
         }
+        .action-link>span {
+            font-size: 1.5rem;
+            vertical-align: top;
+            display: inline-block;
+            padding-left: .5rem;
+        }
+        .action-link.web-link {
+            margin-bottom: -.5rem;
+        }
         .red-color {
             color: red;
         }

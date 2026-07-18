@@ -5,7 +5,7 @@ import { ITopic } from '@domain';
 @Injectable({
   providedIn: 'root'
 })
-export class GetTopicBasesService {
+export class GetTopicDataService {
     private readonly getBases = inject(GetBasesService);
 
     readonly call = (topic: ITopic) => {

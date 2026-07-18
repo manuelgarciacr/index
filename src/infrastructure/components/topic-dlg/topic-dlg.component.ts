@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
 
 export interface TopicDlgData {
-    topic: string;
+    name: string;
     text: string[];
     inFilter: boolean
 }

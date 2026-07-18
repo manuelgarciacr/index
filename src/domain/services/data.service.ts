@@ -12,13 +12,13 @@ export class DataService {
     private readonly joinReq = inject(JoinJsonRequestsService).call;
     private readonly udefTopicsService = inject(UndefinedTopicsService).call;
     private readonly pipeif = inject(PipeifService).call;
-    private _data = signal<IRepo[]>([]);
+    private _repos = signal<IRepo[]>([]);
     private _topics = signal<ITopic[]>([]);
     private _subtopics = signal<ITopic[]>([]);
     private _udefTopics = signal<string[]>([]);
     private _udefSubtopics = signal<string[]>([]);
 
-    readonly data = this._data.asReadonly();
+    readonly repos = this._repos.asReadonly();
     readonly topics = this._topics.asReadonly();
     readonly subtopics = this._subtopics.asReadonly();
     readonly udefTopics = this._udefTopics.asReadonly();
@@ -31,11 +31,11 @@ export class DataService {
     predicate = (v: (unknown[] | Error)[]) => !(v[0] instanceof Error);
 
     constructor() {
-        this.joinReq("data", "topics", "subtopics")
+        this.joinReq("repos", "topics", "subtopics")
             .pipe(
                 this.pipeif(
                     v => Array.isArray(v[0]),
-                    tap(v => this._data.set(v[0]))
+                    tap(v => this._repos.set(v[0]))
                 ),
                 this.pipeif(
                     v =>
@@ -105,7 +105,7 @@ export class DataService {
             });
     }
 
-    readonly sortData = (
+    readonly sortRepos = (
         sort01: keyof IOrder,
         sort02: keyof IOrder,
         order: IOrder
@@ -113,7 +113,7 @@ export class DataService {
         const order01 = order[sort01];
         const order02 = order[sort02];
 
-        this._data.update(v => {
+        this._repos.update(v => {
             if (!Array.isArray(v)) return v;
             v.sort((a, b) => {
                 if (order02 === "down") [a, b] = [b, a];

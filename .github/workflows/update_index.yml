@@ -49,6 +49,12 @@ jobs:
       - name: Install @actions/core data
         run: npm i @actions/core
 
+      - name: Show secret length
+        env:
+          PAT_GITHUB_TOKEN: ${{ secrets.PAT_GITHUB_TOKEN }}
+        run: |
+          echo "Length=${#PAT_GITHUB_TOKEN}"
+
       - name: Find repositories data
         run: ./scripts/update_index.js
         env:
@@ -85,7 +91,7 @@ jobs:
             echo "DATA.JSON PUSHED"
 
             if [ "${{ github.event.inputs.local }}" = "true" ]; then
-                git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 git push https://github.com/manuelgarciacr/index.git
             fi

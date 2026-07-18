@@ -11,7 +11,7 @@
         "start:v": "npm --loglevel verbose -v && ng serve --port 4200 -c development -o",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "test": "CHROME_BIN=/usr/bin/google-chrome-stable ng test",
+        "test": "CHROME_BIN=/snap/bin/brave ng test",
         "set-verbose": "npm config set loglevel=verbose",
         "set-notice": "npm config set loglevel=notice"
     },

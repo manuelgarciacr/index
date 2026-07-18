@@ -39,19 +39,22 @@
         </mat-form-field>
         <mat-button-toggle-group name="order" [formControl]="orderControl" aria-label="Repositories sort order"
             [hideSingleSelectionIndicator]="true" class="align-self-end me-2">
-            <mat-button-toggle value="created" (mousedown)="sortOrder('created')">Created<mat-icon
-                [hidden]="orderControl.value !== 'created'">keyboard_double_arrow_{{order().created}}
-            </mat-icon></mat-button-toggle>
-            <mat-button-toggle value="pushed" (mousedown)="sortOrder('pushed')">Pushed<mat-icon
-                [hidden]="orderControl.value !== 'pushed'">keyboard_double_arrow_{{order().pushed}}
-            </mat-icon></mat-button-toggle>
-            <mat-button-toggle value="name" (mousedown)="sortOrder('name')">Name<mat-icon
-                [hidden]="orderControl.value !== 'name'">keyboard_double_arrow_{{order().name}}
-            </mat-icon></mat-button-toggle>
+            <mat-button-toggle value="created" (mousedown)="sortOrder('created')">
+                Created
+                <mat-icon>keyboard_double_arrow_{{order().created}}</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="pushed" (mousedown)="sortOrder('pushed')">
+                Pushed
+                <mat-icon>keyboard_double_arrow_{{order().pushed}}</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="name" (mousedown)="sortOrder('name')">
+                Name
+                <mat-icon>keyboard_double_arrow_{{order().name}}</mat-icon>
+            </mat-button-toggle>
         </mat-button-toggle-group>
     </form>
     <div class="d-flex flex-wrap justify-content-around w-100">
-        @for (item of filteredData(); let first = $first; track $index) {
+        @for (item of filteredRepos(); let first = $first; track $index) {
         <div class="card">
         <mat-card [class.first-element]="first" [class.private]="!item.show" class="h-100">
             @if (first) {
@@ -81,15 +84,15 @@
                 <p>{{ item.description}}</p>
             </mat-card-content>
             <mat-card-actions class="bottom-0 position-absolute">
-                <a [attr.href]="item.private ? null : item.repository" target="_blank" class="accent-color" [class.red-color]="item.private">
+                <a [attr.href]="item.private ? null : item.repository" target="_blank" class="action-link" [class.red-color]="item.private">
                     <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'github-white' : 'github'"
                         class="repo-size overflow-visible"></mat-icon>
-                    {{ item.private ? 'PRIVATE REPOSITORY' : 'Repository'}}
+                    <span>{{ item.private ? 'PRIVATE REPOSITORY' : 'Repository'}}</span>
                 </a>
-                <a [href]="item.webpage" target="_blank" class="ms-3" [hidden]="item.webpage === ''">
+                <a [href]="item.webpage" target="_blank" class="action-link web-link ms-3" [hidden]="item.webpage === ''">
                     <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'web-white' : 'web'"
                         class="web-size overflow-visible"></mat-icon>
-                    Webpage
+                    <span>Webpage</span>
                 </a>
             </mat-card-actions>
         </mat-card>

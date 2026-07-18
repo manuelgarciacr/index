@@ -8,7 +8,7 @@ import { catchError, of } from 'rxjs';
 })
 export class JsonRequestService {
     private readonly http = inject(HttpClient);
-    // bug: typescript does not asumes the generic type
+    // bug: angular typescript does not asumes the generic type
     //   of the injected service,
     //   you needs especifically redeclare this
     jsonRepoService = inject(

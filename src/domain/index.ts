@@ -1,5 +1,7 @@
 export * from "./services/storage-configuration.service";
 export * from "./services/data.service";
+export * from "./services/cokies-configuration.service";
+export * from "./services/get-topic-data.service";
 
 //export * from "./services/micro/request.service";
 export * from "./model/IRepo";

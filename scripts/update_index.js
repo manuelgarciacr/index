@@ -27,7 +27,7 @@ let options = {
     headers
 };
 
-console.log(headers.Authorization.length)
+console.log("header: ", headers.Authorization.length, $USER.length)
 https.request(options, res => {
     let strData = "";
 
@@ -50,8 +50,8 @@ https.request(options, res => {
 
         if (process.exitCode ?? 0) return;
 
-        console.log("RES", res.headers);
-
+        console.log("RES:", res.headers);
+        console.log("DATA: ", data)
         createFile(data);
         sortTopics("topics");
         sortTopics("subtopics");
@@ -120,8 +120,8 @@ const getRepos = async (user, strData) => {
                 } else {
                     repo.show = false
                 }
-                core.info(typeof res);
-                core.info(JSON.stringify(JSON.parse(res), null, 4));
+                core.info("TYPE: " + typeof res);
+                //core.info("SUBTOPICS: " + JSON.stringify(JSON.parse(res), null, 4));
             })
             .catch(err => {
                 core.error(err);

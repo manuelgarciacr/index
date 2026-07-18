@@ -37,9 +37,9 @@ import {
     StorageConfigurationService,
     DataService,
     IOrder,
+    GetTopicDataService,
+    CokiesConfigurationService,
 } from "@domain";
-import { CokiesConfigurationService } from "domain/services/cokies-configuration.service";
-import { GetTopicBasesService } from "domain/services/get-topic-bases.service";
 import { tap } from "rxjs";
 
 @Component({
@@ -67,31 +67,41 @@ import { tap } from "rxjs";
 export class AppComponent implements OnInit {
     @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;
     @ViewChild("topicInput") input!: ElementRef;
+    // Data Services
     private readonly dataService = inject(DataService);
-    private readonly getTopicText = inject(GetTopicBasesService);
+    private readonly getTopicData = inject(GetTopicDataService);
     protected readonly storageCfg = inject(StorageConfigurationService);
     protected readonly cookiesCfg = inject(CokiesConfigurationService);
-    //protected readonly data = signal<IRepo[]>([]);
-    protected readonly data = this.dataService.data;
-    protected readonly datachanged = toObservable(this.dataService.data)
-    .pipe(
-        tap(v => v.length > 0 && this.getSortConfiguration()),
-        tap(v => v.length > 0 && this.logUndefinedTopics()))
-    .subscribe({
-            next: v => v.length > 0 && this.datachanged.unsubscribe()
-        });
-    //protected readonly topics = signal<ITopic[]>([]);
+    // LiveAnnouncer is used to announce messages for screen-reader
+    // users using an aria-live region.
+    // An ARIA live region is a mechanism for notifying screen readers when
+    // content is updated on a page, ensuring that dynamic content changes
+    // are announced to users of assistive technologies.
+    protected readonly announcer = inject(LiveAnnouncer);
+    protected readonly dialog = inject(MatDialog);
+    // Data of all the repos, topics, subtopics and undefined items
+    protected readonly repos = this.dataService.repos;
     protected readonly topics = this.dataService.topics;
-    //protected readonly subtopics = signal<ITopic[]>([]);
     protected readonly subtopics = this.dataService.subtopics;
     protected readonly udefTopics = this.dataService.udefTopics;
     protected readonly udefSubtopics = this.dataService.udefSubtopics;
+    // When the repos are loaded, the data are sorted and undefined topics are reported
+    protected readonly reposChanged = toObservable(this.dataService.repos)
+        .pipe(
+            tap(v => v.length > 0 && this.getSortConfiguration()),
+            tap(v => v.length > 0 && this.logUndefinedTopics())
+        )
+        .subscribe({
+            next: v => v.length > 0 && this.reposChanged.unsubscribe(),
+        });
+    // Topics selected for filter the repos on the screen
     protected readonly selectedTopics = signal<string[]>([]);
     protected readonly hasSelections = computed(
         () => !!this.selectedTopics().length
     );
-    protected readonly filteredData = computed(() =>
-        this.data().filter(r => {
+    // Repos on the screen (filtered)
+    protected readonly filteredRepos = computed(() =>
+        this.repos().filter(r => {
             if (!r.show) {
                 // return false;
             }
@@ -99,6 +109,8 @@ export class AppComponent implements OnInit {
             let filter = !this.hasSelections();
 
             filter ||= r.topics.some(t => this.selectedTopics().includes(t));
+
+            // Dashed topics can include more than one topic
             filter ||= r.topics.some(t =>
                 this.selectedTopics().some(st => t.includes(`-${st}-`))
             );
@@ -112,9 +124,15 @@ export class AppComponent implements OnInit {
             return filter;
         })
     );
+    // Topic (input field value) to be included in the topics selected
+    // for filter the repos on the screen
     protected readonly currentTopic = signal("");
+    // These keys end the keyboard entry of the topic in the previous entry field
+    protected readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+    // Topics included in the autocomplete input
     protected readonly filteredTopics = computed(() => {
         const currentTopic = this.currentTopic().toLowerCase();
+        // Topics not included in the selected ones
         const remainingTopics = this.topics()
             .map(topic => topic.name)
             .filter(topic => !this.selectedTopics().includes(topic))
@@ -125,11 +143,11 @@ export class AppComponent implements OnInit {
               )
             : remainingTopics.slice();
     });
-    protected readonly announcer = inject(LiveAnnouncer);
-    protected readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-    protected readonly dialog = inject(MatDialog);
+    // Makes visible the "goTop" button on the screen
     protected readonly goTopBtn = signal(false);
+    // Form control that changes the order of the repos on the screen
     protected readonly orderControl = new FormControl<keyof IOrder>("created");
+    // Variables controlling the order of the repos on the screen
     protected readonly sort01 = signal<keyof IOrder>("created");
     protected readonly sort02 = signal<keyof IOrder>("name");
     protected readonly order = signal<IOrder>({
@@ -148,11 +166,16 @@ export class AppComponent implements OnInit {
             next: err =>
                 this.openDialog("DATA SERVICE ERROR", err.message, "alert"),
         });
-
     }
 
+    /**
+     * Add the topic introduced by keyboard to those selected to filter
+     * the repos on the screen
+     * @param event
+     */
     add(event: MatChipInputEvent): void {
         const value = (event.value || "").toLowerCase().trim();
+        // The topic must be included in the autocomplete list
         const topic = this.filteredTopics().find(
             topic => topic.toLowerCase() === value
         );
@@ -161,10 +184,14 @@ export class AppComponent implements OnInit {
         }
         this.currentTopic.set("");
 
-        // Update input control
+        // Update input control value. Two way binding does not works. Workaround.
         this.input.nativeElement.value = "";
     }
 
+    /**
+     * Remove a topic from those selected to filter the repos on the screen
+     * @param topic
+     */
     remove(topic: string): void {
         this.selectedTopics.update(topics => {
             const index = this.selectedTopics().indexOf(topic);
@@ -179,6 +206,11 @@ export class AppComponent implements OnInit {
         });
     }
 
+    /**
+     * Add the topic selected from the autocomplete list to those
+     * selected to filter the repos on the screen
+     * @param event
+     */
     selected(event: MatAutocompleteSelectedEvent): void {
         this.selectedTopics.update(topics => [
             ...topics,
@@ -188,27 +220,16 @@ export class AppComponent implements OnInit {
         event.option.deselect();
     }
 
-    openTopicDialog(topic: string): void {
-        const itopic = this.topics().find(v => v.name === topic);
-        // const text = [...(itopic?.text ?? [])];
-        // const bases: string[] = [];
-        // const type = itopic?.type ?? "";
-        const inFilter = this.selectedTopics().includes(topic);
-
-        // if (type !== "base") {
-        //     const basesArray = topic.split("-") ?? [];
-        //     const topics = basesArray
-        //         .map(base => this.topics().find(t => t.name === base))
-        //         .filter(t => t !== undefined);
-        //     const topicsText = topics.flatMap(t => t.text);
-
-        //     bases.push(...topics.map(t => t.name));
-        //     text.unshift(...topicsText)
-        // }
-
-        const { topics, text } = this.getTopicText.call(itopic!);
+    openTopicDialog(name: string): void {
+        const topic = this.topics().find(v => v.name === name);
+        // If true, the dialog box only shows the text, otherwise, it
+        // requests to include the topics in the selected ones
+        const inFilter = this.selectedTopics().includes(name);
+        // Dashed topics can include more than one topic
+        // The text is the sum of all the texts
+        const { topics, text } = this.getTopicData.call(topic!);
         const dialogRef = this.dialog.open(TopicDlgComponent, {
-            data: { topic, text, inFilter },
+            data: { name, text, inFilter },
         });
 
         dialogRef.afterClosed().subscribe(result => {
@@ -216,11 +237,17 @@ export class AppComponent implements OnInit {
 
             this.selectedTopics.update(v => [...new Set([...v, ...topics])]);
             this.currentTopic.set("");
-            // Update input control
+            // Update input control value. Two way binding does not works. Workaround.
             this.input.nativeElement.value = "";
         });
     }
 
+    /**
+     * General dialog
+     * @param title
+     * @param text
+     * @param type
+     */
     openDialog(title: string, text: string, type: "info" | "alert"): void {
         const dialogRef = this.dialog.open(DlgComponent, {
             data: { title, text, type },
@@ -234,7 +261,7 @@ export class AppComponent implements OnInit {
     clearFilter(): void {
         this.selectedTopics.set([]);
         this.currentTopic.set("");
-        // Update input control
+        // Update input control value. Two way binding does not works. Workaround.
         this.input.nativeElement.value = "";
     }
 
@@ -253,6 +280,11 @@ export class AppComponent implements OnInit {
     protected withDescription = (topic: string) =>
         this.topics().findIndex(v => v.name === topic && v.text.length) >= 0;
 
+    /**
+     * By clicking on the option already selected from the OrderControl, the
+     * sort field does not change, but the sort direction
+     * @param sort
+     */
     protected sortOrder = (sort: "created" | "pushed" | "name") => {
         if (this.orderControl.value === sort) {
             this.order.update(v => ({
@@ -260,7 +292,7 @@ export class AppComponent implements OnInit {
                 [sort]: v[sort] === "up" ? "down" : "up",
             }));
             document.cookie = `${sort}=${this.order()[sort]}`;
-            this.dataService.sortData(
+            this.dataService.sortRepos(
                 this.sort01(),
                 this.sort02(),
                 this.order()
@@ -305,14 +337,15 @@ export class AppComponent implements OnInit {
         this.sort02.set(cfg.sort02);
         this.order.set(cfg.order);
         this.orderControl.setValue(cfg.sort01);
-        this.dataService.sortData(this.sort01(), this.sort02(), this.order());
-        console.log(this.sort01(), this.sort02(), this.order());
+        this.dataService.sortRepos(this.sort01(), this.sort02(), this.order());
+
+        // orderControl subscription
         this.orderControl.valueChanges.subscribe(value => {
             this.sort02.set(this.sort01());
             this.sort01.set(value!);
             document.cookie = `sort01=${this.sort01()}`;
             document.cookie = `sort02=${this.sort02()}`;
-            this.dataService.sortData(
+            this.dataService.sortRepos(
                 this.sort01(),
                 this.sort02(),
                 this.order()
@@ -320,6 +353,10 @@ export class AppComponent implements OnInit {
         });
     };
 
+    /**
+     * Topics and subtopics of the repos not included in the json files
+     * or included but without text
+     */
     private logUndefinedTopics = () => {
         this.udefTopics().forEach((v, i) => {
             if (i === 0) console.error("Undefined topics:");
