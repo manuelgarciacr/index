@@ -78,12 +78,12 @@ jobs:
           git remote -v
 
           # Debug: List files in assets/
-          #echo "--- Files in assets/ ---"
-          #ls ./src/assets -la
-          #cat ./src/assets/data.json
+          echo "--- Files in assets/ ---"
+          ls ./src/assets -la
+          wc -l ./src/assets/data.json
 
           # Only commits on changes
-          if [ -n "$(git diff ./src/assets/data.json)" ]; then
+          if [ -n "$(git diff ./src/assets/data.json)" ] || [ -n "$(git status --porcelain ./src/assets/data.json)" ]; then
             git add ./src/assets/data.json
             git commit -m "Updates data.json on ${{ github.event_name }} event"
 
@@ -108,7 +108,7 @@ jobs:
           git remote -v
 
           # Only commits on changes
-          if [ -n "$(git diff ./src/assets/topics.json)" ]; then
+          if [ -n "$(git diff ./src/assets/topics.json)" ] || [ -n "$(git status --porcelain ./src/assets/topics.json)" ]; then
             git add ./src/assets/topics.json
             git commit -m "Updates topics.json on ${{ github.event_name }} event"
 
@@ -133,7 +133,7 @@ jobs:
           git remote -v
 
           # Only commits on changes
-          if [ -n "$(git diff ./src/assets/subtopics.json)" ]; then
+          if [ -n "$(git diff ./src/assets/subtopics.json)" ] || [ -n "$(git status --porcelain ./src/assets/subtopics.json)" ]; then
             git add ./src/assets/subtopics.json
             git commit -m "Updates subtopics.json on ${{ github.event_name }} event"
 
