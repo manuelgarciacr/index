@@ -34,8 +34,9 @@ console.log("OPTIONS: ", options);
 
 async function main() {
     try {
+console.log("***************************ENTRO MAIN")
         const reposData = await getAllRepos();
-
+console.log("***************************SALGO MAIN", reposData.length)
         const repos = [];
 
         for (const ele  of reposData) {
@@ -167,9 +168,10 @@ function request(url) {
 
                 res.on("end", () => {
                     if (res.statusCode !== 200) {
+console.log("*****************ERROR !== 200")
                         reject(new Error(`HTTP ${res.statusCode}: ${body}`));
                     }
-
+console.log("******************200", )
                     resolve({
                         repos: JSON.parse(body),
                         link: res.headers.link,
