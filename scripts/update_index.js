@@ -158,7 +158,7 @@ function request(url) {
                 headers: {
                     "User-Agent": "node",
                     Accept: "application/vnd.github+json",
-                    Authorization: `Bearer ${process.env.PAT_GITHUB_TOKEN}`,
+                    Authorization: `token ${$GITHUB_TOKEN}`,
                 },
             },
             res => {
@@ -168,10 +168,12 @@ function request(url) {
 
                 res.on("end", () => {
                     if (res.statusCode !== 200) {
-console.log("*****************ERROR !== 200")
-                        return reject(new Error(`HTTP ${res.statusCode}: ${body} ${req}`));
+                        console.log("*****************ERROR !== 200");
+                        return reject(
+                            new Error(`HTTP ${res.statusCode}: ${body} ${req}`),
+                        );
                     }
-console.log("******************200", )
+                    console.log("******************200");
                     resolve({
                         repos: JSON.parse(body),
                         link: res.headers.link,
