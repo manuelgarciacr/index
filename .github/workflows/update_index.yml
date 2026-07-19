@@ -116,7 +116,7 @@ jobs:
             echo "TOPICS.JSON PUSHED"
 
             if [ "${{ github.event.inputs.local }}" = "true" ]; then
-                git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 git push https://github.com/manuelgarciacr/index.git
             fi
@@ -141,7 +141,7 @@ jobs:
             echo "SUBTOPICS.JSON PUSHED"
 
             if [ "${{ github.event.inputs.local }}" = "true" ]; then
-                git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 git push https://github.com/manuelgarciacr/index.git
             fi
