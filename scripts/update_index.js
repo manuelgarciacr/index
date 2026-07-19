@@ -169,7 +169,7 @@ function request(url) {
                 res.on("end", () => {
                     if (res.statusCode !== 200) {
 console.log("*****************ERROR !== 200")
-                        reject(new Error(`HTTP ${res.statusCode}: ${body}`));
+                        return reject(new Error(`HTTP ${res.statusCode}: ${body} ${req}`));
                     }
 console.log("******************200", )
                     resolve({
