@@ -157,7 +157,7 @@ function request(url) {
             {
                 headers: {
                     "User-Agent": "node",
-                    Accept: "application/vnd.github+json",
+                    //Accept: "application/vnd.github+json",
                     Authorization: `token ${$GITHUB_TOKEN}`,
                 },
             },
@@ -168,7 +168,11 @@ function request(url) {
 
                 res.on("end", () => {
                     if (res.statusCode !== 200) {
-                        console.log("*****************ERROR !== 200");
+                        console.log(
+                            "*****************ERROR !== 200",
+                            $GITHUB_TOKEN.length,
+                            req.getHeaders
+                        );
                         return reject(
                             new Error(`HTTP ${res.statusCode}: ${body} ${req}`),
                         );
