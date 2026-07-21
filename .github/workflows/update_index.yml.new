@@ -49,6 +49,12 @@ jobs:
       - name: Install @actions/core data
         run: npm i @actions/core
 
+      - name: Show secret length
+        env:
+          PAT_GITHUB_TOKEN: ${{ secrets.PAT_GITHUB_TOKEN }}
+        run: |
+          echo "Length=${#PAT_GITHUB_TOKEN}"
+
       - name: Find repositories data
         run: ./scripts/update_index.js
         env:
@@ -72,12 +78,12 @@ jobs:
           git remote -v
 
           # Debug: List files in assets/
-          #echo "--- Files in assets/ ---"
-          #ls ./src/assets -la
-          #cat ./src/assets/data.json
+          echo "--- Files in assets/ ---"
+          ls ./src/assets -la
+          wc -l ./src/assets/data.json
 
           # Only commits on changes
-          if [ -n "$(git diff ./src/assets/data.json)" ]; then
+          if [ -n "$(git diff ./src/assets/data.json)" ] || [ -n "$(git status --porcelain ./src/assets/data.json)" ]; then
             git add ./src/assets/data.json
             git commit -m "Updates data.json on ${{ github.event_name }} event"
 
@@ -85,7 +91,7 @@ jobs:
             echo "DATA.JSON PUSHED"
 
             if [ "${{ github.event.inputs.local }}" = "true" ]; then
-                git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 git push https://github.com/manuelgarciacr/index.git
             fi
@@ -102,7 +108,7 @@ jobs:
           git remote -v
 
           # Only commits on changes
-          if [ -n "$(git diff ./src/assets/topics.json)" ]; then
+          if [ -n "$(git diff ./src/assets/topics.json)" ] || [ -n "$(git status --porcelain ./src/assets/topics.json)" ]; then
             git add ./src/assets/topics.json
             git commit -m "Updates topics.json on ${{ github.event_name }} event"
 
@@ -110,7 +116,7 @@ jobs:
             echo "TOPICS.JSON PUSHED"
 
             if [ "${{ github.event.inputs.local }}" = "true" ]; then
-                git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 git push https://github.com/manuelgarciacr/index.git
             fi
@@ -127,7 +133,7 @@ jobs:
           git remote -v
 
           # Only commits on changes
-          if [ -n "$(git diff ./src/assets/subtopics.json)" ]; then
+          if [ -n "$(git diff ./src/assets/subtopics.json)" ] || [ -n "$(git status --porcelain ./src/assets/subtopics.json)" ]; then
             git add ./src/assets/subtopics.json
             git commit -m "Updates subtopics.json on ${{ github.event_name }} event"
 
@@ -135,7 +141,7 @@ jobs:
             echo "SUBTOPICS.JSON PUSHED"
 
             if [ "${{ github.event.inputs.local }}" = "true" ]; then
-                git push https://${{ secrets.GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
+                git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
             else
                 git push https://github.com/manuelgarciacr/index.git
             fi
