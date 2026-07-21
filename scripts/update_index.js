@@ -218,7 +218,7 @@ const sortTopics = name => {
 
         fs.writeFileSync(
             `./src/assets/${name}.json`,
-            JSON.stringify(topics, null, 4),
+            JSON.stringify(topics, null, 4) + "\n",
         );
         core.info(`${name}.json written to file successfully.`);
     } catch (err) {
