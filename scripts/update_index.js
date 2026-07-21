@@ -27,7 +27,7 @@ let options = {
     headers,
 };
 
-console.log(headers.Authorization.length);
+console.log("Auth: ", $GITHUB_TOKEN.length);
 https
     .request(options, res => {
         let strData = "";
