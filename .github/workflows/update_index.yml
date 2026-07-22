@@ -137,56 +137,6 @@ jobs:
             else
                 echo "Nothing to commit"
             fi
-    #   - name: Commit and push topics.json if changes
-    #     id: topics_id
-    #     run: |
-    #       git config --global user.name "GitHub Actions"
-    #       git config --global user.email "actions@github.com"
-    #       git remote -v
-
-    #       # Only commits on changes
-    #       if [ -n "$(git diff ./src/assets/topics.json)" ]; then
-    #         # git diff -- ./src/assets/topics.json
-    #         git add ./src/assets/topics.json
-    #         git commit -m "Updates topics.json on ${{ github.event_name }} event"
-
-    #         echo "topics_json=pushed" >> "$GITHUB_OUTPUT"
-    #         echo "TOPICS.JSON PUSHED"
-
-    #         if [ "${{ github.event.inputs.local }}" = "true" ]; then
-    #             git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
-    #         else
-    #             git push https://github.com/manuelgarciacr/index.git
-    #         fi
-    #       else
-    #         echo "topics_json=no_changes" >> "$GITHUB_OUTPUT"
-    #         echo "NO TOPICS.JSON CHANGES"
-    #       fi
-
-    #   - name: Commit and push subtopics.json if changes
-    #     id: subtopics_id
-    #     run: |
-    #       git config --global user.name "GitHub Actions"
-    #       git config --global user.email "actions@github.com"
-    #       git remote -v
-
-    #       # Only commits on changes
-    #       if [ -n "$(git diff ./src/assets/subtopics.json)" ]; then
-    #         git add ./src/assets/subtopics.json
-    #         git commit -m "Updates subtopics.json on ${{ github.event_name }} event"
-
-    #         echo "subtopics_json=pushed" >> "$GITHUB_OUTPUT"
-    #         echo "SUBTOPICS.JSON PUSHED"
-
-    #         if [ "${{ github.event.inputs.local }}" = "true" ]; then
-    #             git push https://${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git
-    #         else
-    #             git push https://github.com/manuelgarciacr/index.git
-    #         fi
-    #       else
-    #         echo "subtopics_json=no_changes" >> "$GITHUB_OUTPUT"
-    #         echo "NO SUBTOPICS.JSON CHANGES"
-    #       fi
 
   final-message:
     runs-on: ubuntu-latest

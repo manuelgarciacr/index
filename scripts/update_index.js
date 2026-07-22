@@ -53,7 +53,7 @@ https
 
             if (process.exitCode ?? 0) return;
 
-            console.log("RES", res.headers);
+            // console.log("RES", res.headers);
 
             createFile(data);
             sortTopics("topics");
@@ -118,16 +118,16 @@ const getRepos = async (user, strData) => {
                     v => v.name === "SUBTOPICS",
                 );
                 const subtopics = JSON.parse(subtopicsVar?.value ?? "[]");
-                const showIdx = subtopics.indexOf("show-private");
+                const showRepo = subtopics.includes("show-private");
                 repo.subtopics = subtopics.sort((a, b) => a - b);
 
-                if (!repo.private || showIdx >= 0) {
-                    repo.show = true;
-                } else {
+                if (repo.private && !showRepo || !repo.topics.length) {
                     repo.show = false;
+                } else {
+                    repo.show = true;
                 }
-                core.info(typeof res);
-                core.info(JSON.stringify(JSON.parse(res), null, 4));
+                //core.info(typeof res);
+                //core.info(JSON.stringify(JSON.parse(res), null, 4));
             })
             .catch(err => {
                 core.error(err);
@@ -174,7 +174,7 @@ const getLanguages = url => {
 
 const getSubtopics = repo => {
     const url = `https://api.github.com/repos/${$USER}/${repo}/actions/variables`;
-    core.info(`URL: ${url}`);
+    // core.info(`URL: ${url}`);
 
     return new Promise((response, reject) =>
         https

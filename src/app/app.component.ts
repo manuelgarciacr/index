@@ -40,7 +40,7 @@ import {
     GetTopicDataService,
     CokiesConfigurationService,
 } from "@domain";
-import { tap } from "rxjs";
+import { filter, take } from "rxjs";
 
 @Component({
     selector: "app-root",
@@ -70,6 +70,7 @@ export class AppComponent implements OnInit {
     // Data Services
     private readonly dataService = inject(DataService);
     private readonly getTopicData = inject(GetTopicDataService);
+    private readonly showAll = false;
     protected readonly storageCfg = inject(StorageConfigurationService);
     protected readonly cookiesCfg = inject(CokiesConfigurationService);
     // LiveAnnouncer is used to announce messages for screen-reader
@@ -81,29 +82,48 @@ export class AppComponent implements OnInit {
     protected readonly dialog = inject(MatDialog);
     // Data of all the repos, topics, subtopics and undefined items
     protected readonly repos = this.dataService.repos;
-    protected readonly topics = this.dataService.topics;
-    protected readonly subtopics = this.dataService.subtopics;
+    //protected readonly topics = this.dataService.topics;
+    protected readonly topics = computed(() =>
+        this.dataService.topics().filter(r => this.hasTopic(r.name)),
+    );
+    //protected readonly subtopics = this.dataService.subtopics;
+    protected readonly subtopics = computed(() =>
+        this.dataService.subtopics().filter(r => this.hasTopic(r.name, true)),
+    );
     protected readonly udefTopics = this.dataService.udefTopics;
     protected readonly udefSubtopics = this.dataService.udefSubtopics;
     // When the repos are loaded, the data are sorted and undefined topics are reported
     protected readonly reposChanged = toObservable(this.dataService.repos)
         .pipe(
-            tap(v => v.length > 0 && this.getSortConfiguration()),
-            tap(v => v.length > 0 && this.logUndefinedTopics())
+            filter(v => v.length > 0),
+            take(1),
         )
-        .subscribe({
-            next: v => v.length > 0 && this.reposChanged.unsubscribe(),
+        .subscribe(() => {
+            this.getSortConfiguration();
+            if (this.showAll) this.logUndefinedTopics();
         });
+    // protected readonly reposChanged: Subscription = toObservable(
+    //     this.dataService.repos,
+    // )
+    //     .pipe(
+    //         tap(v => v.length > 0 && this.getSortConfiguration()),
+    //         tap(v => v.length > 0 && this.logUndefinedTopics()),
+    //     )
+    //     .subscribe({
+    //         next: v => v.length > 0 && this.reposChanged.unsubscribe(),
+    //     });
     // Topics selected for filter the repos on the screen
     protected readonly selectedTopics = signal<string[]>([]);
     protected readonly hasSelections = computed(
-        () => !!this.selectedTopics().length
+        () => !!this.selectedTopics().length,
     );
     // Repos on the screen (filtered)
     protected readonly filteredRepos = computed(() =>
-        this.repos().filter(r => {
-            if (!r.show) {
-                // return false;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        this.repos().filter((r, i) => {
+            // if (i > 4) return false;
+            if (!r.show && !this.showAll) {
+                return false;
             }
 
             let filter = !this.hasSelections();
@@ -112,17 +132,17 @@ export class AppComponent implements OnInit {
 
             // Dashed topics can include more than one topic
             filter ||= r.topics.some(t =>
-                this.selectedTopics().some(st => t.includes(`-${st}-`))
+                this.selectedTopics().some(st => t.includes(`-${st}-`)),
             );
             filter ||= r.topics.some(t =>
-                this.selectedTopics().some(st => t.endsWith(`-${st}`))
+                this.selectedTopics().some(st => t.endsWith(`-${st}`)),
             );
             filter ||= r.topics.some(t =>
-                this.selectedTopics().some(st => t.startsWith(`${st}-`))
+                this.selectedTopics().some(st => t.startsWith(`${st}-`)),
             );
 
             return filter;
-        })
+        }),
     );
     // Topic (input field value) to be included in the topics selected
     // for filter the repos on the screen
@@ -139,7 +159,7 @@ export class AppComponent implements OnInit {
             .sort((a, b) => a.localeCompare(b));
         return currentTopic
             ? remainingTopics.filter(topic =>
-                  topic.toLowerCase().includes(currentTopic)
+                  topic.toLowerCase().includes(currentTopic),
               )
             : remainingTopics.slice();
     });
@@ -177,7 +197,7 @@ export class AppComponent implements OnInit {
         const value = (event.value || "").toLowerCase().trim();
         // The topic must be included in the autocomplete list
         const topic = this.filteredTopics().find(
-            topic => topic.toLowerCase() === value
+            topic => topic.toLowerCase() === value,
         );
         if (topic) {
             this.selectedTopics.update(topics => [...topics, topic]);
@@ -295,38 +315,38 @@ export class AppComponent implements OnInit {
             this.dataService.sortRepos(
                 this.sort01(),
                 this.sort02(),
-                this.order()
+                this.order(),
             );
         }
     };
 
     private registerIcons = (
         iconRegistry: MatIconRegistry,
-        sanitizer: DomSanitizer
+        sanitizer: DomSanitizer,
     ) => {
         iconRegistry.addSvgIcon(
             "github",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/github.svg")
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/github.svg"),
         );
         iconRegistry.addSvgIcon(
             "web",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/web.svg")
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/web.svg"),
         );
         iconRegistry.addSvgIcon(
             "github-white",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/github-white.svg")
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/github-white.svg"),
         );
         iconRegistry.addSvgIcon(
             "web-white",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/web-white.svg")
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/web-white.svg"),
         );
         iconRegistry.addSvgIcon(
             "favicon",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon.svg")
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon.svg"),
         );
         iconRegistry.addSvgIcon(
             "favicon-dark",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon-dark.svg")
+            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon-dark.svg"),
         );
     };
 
@@ -348,7 +368,7 @@ export class AppComponent implements OnInit {
             this.dataService.sortRepos(
                 this.sort01(),
                 this.sort02(),
-                this.order()
+                this.order(),
             );
         });
     };
@@ -358,13 +378,22 @@ export class AppComponent implements OnInit {
      * or included but without text
      */
     private logUndefinedTopics = () => {
-        this.udefTopics().forEach((v, i) => {
-            if (i === 0) console.error("Undefined topics:");
-            console.log(v);
+        console.error("Undefined topics:");
+        this.udefTopics().forEach(v => {
+            if (this.hasTopic(v)) console.log(v);
         });
-        this.udefSubtopics().forEach((v, i) => {
-            if (i === 0) console.error("Undefined subtopics:");
-            console.log(v);
+        console.error("Undefined subtopics:");
+        this.udefSubtopics().forEach(v => {
+            if (this.hasTopic(v, true)) console.log(v);
         });
+        console.log(this.filteredRepos());
     };
+
+    private hasTopic(name: string, subtopic: boolean = false): boolean {
+        if (subtopic)
+            return this.filteredRepos().some(repo =>
+                repo.subtopics.includes(name),
+            );
+        return this.filteredRepos().some(repo => repo.topics.includes(name));
+    }
 }
