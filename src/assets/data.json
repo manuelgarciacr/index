@@ -15,7 +15,7 @@
             "HTML": 1.1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "alumnes-api",
@@ -28,7 +28,7 @@
         "private": false,
         "languages": {},
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "android-uoc-pac1",
@@ -60,7 +60,7 @@
             "Kotlin": 100
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "angular-tutorial",
@@ -77,7 +77,7 @@
             "HTML": 8.3
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "angularjs-jhu",
@@ -111,7 +111,7 @@
             "JavaScript": 49.8
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment1"
     },
     {
@@ -128,7 +128,7 @@
             "JavaScript": 44.9
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment2"
     },
     {
@@ -146,7 +146,7 @@
             "HTML": 26.2
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment3"
     },
     {
@@ -164,7 +164,7 @@
             "CSS": 3.9
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment4"
     },
     {
@@ -182,7 +182,7 @@
             "CSS": 2.1
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/angularjs-jhu-assignment5"
     },
     {
@@ -198,7 +198,7 @@
             "JavaScript": 100
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "BarAdmin",
@@ -260,7 +260,7 @@
             "Shell": 100
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "Bootstrap",
@@ -276,7 +276,7 @@
             "SCSS": 21.7
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "bs4",
@@ -293,7 +293,7 @@
             "JavaScript": 6.9
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "bs5",
@@ -313,7 +313,7 @@
             "CSS": 0.1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "charactercreator",
@@ -331,7 +331,7 @@
             "Shell": 0
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ciscopackettracer",
@@ -344,7 +344,7 @@
         "private": false,
         "languages": {},
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "curs2022_frontVue",
@@ -363,7 +363,7 @@
             "GLSL": 0.1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "cursfront",
@@ -477,7 +477,7 @@
             "HTML": 0.6
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "docman",
@@ -521,7 +521,7 @@
             "Batchfile": 0
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "fullstack-course5",
@@ -537,7 +537,7 @@
             "CSS": 26.6
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "git-exercici",
@@ -550,7 +550,7 @@
         "private": false,
         "languages": {},
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "gitactionex",
@@ -619,7 +619,7 @@
         "repository": "https://github.com/manuelgarciacr/index",
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2025/10-31T01:10:41Z",
+        "pushed": "2026/07-23T08:23:18Z",
         "topics": [
             "angular-18",
             "angular-material",
@@ -629,10 +629,10 @@
         ],
         "private": false,
         "languages": {
-            "TypeScript": 59.9,
-            "SCSS": 18.6,
-            "HTML": 12.5,
-            "JavaScript": 8.9,
+            "TypeScript": 50,
+            "JavaScript": 25.5,
+            "SCSS": 14.8,
+            "HTML": 9.7,
             "CSS": 0
         },
         "subtopics": [
@@ -664,7 +664,7 @@
             "JavaScript": 5.2
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ITA-Angular-First-delivery",
@@ -717,7 +717,7 @@
             "HTML": 6.2
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-js",
@@ -734,7 +734,7 @@
             "CSS": 2.4
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-jses6",
@@ -750,7 +750,7 @@
             "HTML": 0.9
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-s7",
@@ -767,7 +767,7 @@
             "SCSS": 4.9
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-s8-ng-3",
@@ -784,7 +784,7 @@
             "SCSS": 5
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-s8-ng-4",
@@ -802,7 +802,7 @@
             "CSS": 0.1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-s8-ng-4-backend",
@@ -819,7 +819,7 @@
             "Batchfile": 0.8
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-s9",
@@ -836,7 +836,7 @@
             "SCSS": 11.3
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-s9-backend",
@@ -854,7 +854,7 @@
             "Batchfile": 0
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "ita-angular-ts-apirest",
@@ -870,7 +870,7 @@
             "TypeScript": 49.3
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "j2d-manuel-gc",
@@ -887,7 +887,7 @@
             "HTML": 10.7
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/j2d-manuel-gc"
     },
     {
@@ -920,7 +920,7 @@
             "HTML": 0
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/manuelgarciacr.github.io"
     },
     {
@@ -938,7 +938,7 @@
             "JavaScript": 8.4
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "menuinteractivo",
@@ -996,7 +996,7 @@
             "HTML": 1.3
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "mgcguide",
@@ -1030,7 +1030,7 @@
             "HTML": 6.7
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "netspeed",
@@ -1067,7 +1067,7 @@
             "CSS": 0.1
         },
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/ngx-oauth2-oidc"
     },
     {
@@ -1081,7 +1081,7 @@
         "private": false,
         "languages": {},
         "subtopics": [],
-        "show": true,
+        "show": false,
         "page": "https://manuelgarciacr.github.io/ngx-oauth2-oidc-demo"
     },
     {
@@ -1100,7 +1100,7 @@
             "CSS": 0.6
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "nuwe-summer21-ch04",
@@ -1117,7 +1117,7 @@
             "CSS": 1.4
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "nuwe-summer21-ch04-BAK",
@@ -1134,7 +1134,7 @@
             "CSS": 1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "original-state",
@@ -1150,7 +1150,7 @@
             "HTML": 35.1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "original-state-ts",
@@ -1167,7 +1167,7 @@
             "CSS": 12.1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "PEC4App",
@@ -1214,7 +1214,7 @@
             "CSS": 1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "quizzes",
@@ -1246,7 +1246,7 @@
             "CSS": 12.8
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "react-state",
@@ -1261,7 +1261,7 @@
             "TypeScript": 100
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "react-utils",
@@ -1276,7 +1276,7 @@
             "TypeScript": 100
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "restaurant-server",
@@ -1295,7 +1295,7 @@
             "CoffeeScript": 0.1
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "rnp-textinput-bug",
@@ -1311,7 +1311,7 @@
             "JavaScript": 16.8
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "router-animations",
@@ -1328,7 +1328,7 @@
             "SCSS": 1.4
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "skills-communicate-using-markdown",
@@ -1395,7 +1395,7 @@
             "JavaScript": 18.2
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "tmux-netspeed",
@@ -1410,7 +1410,7 @@
             "Shell": 100
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "vite-gift-list",
@@ -1482,7 +1482,7 @@
             "HTML": 3
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "vue3-ts-vuetify-sb",
@@ -1501,7 +1501,7 @@
             "HTML": 1.8
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "vuln01",
@@ -1518,7 +1518,7 @@
             "Batchfile": 0.8
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "vuln02",
@@ -1533,7 +1533,7 @@
             "C++": 100
         },
         "subtopics": [],
-        "show": true
+        "show": false
     },
     {
         "name": "proves",
@@ -1546,6 +1546,6 @@
         "private": false,
         "languages": {},
         "subtopics": [],
-        "show": true
+        "show": false
     }
 ]
