@@ -326,27 +326,27 @@ export class AppComponent implements OnInit {
     ) => {
         iconRegistry.addSvgIcon(
             "github",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/github.svg"),
+            sanitizer.bypassSecurityTrustResourceUrl("icons/github.svg"),
         );
         iconRegistry.addSvgIcon(
             "web",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/web.svg"),
+            sanitizer.bypassSecurityTrustResourceUrl("icons/web.svg"),
         );
         iconRegistry.addSvgIcon(
             "github-white",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/github-white.svg"),
+            sanitizer.bypassSecurityTrustResourceUrl("icons/github-white.svg"),
         );
         iconRegistry.addSvgIcon(
             "web-white",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/web-white.svg"),
+            sanitizer.bypassSecurityTrustResourceUrl("icons/web-white.svg"),
         );
         iconRegistry.addSvgIcon(
             "favicon",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon.svg"),
+            sanitizer.bypassSecurityTrustResourceUrl("icons/favicon.svg"),
         );
         iconRegistry.addSvgIcon(
             "favicon-dark",
-            sanitizer.bypassSecurityTrustResourceUrl("/icons/favicon-dark.svg"),
+            sanitizer.bypassSecurityTrustResourceUrl("icons/favicon-dark.svg"),
         );
     };
 
