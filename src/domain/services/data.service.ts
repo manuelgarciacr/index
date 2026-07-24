@@ -31,7 +31,7 @@ export class DataService {
     predicate = (v: (unknown[] | Error)[]) => !(v[0] instanceof Error);
 
     constructor() {
-        this.joinReq("repos", "topics", "subtopics")
+        this.joinReq("data", "topics", "subtopics")
             .pipe(
                 this.pipeif(
                     v => Array.isArray(v[0]),

@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
         )
         .subscribe(() => {
             this.getSortConfiguration();
-            if (this.showAll) this.logUndefinedTopics();
+            this.logUndefinedTopics()
         });
     // protected readonly reposChanged: Subscription = toObservable(
     //     this.dataService.repos,

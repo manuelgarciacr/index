@@ -56,7 +56,7 @@ jobs:
           # GITHUB_TOKEN has not Variables permission.
           PAT_GITHUB_TOKEN: ${{ secrets.PAT_GITHUB_TOKEN }}
 
-      - name: Commit and push data.json if changes
+      - name: Stage data.json if changed
         id: data_id
         run: |
             if ! git diff --quiet -- ./src/assets/data.json; then

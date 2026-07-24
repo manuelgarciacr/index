@@ -2,8 +2,8 @@
     {
         "name": "angular",
         "text": [
-            "Angular 17: Bootcamp of Angular at the IT Academy of Barcelona Activa. Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, Rxjs, etc. June-January 2023-2024. 100% final note (excellent).",
-            "Angular 2: Online course 'Front-End JavaScript Frameworks: Angular' (38h) taught by The Hong Kong University of Science and Technology on Coursera. Scholarship from the Generalitat de Catalunya. Angular Material, Flex-Layout, RxJS, etc. November-December 2020. Final grade 100%."
+            "Angular (commonly called Angular 2+ or Angular 2) is an open-source web application framework developed on TypeScript, maintained by Google, that is used to create and maintain single-page web applications.",
+            "It aims to augment browser-based applications with Model View Controller (MVC) capability, in an effort to make development and testing easier and simpler"
         ],
         "type": "base"
     },
@@ -38,9 +38,9 @@
     {
         "name": "asedem",
         "text": [
-            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
+            "ASEDEM in Barcelona. Training in everything that involves multimedia and digital communications for the company."
         ],
-        "type": "base"
+        "type": "centre"
     },
     {
         "name": "aws",
