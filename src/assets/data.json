@@ -619,7 +619,7 @@
         "repository": "https://github.com/manuelgarciacr/index",
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/07-24T11:16:25Z",
+        "pushed": "2026/07-24T11:19:47Z",
         "topics": [
             "angular-18",
             "angular-material",
@@ -629,9 +629,9 @@
         ],
         "private": false,
         "languages": {
-            "TypeScript": 49.9,
-            "JavaScript": 25.6,
-            "SCSS": 14.8,
+            "TypeScript": 49.8,
+            "JavaScript": 25.5,
+            "SCSS": 15,
             "HTML": 9.7,
             "CSS": 0
         },
