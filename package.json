@@ -1,50 +1,50 @@
 {
-    "name": "index",
-    "version": "0.0.0",
-    "author": {
-        "name": "Manuel García Criado"
-    },
-    "license": "MIT",
-    "scripts": {
-        "ng": "ng",
-        "start": "npm --loglevel notice -v && ng serve --port 4200 -c development -o",
-        "start:v": "npm --loglevel verbose -v && ng serve --port 4200 -c development -o",
-        "build": "ng build",
-        "build-prod": "ng build --configuration production --base-href /index/",
-        "watch": "ng build --watch --configuration development",
-        "test": "CHROME_BIN=/snap/bin/brave ng test",
-        "set-verbose": "npm config set loglevel=verbose",
-        "set-notice": "npm config set loglevel=notice",
-        "deploy": "rm -R /mnt/vps/browser/*; cp -r dist/index/browser /mnt/vps"
-    },
-    "private": true,
-    "dependencies": {
-        "@actions/core": "^1.11.1",
-        "@angular/animations": "^18.2.0",
-        "@angular/cdk": "^18.2.14",
-        "@angular/common": "^18.2.0",
-        "@angular/compiler": "^18.2.0",
-        "@angular/core": "^18.2.0",
-        "@angular/forms": "^18.2.0",
-        "@angular/material": "^18.2.14",
-        "@angular/platform-browser": "^18.2.0",
-        "@angular/platform-browser-dynamic": "^18.2.0",
-        "@angular/router": "^18.2.0",
-        "rxjs": "~7.8.0",
-        "tslib": "^2.3.0",
-        "zone.js": "~0.14.10"
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "^18.2.12",
-        "@angular/cli": "^18.2.12",
-        "@angular/compiler-cli": "^18.2.0",
-        "@types/jasmine": "~5.1.0",
-        "jasmine-core": "~5.2.0",
-        "karma": "~6.4.0",
-        "karma-chrome-launcher": "~3.2.0",
-        "karma-coverage": "~2.2.0",
-        "karma-jasmine": "~5.1.0",
-        "karma-jasmine-html-reporter": "~2.1.0",
-        "typescript": "~5.5.2"
-    }
+  "name": "index",
+  "version": "0.0.0",
+  "author": {
+    "name": "Manuel García Criado"
+  },
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "npm --loglevel notice -v && ng serve --port 4200 -c development -o",
+    "start:v": "npm --loglevel verbose -v && ng serve --port 4200 -c development -o",
+    "build": "ng build",
+    "build-prod": "ng build --configuration production --base-href /index/",
+    "watch": "ng build --watch --configuration development",
+    "test": "CHROME_BIN=/snap/bin/brave ng test",
+    "set-verbose": "npm config set loglevel=verbose",
+    "set-notice": "npm config set loglevel=notice",
+    "deploy": "rm -R /mnt/vps/browser/*; cp -r dist/index/browser /mnt/vps"
+  },
+  "private": true,
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@angular/animations": "^19.2.25",
+    "@angular/cdk": "^18.2.14",
+    "@angular/common": "^19.2.25",
+    "@angular/compiler": "^19.2.25",
+    "@angular/core": "^19.2.25",
+    "@angular/forms": "^19.2.25",
+    "@angular/material": "^18.2.14",
+    "@angular/platform-browser": "^19.2.25",
+    "@angular/platform-browser-dynamic": "^19.2.25",
+    "@angular/router": "^19.2.25",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.27",
+    "@angular/cli": "^19.2.27",
+    "@angular/compiler-cli": "^19.2.25",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.5.2"
+  }
 }

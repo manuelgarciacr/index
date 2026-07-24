@@ -44,7 +44,6 @@ import { filter, take } from "rxjs";
 
 @Component({
     selector: "app-root",
-    standalone: true,
     imports: [
         MatButtonModule,
         MatToolbarModule,
@@ -62,7 +61,7 @@ import { filter, take } from "rxjs";
     ],
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.scss"],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
     @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;

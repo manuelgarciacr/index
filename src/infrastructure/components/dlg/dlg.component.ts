@@ -10,7 +10,6 @@ export interface DlgData {
 
 @Component({
     selector: "dlg-component",
-    standalone: true,
     imports: [
         MatButtonModule,
         MatDialogTitle,
@@ -20,7 +19,7 @@ export interface DlgData {
     ],
     templateUrl: `./dlg.component.html`,
     styleUrl: "./dlg.component.scss",
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DlgComponent {
     readonly dialogRef = inject(MatDialogRef<DlgComponent>);

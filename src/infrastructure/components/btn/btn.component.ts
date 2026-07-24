@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 
 @Component({
     selector: "btn-component",
-    standalone: true,
     imports: [MatButtonModule, RouterModule],
     templateUrl: "./btn.component.html",
     styleUrl: "./btn.component.scss",
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BtnComponent implements AfterViewInit {
     @Output() click2 = new EventEmitter<MouseEvent>();

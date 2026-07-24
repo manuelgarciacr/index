@@ -11,7 +11,6 @@ export interface TopicDlgData {
 
 @Component({
     selector: "app-topic-dlg",
-    standalone: true,
     imports: [
         // MatFormFieldModule,
         // MatInputModule,
@@ -25,7 +24,7 @@ export interface TopicDlgData {
     ],
     templateUrl: `./topic-dlg.component.html`,
     styleUrl: "./topic-dlg.component.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopicDlgComponent {
     readonly dialogRef = inject(MatDialogRef<TopicDlgComponent>);

@@ -6,10 +6,9 @@ import { BtnComponent } from '@infrastructure';
 
 @Component({
     selector: "toggle-theme",
-    standalone: true,
     imports: [MatButtonModule, BtnComponent],
     templateUrl: "toggle-theme.component.html",
-    styles: [],
+    styles: []
 })
 export class ToggleThemeComponent implements OnInit {
     @Output() collapseNavbar = new EventEmitter<boolean>();
