@@ -8,7 +8,8 @@
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // Define the theme object.
 // $index-theme: mat.define-theme(
@@ -45,13 +46,15 @@
 
 :root {
     @include mat.system-level-colors(m3-theme.$light-theme);
-    @include mat.core-theme(m3-theme.$light-theme);
+    @include mat.elevation-classes();
+    @include mat.app-background();
     @include mat.all-component-themes(m3-theme.$light-theme);
     //@include mat.card-theme(m3-theme.$light-theme);
     @include btn.theme(m3-theme.$light-theme);
     .dark-theme {
         @include mat.system-level-colors(m3-theme.$dark-theme);
-        @include mat.core-color(m3-theme.$dark-theme);
+        @include mat.elevation-classes();
+        @include mat.app-background();
         @include mat.all-component-colors(m3-theme.$dark-theme);
         //@include mat.card-color(m3-theme.$dark-theme);
         @include btn.theme(m3-theme.$dark-theme);
