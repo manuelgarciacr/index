@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, model } from '@angular/core';
 import { MatDialogContent, MatDialogTitle, MatDialogActions, MatDialogClose, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf } from '@angular/common';
+
 
 export interface TopicDlgData {
     name: string;
@@ -12,16 +12,12 @@ export interface TopicDlgData {
 @Component({
     selector: "app-topic-dlg",
     imports: [
-        // MatFormFieldModule,
-        // MatInputModule,
-        // FormsModule,
-        MatButtonModule,
-        MatDialogTitle,
-        MatDialogContent,
-        MatDialogActions,
-        MatDialogClose,
-        NgIf,
-    ],
+    MatButtonModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose
+],
     templateUrl: `./topic-dlg.component.html`,
     styleUrl: "./topic-dlg.component.css",
     changeDetection: ChangeDetectionStrategy.OnPush

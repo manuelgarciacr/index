@@ -1,14 +1,16 @@
 <h2 mat-dialog-title>{{ data.name }}</h2>
 <mat-dialog-content>
-    <ul>
+  <ul>
     @for (line of data.text; track $index) {
-        <li>
-            {{ line }}
-        </li>
+      <li>
+        {{ line }}
+      </li>
     }
-    </ul>
+  </ul>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button *ngIf="!inFilter()" mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="!inFilter()" cdkFocusInitial>{{ inFilter() ? "Ok" : "Add to filter" }}</button>
+  @if (!inFilter()) {
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+  }
+  <button mat-button [mat-dialog-close]="!inFilter()" cdkFocusInitial>{{ inFilter() ? "Ok" : "Add to filter" }}</button>
 </mat-dialog-actions>
