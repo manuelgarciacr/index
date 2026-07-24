@@ -60,7 +60,9 @@
         @include btn.theme(m3-theme.$dark-theme);
         //$accent: mat.get-theme-color(m3-theme.$dark-theme, secondary);
     }
-    --system-preference: undefined;
+    & {
+        --system-preference: undefined;
+    }
 }
 
 
