@@ -393,7 +393,7 @@
         "pushed": "2025/05-26T10:54:51Z",
         "topics": [
             "cibernarium",
-            "curso-aws"
+            "aws-course"
         ],
         "private": true,
         "languages": {
@@ -430,7 +430,7 @@
         "pushed": "2025/05-26T11:03:51Z",
         "topics": [
             "cibernarium",
-            "curso-github"
+            "github-course"
         ],
         "private": true,
         "languages": {
@@ -561,7 +561,7 @@
         "pushed": "2026/07-25T01:22:55Z",
         "topics": [
             "cibernarium",
-            "curso-github",
+            "github-course",
             "github-actions"
         ],
         "private": false,
@@ -580,7 +580,7 @@
         "pushed": "2025/04-09T15:20:32Z",
         "topics": [
             "cibernarium",
-            "curso-github"
+            "github-course"
         ],
         "private": false,
         "languages": {
@@ -621,7 +621,8 @@
         "created": "2025/05-03T15:21:42Z",
         "pushed": "2026/07-24T14:16:28Z",
         "topics": [
-            "angular-20",
+            "angular-18",
+            "angular-19",
             "angular-material",
             "github-actions",
             "testing",
@@ -1343,7 +1344,7 @@
         "pushed": "2026/01-01T14:21:18Z",
         "topics": [
             "cibernarium",
-            "curso-github"
+            "github-course"
         ],
         "private": false,
         "languages": {},
@@ -1360,7 +1361,7 @@
         "pushed": "2025/12-01T11:06:02Z",
         "topics": [
             "cibernarium",
-            "curso-github"
+            "github-course"
         ],
         "private": false,
         "languages": {
@@ -1378,7 +1379,7 @@
         "pushed": "2025/04-12T17:21:29Z",
         "topics": [
             "cibernarium",
-            "curso-github"
+            "github-course"
         ],
         "private": false,
         "languages": {},

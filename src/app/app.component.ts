@@ -8,7 +8,7 @@ import {
     ViewChild,
     ElementRef,
 } from "@angular/core";
-import { toObservable } from "@angular/core/rxjs-interop";
+import { toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { MatButtonModule } from "@angular/material/button";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -41,6 +41,7 @@ import {
     CokiesConfigurationService,
 } from "@domain";
 import { filter, take } from "rxjs";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "app-root",
@@ -61,7 +62,7 @@ import { filter, take } from "rxjs";
     ],
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.scss"],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
     @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;
@@ -69,7 +70,11 @@ export class AppComponent implements OnInit {
     // Data Services
     private readonly dataService = inject(DataService);
     private readonly getTopicData = inject(GetTopicDataService);
-    private readonly showAll = false;
+    private readonly route = inject(ActivatedRoute);
+    private readonly queryParamMap = toSignal(this.route.queryParamMap);
+    private readonly showAll = computed(
+        () => this.queryParamMap()?.get("showAll") === "true",
+    );
     protected readonly storageCfg = inject(StorageConfigurationService);
     protected readonly cookiesCfg = inject(CokiesConfigurationService);
     // LiveAnnouncer is used to announce messages for screen-reader
@@ -99,7 +104,7 @@ export class AppComponent implements OnInit {
         )
         .subscribe(() => {
             this.getSortConfiguration();
-            this.logUndefinedTopics()
+            this.logUndefinedTopics();
         });
     // protected readonly reposChanged: Subscription = toObservable(
     //     this.dataService.repos,
@@ -121,7 +126,7 @@ export class AppComponent implements OnInit {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         this.repos().filter((r, i) => {
             // if (i > 4) return false;
-            if (!r.show && !this.showAll) {
+            if (!r.show && !this.showAll()) {
                 return false;
             }
 
@@ -130,12 +135,13 @@ export class AppComponent implements OnInit {
             filter ||= r.topics.some(t => this.selectedTopics().includes(t));
 
             // Dashed topics can include more than one topic
-            filter ||= r.topics.some(t =>
-                this.selectedTopics().some(st => t.includes(`-${st}-`)),
-            );
-            filter ||= r.topics.some(t =>
-                this.selectedTopics().some(st => t.endsWith(`-${st}`)),
-            );
+            // filter ||= r.topics.some(t =>
+            //     this.selectedTopics().some(st => t.includes(`-${st}-`)),
+            // );
+            // filter ||= r.topics.some(t =>
+            //     this.selectedTopics().some(st => t.endsWith(`-${st}`)),
+            // );
+            // Dashed topics can include a base topic
             filter ||= r.topics.some(t =>
                 this.selectedTopics().some(st => t.startsWith(`${st}-`)),
             );
@@ -180,6 +186,9 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        // this.route.queryParams.subscribe(params => {
+        //     this.usuario.set(params['usuario'])
+        // });
         this.dataService.error$.subscribe({
             error: err => console.error(err),
             next: err =>
@@ -240,6 +249,10 @@ export class AppComponent implements OnInit {
     }
 
     openTopicDialog(name: string): void {
+this.dataService
+    .topics()
+    .filter(t => t.type && t.type.length > 0)
+    .forEach(t => this.getTopicData.call(t));
         const topic = this.topics().find(v => v.name === name);
         // If true, the dialog box only shows the text, otherwise, it
         // requests to include the topics in the selected ones
@@ -247,6 +260,7 @@ export class AppComponent implements OnInit {
         // Dashed topics can include more than one topic
         // The text is the sum of all the texts
         const { topics, text } = this.getTopicData.call(topic!);
+//console.log("OPENTOPICDIALOG", topics, text)
         const dialogRef = this.dialog.open(TopicDlgComponent, {
             data: { name, text, inFilter },
         });

@@ -11,11 +11,11 @@ export class GetBasesService {
         const topic = this.topics().find(t => t.name === name);
         const type = topic?.type ?? "";
 
-        if (type !== "base") {
+        if (type !== "subject" && type != "centre") {
             const bases = name.split("-") ?? [];
             const topics = bases
                 .map(b => this.topics().find(t => t.name === b))
-                .filter(t => t !== undefined);
+                .filter((t): t is ITopic => t !== undefined);
             return topics
         }
         return []

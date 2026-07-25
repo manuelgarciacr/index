@@ -5,7 +5,7 @@
             "Angular (commonly called Angular 2+ or Angular 2) is an open-source web application framework developed on TypeScript, maintained by Google, that is used to create and maintain single-page web applications.",
             "It aims to augment browser-based applications with Model View Controller (MVC) capability, in an effort to make development and testing easier and simpler"
         ],
-        "type": "base"
+        "type": "subject"
     },
     {
         "name": "angular-17",
@@ -29,11 +29,27 @@
         "type": "version"
     },
     {
+        "name": "angular-20",
+        "text": [
+            "Released: 2025-05-28  Active end: 2025-11-19  LTS end: 2026-11-28"
+        ],
+        "type": "version"
+    },
+    {
+        "name": "angular-bootcamp",
+        "text": [
+            "Angular Bootcamp at the IT Academy of Barcelona Activa.",
+            "Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, RxJS, etc.",
+            "June-January 2023-2024. Final grade 100% (Excellent)"
+        ],
+        "type": "course"
+    },
+    {
         "name": "angular-material",
         "text": [
             "Material Design components for Angular. Internationalized and accessible components for everyone. Well tested to ensure performance and reliability. Straightforward APIs with consistent cross platform behaviour. Provide tools that help developers build their own custom components with common interaction patterns. Customizable within the bounds of the Material Design specification. Built by the Angular team to integrate seamlessly with Angular. Start from scratch or drop into your existing applications."
         ],
-        "type": "base"
+        "type": "subject"
     },
     {
         "name": "asedem",
@@ -44,10 +60,20 @@
     },
     {
         "name": "aws",
+        "text": ["Amazon Web Services. Cloud computing"],
+        "type": "subject"
+    },
+    {
+        "name": "aws-course",
         "text": [
-            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)"
+            "Tema 1 - Introducció a AWS",
+            "Tema 2 - Desenvolupament amb AWS",
+            "Tema 3 - Arquitectura Serverless amb AWS",
+            "Tema 4 - CI\\CD i DevOps amb AWS",
+            "Pràctica extra CRUD API",
+            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h). Course material"
         ],
-        "type": "base"
+        "type": "course"
     },
     {
         "name": "cibernarium",
@@ -57,35 +83,48 @@
             "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)",
             "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)"
         ],
-        "type": "base"
+        "type": "centre"
     },
     {
         "name": "cifo-la-violeta",
         "text": [
             "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
-        "type": "base"
+        "type": "centre"
     },
     {
         "name": "coursera",
         "text": [
             "Angular 2: Online course 'Front-End JavaScript Frameworks: Angular' (38h) taught by The Hong Kong University of Science and Technology on Coursera. Scholarship from the Generalitat de Catalunya. Angular Material, Flex-Layout, RxJS, etc. November-December 2020. Final grade 100%."
         ],
-        "type": "base"
+        "type": "centre"
     },
     {
-        "name": "curso-aws",
+        "name": "css",
+        "text": [],
+        "type": "subject"
+    },
+    {
+        "name": "curso-nodejs",
+        "text": ["Cibernarium. Barcelona Activa. Nodejs course material"],
+        "type": "course"
+    },
+    {
+        "name": "github",
         "text": [
-            "Tema 1 - Introducció a AWS",
-            "Tema 2 - Desenvolupament amb AWS",
-            "Tema 3 - Arquitectura Serverless amb AWS",
-            "Tema 4 - CI\\CD i DevOps amb AWS",
-            "Pràctica extra CRUD API"
+            "GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code. It uses Git to provide distributed version control, and GitHub itself provides access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project."
         ],
-        "type": "curso"
+        "type": "subject"
     },
     {
-        "name": "curso-github",
+        "name": "github-actions",
+        "text": [
+            "GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production. GitHub Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository. For example, you can run a workflow to automatically add the appropriate labels whenever someone creates a new issue in your repository. GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure."
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "github-course",
         "text": [
             "Tema 1 - Introducció a Git i Github",
             "Tema 2 - Treballant amb Github Repository",
@@ -93,71 +132,99 @@
             "Tema 4 - Desenvolupament modern",
             "Tema 5 - Project Management",
             "Tema 6 - Privacitat, Seguretat i Administració",
-            "Tema 7 - Beneficis de GitHub Community"
+            "Tema 7 - Beneficis de GitHub Community",
+            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h). Course material"
         ],
-        "type": "curso"
+        "type": "course"
     },
     {
-        "name": "curso-nodejs",
-        "text": [
-            "Cibernarium. Barcelona Activa. Nodejs course material"
-        ]
-    },
-    {
-        "name": "github",
-        "text": [
-            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)"
-        ],
-        "type": "base"
-    },
-    {
-        "name": "github-actions",
-        "text": [
-            "GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production. GitHub Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository. For example, you can run a workflow to automatically add the appropriate labels whenever someone creates a new issue in your repository. GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure."
-        ],
-        "type": ""
+        "name": "html5",
+        "text": [],
+        "type": "subject"
     },
     {
         "name": "it-academy",
         "text": [
             "Angular 17: Bootcamp of Angular at the IT Academy of Barcelona Activa. Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, Rxjs, etc. June-January 2023-2024. 100% final note (excellent)."
         ],
-        "type": "base"
+        "type": "centre"
+    },
+    {
+        "name": "linux",
+        "text": "Linux is a free, open source, Unix-like operating system created by Linus Torvalds in 1991.",
+        "type": "subject"
+    },
+    {
+        "name": "linux-course",
+        "text": "]Linux for programmers. Environment, tools and development (27h) Preparation for the Linux Foundation LFCA Certificate. July 2025. Course material",
+        "type": "course"
     },
     {
         "name": "lopdgdd",
         "text": [
-            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
+            "Ley Orgánica de Protección de Datos Personales y Garantía de Derechos Digitales"
         ],
-        "type": "base"
+        "type": "subject"
+    },
+    {
+        "name": "lopdgdd-course",
+        "text": [
+            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h). Course material"
+        ],
+        "type": "course"
     },
     {
         "name": "mysql",
         "text": [
-            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
+            "MySQL is an open source relational database management system developed under dual license: General Public License/Commercial License by Oracle Corporation"
         ],
-        "type": "base"
+        "type": "subject"
+    },
+    {
+        "name": "mysql-course",
+        "text": [
+            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h). Course material"
+        ],
+        "type": "course"
+    },
+    {
+        "name": "scss",
+        "text": [],
+        "type": "subject"
     },
     {
         "name": "seo",
         "text": [
-            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)",
-            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%."
+            "SEO (Search Engine Optimization) and SEM (Search Engine Marketing) are the two fundamental strategies for search engine positioning, differing mainly in the method of obtaining visibility and the deadlines for results."
         ],
-        "type": "base"
+        "type": "subject"
+    },
+    {
+        "name": "seo-cibernariun-course",
+        "text": [
+            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h). Course Material"
+        ],
+        "type": "course"
+    },
+    {
+        "name": "seo-asedem-course",
+        "text": [
+            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%. Course material"
+        ],
+        "type": "course"
     },
     {
         "name": "testing",
         "text": [
-            "Test an application with the Jasmine testing framework and the Karma test runner."
+            "Test an application with a testing framework as Jasmine and a test runner as Karma ."
         ],
-        "type": "base"
+        "type": "subject"
     },
     {
         "name": "theming",
         "text": [
             "Thematization of an application with resources such as Sass, material angular, bootstrap, etc."
         ],
-        "type": "base"
+        "type": "subject"
     }
 ]
