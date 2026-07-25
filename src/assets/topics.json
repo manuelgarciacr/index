@@ -60,7 +60,9 @@
     },
     {
         "name": "aws",
-        "text": ["Amazon Web Services. Cloud computing"],
+        "text": [
+            "Amazon Web Services. Cloud computing"
+        ],
         "type": "subject"
     },
     {
@@ -106,7 +108,9 @@
     },
     {
         "name": "curso-nodejs",
-        "text": ["Cibernarium. Barcelona Activa. Nodejs course material"],
+        "text": [
+            "Cibernarium. Barcelona Activa. Nodejs course material"
+        ],
         "type": "course"
     },
     {
@@ -200,16 +204,16 @@
         "type": "subject"
     },
     {
-        "name": "seo-cibernariun-course",
+        "name": "seo-asedem-course",
         "text": [
-            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h). Course Material"
+            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%. Course material"
         ],
         "type": "course"
     },
     {
-        "name": "seo-asedem-course",
+        "name": "seo-cibernariun-course",
         "text": [
-            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%. Course material"
+            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h). Course Material"
         ],
         "type": "course"
     },
