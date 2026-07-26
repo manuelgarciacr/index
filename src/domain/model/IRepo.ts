@@ -2,6 +2,7 @@ export interface IRepo {
     name: string;
     description: string;
     repository: string;
+    fork: boolean;
     webpage: string;
     created: string;
     pushed: string;

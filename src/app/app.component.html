@@ -4,7 +4,14 @@
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
             <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'favicon-dark' : 'favicon'"></mat-icon>
         </button>
-        <span><h1>Repositories</h1></span>
+        <a [attr.href]="'https://github.com/manuelgarciacr'" target="_blank" class="action-link">
+            <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'github-white' : 'github'"
+                class="repo-size overflow-visible"></mat-icon>
+            <span>
+                Github Repositories
+            </span>
+        </a>
+        <!-- <span><h1>Repositories</h1></span> -->
         <span class="spacer"></span>
          <toggle-theme class="ms-auto"></toggle-theme>
     </mat-toolbar>
@@ -87,7 +94,7 @@
                 <a [attr.href]="item.private ? null : item.repository" target="_blank" class="action-link" [class.red-color]="item.private">
                     <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'github-white' : 'github'"
                         class="repo-size overflow-visible"></mat-icon>
-                    <span>{{ item.private ? 'PRIVATE REPOSITORY' : 'Repository'}}</span>
+                    <span>{{ item.private ? 'PRIVATE REPOSITORY' : 'Repository' }}{{ item.fork ? ' Fork' : '' }}</span>
                 </a>
                 <a [href]="item.webpage" target="_blank" class="action-link web-link ms-3" [hidden]="item.webpage === ''">
                     <mat-icon [svgIcon]="storageCfg.getConfig().isDark ? 'web-white' : 'web'"

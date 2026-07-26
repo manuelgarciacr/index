@@ -72,6 +72,7 @@ const getRepos = async (user, strData) => {
             name: ele.name,
             description: (ele.description || "").trim(),
             repository: ele.html_url,
+            fork: ele.fork,
             webpage: ele.has_pages
                 ? `https://manuelgarciacr.github.io/${ele.name}`
                 : "",
