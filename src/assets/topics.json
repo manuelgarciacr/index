@@ -60,9 +60,7 @@
     },
     {
         "name": "aws",
-        "text": [
-            "Amazon Web Services. Cloud computing"
-        ],
+        "text": ["Amazon Web Services. Cloud computing"],
         "type": "subject"
     },
     {
@@ -73,7 +71,7 @@
             "Tema 3 - Arquitectura Serverless amb AWS",
             "Tema 4 - CI\\CD i DevOps amb AWS",
             "Pràctica extra CRUD API",
-            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h). Course material"
+            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
         "type": "course"
     },
@@ -95,6 +93,13 @@
         "type": "centre"
     },
     {
+        "name": "course",
+        "text": [
+            "Course material"
+        ],
+        "type": "special"
+    },
+    {
         "name": "coursera",
         "text": [
             "Angular 2: Online course 'Front-End JavaScript Frameworks: Angular' (38h) taught by The Hong Kong University of Science and Technology on Coursera. Scholarship from the Generalitat de Catalunya. Angular Material, Flex-Layout, RxJS, etc. November-December 2020. Final grade 100%."
@@ -108,9 +113,7 @@
     },
     {
         "name": "curso-nodejs",
-        "text": [
-            "Cibernarium. Barcelona Activa. Nodejs course material"
-        ],
+        "text": ["Cibernarium. Barcelona Activa."],
         "type": "course"
     },
     {
@@ -137,7 +140,7 @@
             "Tema 5 - Project Management",
             "Tema 6 - Privacitat, Seguretat i Administració",
             "Tema 7 - Beneficis de GitHub Community",
-            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h). Course material"
+            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)"
         ],
         "type": "course"
     },
@@ -160,7 +163,7 @@
     },
     {
         "name": "linux-course",
-        "text": "]Linux for programmers. Environment, tools and development (27h) Preparation for the Linux Foundation LFCA Certificate. July 2025. Course material",
+        "text": "]Linux for programmers. Environment, tools and development (27h) Preparation for the Linux Foundation LFCA Certificate. July 2025",
         "type": "course"
     },
     {
@@ -173,7 +176,7 @@
     {
         "name": "lopdgdd-course",
         "text": [
-            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h). Course material"
+            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
         "type": "course"
     },
@@ -187,7 +190,7 @@
     {
         "name": "mysql-course",
         "text": [
-            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h). Course material"
+            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
         "type": "course"
     },
@@ -206,14 +209,14 @@
     {
         "name": "seo-asedem-course",
         "text": [
-            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9%. Course material"
+            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9% "
         ],
         "type": "course"
     },
     {
         "name": "seo-cibernariun-course",
         "text": [
-            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h). Course Material"
+            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)"
         ],
         "type": "course"
     },

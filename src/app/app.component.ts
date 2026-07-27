@@ -16,7 +16,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatChipInputEvent, MatChipsModule } from "@angular/material/chips";
 import { MatDialog } from "@angular/material/dialog";
-import { MatOptionModule } from "@angular/material/core";
+// import { MatOptionModule } from "@angular/material/core";
 import {
     MatAutocompleteModule,
     MatAutocompleteSelectedEvent,
@@ -42,6 +42,8 @@ import {
 } from "@domain";
 import { filter, take } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
+import { GetTopicBreakdownService } from "domain/services/get-topic-breakdown.service";
+//import { AutocompleteToggleDirective } from "./directives/autocomplete-toggle.directive";
 
 @Component({
     selector: "app-root",
@@ -52,13 +54,14 @@ import { ActivatedRoute } from "@angular/router";
         MatIconModule,
         MatChipsModule,
         MatAutocompleteModule,
-        MatOptionModule,
+        // MatOptionModule,
         MatLabel,
         FormsModule,
         MatFormFieldModule,
         ReactiveFormsModule,
         MatButtonToggleModule,
         ToggleThemeComponent,
+        // AutocompleteToggleDirective,
     ],
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.scss"],
@@ -70,6 +73,7 @@ export class AppComponent implements OnInit {
     // Data Services
     private readonly dataService = inject(DataService);
     private readonly getTopicData = inject(GetTopicDataService);
+    private readonly getTopicBreakdown = inject(GetTopicBreakdownService).call;
     private readonly route = inject(ActivatedRoute);
     private readonly queryParamMap = toSignal(this.route.queryParamMap);
     private readonly showAll = computed(
@@ -88,7 +92,9 @@ export class AppComponent implements OnInit {
     protected readonly repos = this.dataService.repos;
     //protected readonly topics = this.dataService.topics;
     protected readonly topics = computed(() =>
-        this.dataService.topics().filter(r => this.hasTopic(r.name)),
+        this.dataService
+            .topics()
+            .filter(t => this.hasTopic(t.name) || t.type == "special"),
     );
     //protected readonly subtopics = this.dataService.subtopics;
     protected readonly subtopics = computed(() =>
@@ -104,7 +110,7 @@ export class AppComponent implements OnInit {
         )
         .subscribe(() => {
             this.getSortConfiguration();
-            this.logUndefinedTopics();
+            if (this.showAll()) this.logUndefinedTopics();
         });
     // protected readonly reposChanged: Subscription = toObservable(
     //     this.dataService.repos,
@@ -135,15 +141,21 @@ export class AppComponent implements OnInit {
             filter ||= r.topics.some(t => this.selectedTopics().includes(t));
 
             // Dashed topics can include more than one topic
-            // filter ||= r.topics.some(t =>
-            //     this.selectedTopics().some(st => t.includes(`-${st}-`)),
-            // );
+            filter ||= r.topics.some(t =>
+                this.selectedTopics().some(st => t.includes(`-${st}-`)),
+            );
             // filter ||= r.topics.some(t =>
             //     this.selectedTopics().some(st => t.endsWith(`-${st}`)),
             // );
             // Dashed topics can include a base topic
             filter ||= r.topics.some(t =>
                 this.selectedTopics().some(st => t.startsWith(`${st}-`)),
+            );
+
+            filter ||= r.topics.some(
+                t =>
+                    this.selectedTopics().includes("course") &&
+                    this.isCourse(t),
             );
 
             return filter;
@@ -245,14 +257,14 @@ export class AppComponent implements OnInit {
             event.option.viewValue,
         ]);
         this.currentTopic.set("");
-        event.option.deselect();
+        //event.option.deselect();
     }
 
     openTopicDialog(name: string): void {
-this.dataService
-    .topics()
-    .filter(t => t.type && t.type.length > 0)
-    .forEach(t => this.getTopicData.call(t));
+        // this.dataService
+        //     .topics()
+        //     .filter(t => t.type && t.type.length > 0)
+        //     .forEach(t => this.getTopicData.call(t));
         const topic = this.topics().find(v => v.name === name);
         // If true, the dialog box only shows the text, otherwise, it
         // requests to include the topics in the selected ones
@@ -260,7 +272,7 @@ this.dataService
         // Dashed topics can include more than one topic
         // The text is the sum of all the texts
         const { topics, text } = this.getTopicData.call(topic!);
-//console.log("OPENTOPICDIALOG", topics, text)
+        //console.log("OPENTOPICDIALOG", topics, text)
         const dialogRef = this.dialog.open(TopicDlgComponent, {
             data: { name, text, inFilter },
         });
@@ -402,11 +414,27 @@ this.dataService
         console.log(this.filteredRepos());
     };
 
+    /**
+     * Returns true if some repo on screen has the indicated topic
+     * @param name Topic/subtopic name
+     * @param subtopic True if subtopic name
+     * @returns true if some repo on screen has the indicated topic
+     */
     private hasTopic(name: string, subtopic: boolean = false): boolean {
         if (subtopic)
             return this.filteredRepos().some(repo =>
                 repo.subtopics.includes(name),
             );
-        return this.filteredRepos().some(repo => repo.topics.includes(name));
+        return this.filteredRepos().some(repo => {
+            const topics = repo.topics.flatMap(
+                t => this.getTopicBreakdown(t).topics,
+            );
+            return topics.includes(name);
+        });
     }
+
+    private isCourse = (name: string) =>
+        this.dataService
+            .topics()
+            .some(t => t.name == name && t.type == "course");
 }
