@@ -60,7 +60,9 @@
     },
     {
         "name": "aws",
-        "text": ["Amazon Web Services. Cloud computing"],
+        "text": [
+            "Amazon Web Services. Cloud computing"
+        ],
         "type": "subject"
     },
     {
@@ -113,7 +115,9 @@
     },
     {
         "name": "curso-nodejs",
-        "text": ["Cibernarium. Barcelona Activa."],
+        "text": [
+            "Cibernarium. Barcelona Activa."
+        ],
         "type": "course"
     },
     {
