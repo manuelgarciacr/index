@@ -42,7 +42,7 @@ import {
 } from "@domain";
 import { filter, take } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
-import { GetTopicBreakdownService } from "domain/services/get-topic-breakdown.service";
+//import { GetTopicBreakdownService } from "domain/services/get-topic-breakdown.service";
 //import { AutocompleteToggleDirective } from "./directives/autocomplete-toggle.directive";
 
 @Component({
@@ -72,8 +72,7 @@ export class AppComponent implements OnInit {
     @ViewChild("topicInput") input!: ElementRef;
     // Data Services
     private readonly dataService = inject(DataService);
-    private readonly getTopicData = inject(GetTopicDataService);
-    private readonly getTopicBreakdown = inject(GetTopicBreakdownService).call;
+    private readonly getTopicData = inject(GetTopicDataService).call;
     private readonly route = inject(ActivatedRoute);
     private readonly queryParamMap = toSignal(this.route.queryParamMap);
     private readonly showAll = computed(
@@ -92,13 +91,13 @@ export class AppComponent implements OnInit {
     protected readonly repos = this.dataService.repos;
     //protected readonly topics = this.dataService.topics;
     protected readonly topics = computed(() =>
-        this.dataService
-            .topics()
-            .filter(t => this.hasTopic(t.name) || t.type == "special"),
+        this.dataService.topics()
+        //.filter(t => this.hasTopic(t.name) || t.type == "special"),
     );
     //protected readonly subtopics = this.dataService.subtopics;
     protected readonly subtopics = computed(() =>
-        this.dataService.subtopics().filter(r => this.hasTopic(r.name, true)),
+        this.dataService.subtopics()
+        //.filter(r => this.hasTopic(r.name, true)),
     );
     protected readonly udefTopics = this.dataService.udefTopics;
     protected readonly udefSubtopics = this.dataService.udefSubtopics;
@@ -110,7 +109,7 @@ export class AppComponent implements OnInit {
         )
         .subscribe(() => {
             this.getSortConfiguration();
-            if (this.showAll()) this.logUndefinedTopics();
+            /* if (this.showAll())*/ this.logUndefinedTopics();
         });
     // protected readonly reposChanged: Subscription = toObservable(
     //     this.dataService.repos,
@@ -136,29 +135,30 @@ export class AppComponent implements OnInit {
                 return false;
             }
 
-            let filter = !this.hasSelections();
+            if (!this.hasSelections()) return true;
 
-            filter ||= r.topics.some(t => this.selectedTopics().includes(t));
+            return r.breakdown.some(t => this.selectedTopics().includes(t));
 
-            // Dashed topics can include more than one topic
-            filter ||= r.topics.some(t =>
-                this.selectedTopics().some(st => t.includes(`-${st}-`)),
-            );
+            //let filter = !this.hasSelections();
+
+            // let filter = r.topics.some(t => this.selectedTopics().includes(t));
+
+            // // Dashed topics can include more than one topic
             // filter ||= r.topics.some(t =>
-            //     this.selectedTopics().some(st => t.endsWith(`-${st}`)),
+            //     this.selectedTopics().some(st => t.includes(`-${st}-`)),
             // );
-            // Dashed topics can include a base topic
-            filter ||= r.topics.some(t =>
-                this.selectedTopics().some(st => t.startsWith(`${st}-`)),
-            );
+            // // Dashed topics can include a base topic
+            // filter ||= r.topics.some(t =>
+            //     this.selectedTopics().some(st => t.startsWith(`${st}-`)),
+            // );
+            // // Filter course topic
+            // filter ||= r.topics.some(
+            //     t =>
+            //         this.selectedTopics().includes("course") &&
+            //         this.isCourse(t),
+            // );
 
-            filter ||= r.topics.some(
-                t =>
-                    this.selectedTopics().includes("course") &&
-                    this.isCourse(t),
-            );
-
-            return filter;
+            // return filter;
         }),
     );
     // Topic (input field value) to be included in the topics selected
@@ -271,8 +271,7 @@ export class AppComponent implements OnInit {
         const inFilter = this.selectedTopics().includes(name);
         // Dashed topics can include more than one topic
         // The text is the sum of all the texts
-        const { topics, text } = this.getTopicData.call(topic!);
-        //console.log("OPENTOPICDIALOG", topics, text)
+        const { breakdown, text } = this.getTopicData(topic!, this.dataService.topics());
         const dialogRef = this.dialog.open(TopicDlgComponent, {
             data: { name, text, inFilter },
         });
@@ -280,7 +279,7 @@ export class AppComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (!result) return;
 
-            this.selectedTopics.update(v => [...new Set([...v, ...topics])]);
+            this.selectedTopics.update(v => [...new Set([...v, ...breakdown])]);
             this.currentTopic.set("");
             // Update input control value. Two way binding does not works. Workaround.
             this.input.nativeElement.value = "";
@@ -403,15 +402,25 @@ export class AppComponent implements OnInit {
      * or included but without text
      */
     private logUndefinedTopics = () => {
-        console.error("Undefined topics:");
+        const topics: string[] = [];
+        const subtopics: string[] = [];
+console.log(this.udefTopics(), this.udefSubtopics())
+//console.error("LOGUNDEFINEDTOPICS");
         this.udefTopics().forEach(v => {
-            if (this.hasTopic(v)) console.log(v);
+            if (this.hasTopic(v)) topics.push(v);
         });
-        console.error("Undefined subtopics:");
         this.udefSubtopics().forEach(v => {
-            if (this.hasTopic(v, true)) console.log(v);
+            if (this.hasTopic(v, true)) subtopics.push(v);
         });
-        console.log(this.filteredRepos());
+        if (topics.length) {
+            console.error("Undefined topics:");
+            topics.forEach(t => console.log(t));
+        }
+        if (subtopics.length) {
+            console.error("Undefined subtopics:");
+            subtopics.forEach(st => console.log(st));
+        }
+//console.log(this.filteredRepos());
     };
 
     /**
@@ -422,19 +431,21 @@ export class AppComponent implements OnInit {
      */
     private hasTopic(name: string, subtopic: boolean = false): boolean {
         if (subtopic)
-            return this.filteredRepos().some(repo =>
-                repo.subtopics.includes(name),
+            return this.filteredRepos().some(r =>
+                r.subtopics.includes(name),
             );
-        return this.filteredRepos().some(repo => {
-            const topics = repo.topics.flatMap(
-                t => this.getTopicBreakdown(t).topics,
-            );
-            return topics.includes(name);
-        });
+
+        // return this.filteredRepos().some(repo => {
+        //     const topics = repo.topics.flatMap(
+        //         t => this.getTopicData(t, this.dataService.topics()).breakdown,
+        //     );
+        //     return topics.includes(name);
+        // });
+        return this.filteredRepos().some(r => r.breakdown.includes(name))
     }
 
-    private isCourse = (name: string) =>
-        this.dataService
-            .topics()
-            .some(t => t.name == name && t.type == "course");
+    // private isCourse = (name: string) =>
+    //     this.dataService
+    //         .topics()
+    //         .some(t => t.name == name && t.type == "course");
 }

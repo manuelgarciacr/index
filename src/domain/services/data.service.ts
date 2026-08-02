@@ -2,8 +2,9 @@ import { inject, Injectable, signal } from "@angular/core";
 import { JoinJsonRequestsService } from "./micro/join-json-requests.service";
 import { catchError, map, of, Subject, tap } from "rxjs";
 import { UndefinedTopicsService } from "./micro/undefined-topics.service";
-import { IOrder, IRepo, ITopic } from "@domain";
+import { GetTopicDataService, IOrder, IRepo, ITopic } from "@domain";
 import { PipeifService } from "./micro/pipeif.service";
+//import { GetRepoTopicsBreakdownService } from "./get-repo-topics-breakdown.service";
 
 @Injectable({
     providedIn: "root",
@@ -12,6 +13,7 @@ export class DataService {
     private readonly joinReq = inject(JoinJsonRequestsService).call;
     private readonly udefTopicsService = inject(UndefinedTopicsService).call;
     private readonly pipeif = inject(PipeifService).call;
+    private readonly getBreakdown = inject(GetTopicDataService).call;
     private _repos = signal<IRepo[]>([]);
     private _topics = signal<ITopic[]>([]);
     private _subtopics = signal<ITopic[]>([]);
@@ -35,7 +37,7 @@ export class DataService {
             .pipe(
                 this.pipeif(
                     v => Array.isArray(v[0]),
-                    tap(v => this._repos.set(v[0]))
+                    tap(v => this._repos.set(v[0])),
                 ),
                 this.pipeif(
                     v =>
@@ -48,15 +50,33 @@ export class DataService {
                             t =>
                                 (t.text = Array.isArray(t.text)
                                     ? t.text
-                                    : [t.text])
+                                    : [t.text]),
                         );
                         (v[2] as ITopic[]).forEach(
                             t =>
                                 (t.text = Array.isArray(t.text)
                                     ? t.text
-                                    : [t.text])
+                                    : [t.text]),
                         );
                         return [v[0], v[1], v[2], [], []];
+                    }),
+                    map(v => {
+                        (v[1] as ITopic[]).forEach(t => {
+                            t.breakdown = this.getBreakdown(t, v[1]).breakdown
+                        });
+                        return v;
+                    }),
+                    map(v => {
+                        (v[0] as IRepo[]).forEach(r => {
+                            r.breakdown = [];
+                            r.topics.forEach(
+                                t =>{
+                                    const uniqueSet = new Set<string>([...r.breakdown, ...this.getBreakdown(t, v[1]).breakdown]);
+                                    r.breakdown = Array.from(uniqueSet)
+                                }
+                            );
+                        });
+                        return v;
                     }),
                     map(v => {
                         (v[0] as IRepo[]).forEach(r => {
@@ -66,7 +86,7 @@ export class DataService {
                     }),
                     map(v => {
                         (v[0] as IRepo[]).forEach(r =>
-                            this.udefTopicsService(r.subtopics, v[2], v[4])
+                            this.udefTopicsService(r.subtopics, v[2], v[4]),
                         );
                         return v;
                     }),
@@ -74,7 +94,7 @@ export class DataService {
                         (v[0] as IRepo[]).forEach(r => {
                             r.topics.forEach(t => {
                                 const some = (v[1] as ITopic[]).some(
-                                    v => v.name === t
+                                    v => v.name === t,
                                 );
                                 if (!some) {
                                     v[1].push({ name: t, text: [], type: "" });
@@ -89,14 +109,14 @@ export class DataService {
                 ),
                 catchError(err => {
                     console.error(err);
-                    this._error$.next(err)
+                    this._error$.next(err);
                     return of();
-                })
+                }),
             )
             .subscribe({
                 next: errors => {
                     errors.forEach(
-                        err => !Array.isArray(err) && this._error$.next(err)
+                        err => !Array.isArray(err) && this._error$.next(err),
                     );
                 },
                 error: err => {
@@ -108,7 +128,7 @@ export class DataService {
     readonly sortRepos = (
         sort01: keyof IOrder,
         sort02: keyof IOrder,
-        order: IOrder
+        order: IOrder,
     ) => {
         const order01 = order[sort01];
         const order02 = order[sort02];

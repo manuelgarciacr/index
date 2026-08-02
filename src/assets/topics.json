@@ -60,9 +60,7 @@
     },
     {
         "name": "aws",
-        "text": [
-            "Amazon Web Services. Cloud computing"
-        ],
+        "text": ["Amazon Web Services. Cloud computing"],
         "type": "subject"
     },
     {
@@ -80,6 +78,7 @@
     {
         "name": "cibernarium",
         "text": [
+            "Linux for programmers. Environment, tools and development. Preparation for the Linux Foundation LFCA Certificate. July 2025. (27h)",
             "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)",
             "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
             "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)",
@@ -96,9 +95,7 @@
     },
     {
         "name": "course",
-        "text": [
-            "Course material"
-        ],
+        "text": ["Course material"],
         "type": "special"
     },
     {
@@ -114,9 +111,26 @@
         "type": "subject"
     },
     {
-        "name": "curso-nodejs",
+        "name": "docker",
         "text": [
-            "Cibernarium. Barcelona Activa."
+            "Docker is a set of products that uses operating system-level virtualization to deliver software in packages called containers",
+            "Docker automates the deployment of applications within lightweight containers, enabling them to run consistently across different computing environments"
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "docker-course",
+        "text": [
+            "Tema 1 - Introducció i instal·lació de Docker",
+            "Tema 2 - Imatges i contenidors",
+            "Tema 3 - Empaquetant aplicacions amb Docker",
+            "Tema 4 - Construir i pujar imatges en el registre",
+            "Tema 5 - Configuració de xarxa en Docker",
+            "Tema 6 - Emmagatzematge en Docker",
+            "Tema 7 - Orquestrant sistemes amb Docker",
+            "Tema 8 - Docker i el cloud",
+            "Tema 9 - Exercicis pràctics",
+            "Cibernarium. Barcelona Activa. Docker for beginners: virtualization, containers and cloud orchestration. June 2025. (16h)"
         ],
         "type": "course"
     },
@@ -167,7 +181,7 @@
     },
     {
         "name": "linux-course",
-        "text": "]Linux for programmers. Environment, tools and development (27h) Preparation for the Linux Foundation LFCA Certificate. July 2025",
+        "text": "Linux for programmers. Environment, tools and development. Preparation for the Linux Foundation LFCA Certificate. July 2025. (27h)",
         "type": "course"
     },
     {
@@ -199,6 +213,20 @@
         "type": "course"
     },
     {
+        "name": "nodejs",
+        "text": [
+            "Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more",
+            "Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser",
+            "According to the Stack Overflow Developer Survey, Node.js is one of the most commonly used web technologies"
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "nodejs-course",
+        "text": ["Nodejs course repository fork"],
+        "type": "course"
+    },
+    {
         "name": "scss",
         "text": [],
         "type": "subject"
@@ -213,7 +241,7 @@
     {
         "name": "seo-asedem-course",
         "text": [
-            "SEO/SEM Positioning course” (60h) taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9% "
+            "SEO/SEM Positioning course” taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9% "
         ],
         "type": "course"
     },
@@ -236,6 +264,23 @@
         "text": [
             "Thematization of an application with resources such as Sass, material angular, bootstrap, etc."
         ],
+        "type": "subject"
+    },
+    {
+        "name": "tmux",
+        "text": [
+            "Is an open-source terminal multiplexer (ISC license) developed by Nicholas Marriott, designed to allow the creation, access, and control of multiple terminal sessions from a single screen.",
+            "It is an essential tool for system administrators and developers, as it allows you to divide the console into panels, manage separate windows, and keep processes running in the background"
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "tmux2k",
+        "text": [
+            "Is a highly customizable framework designed to enhance the tmux status bar",
+            "You can integrate your own plugins inside the tmux2k framework"
+        ],
+        "topics": "tmux",
         "type": "subject"
     }
 ]

@@ -3,5 +3,6 @@ export interface ITopic {
     text: string[] | string;
     sufix: number | undefined;
     topics: string[] | string | undefined;
+    breakdown: string[];
     type: string;
 }

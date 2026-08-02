@@ -9,6 +9,7 @@ export interface IRepo {
     languages: { [key: string]: number };
     topics: string[];
     subtopics: string[];
+    breakdown: string[];
     private: boolean;
     show: boolean
 }
