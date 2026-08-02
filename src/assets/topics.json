@@ -60,7 +60,9 @@
     },
     {
         "name": "aws",
-        "text": ["Amazon Web Services. Cloud computing"],
+        "text": [
+            "Amazon Web Services. Cloud computing"
+        ],
         "type": "subject"
     },
     {
@@ -95,7 +97,9 @@
     },
     {
         "name": "course",
-        "text": ["Course material"],
+        "text": [
+            "Course material"
+        ],
         "type": "special"
     },
     {
@@ -223,7 +227,9 @@
     },
     {
         "name": "nodejs-course",
-        "text": ["Nodejs course repository fork"],
+        "text": [
+            "Nodejs course repository fork"
+        ],
         "type": "course"
     },
     {
