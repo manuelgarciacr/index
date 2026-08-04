@@ -38,9 +38,14 @@
     {
         "name": "angular-bootcamp",
         "text": [
-            "Angular Bootcamp at the IT Academy of Barcelona Activa.",
-            "Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, RxJS, etc.",
-            "June-January 2023-2024. Final grade 100% (Excellent)"
+            "Angular Bootcamp. IT Academy of Barcelona Activa. June 2023 - January 2024. Final grade 100% (Excellent)",
+            " - Angular 17",
+            " - Angular Material",
+            " - Bootstrap 5",
+            " - Flex-Layout",
+            " - Grid-Layout",
+            " - Signals",
+            " - RxJS, etc."
         ],
         "type": "course"
     },
@@ -68,21 +73,19 @@
     {
         "name": "aws-course",
         "text": [
+            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
             "Tema 1 - Introducció a AWS",
             "Tema 2 - Desenvolupament amb AWS",
             "Tema 3 - Arquitectura Serverless amb AWS",
             "Tema 4 - CI\\CD i DevOps amb AWS",
-            "Pràctica extra CRUD API",
-            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)"
+            "Pràctica - CRUD API"
         ],
         "type": "course"
     },
     {
         "name": "cibernarium",
         "text": [
-            "Linux for programmers. Environment, tools and development. Preparation for the Linux Foundation LFCA Certificate. July 2025. (27h)",
-            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)",
-            "Cloud Computing with AWS for Beginners. Cibernarium of Barcelona Activa. March 2025. (16h)",
+            "Cibernàrium is a technological training center of Barcelona Activa (Barcelona City Council), designed to improve the digital skills of professionals, companies and citizens.",
             "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)",
             "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)"
         ],
@@ -91,7 +94,8 @@
     {
         "name": "cifo-la-violeta",
         "text": [
-            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
+            "Center for Innovation and Occupational Training (CIFO) La Violeta in Barcelona",
+            "Dedicated to the professional qualification and requalification of people who want to improve their professional skills in the information and communication technologies sector"
         ],
         "type": "centre"
     },
@@ -105,6 +109,7 @@
     {
         "name": "coursera",
         "text": [
+            "Coursera is a virtual education platform born in October 2011 and developed by academics at Stanford University",
             "Angular 2: Online course 'Front-End JavaScript Frameworks: Angular' (38h) taught by The Hong Kong University of Science and Technology on Coursera. Scholarship from the Generalitat de Catalunya. Angular Material, Flex-Layout, RxJS, etc. November-December 2020. Final grade 100%."
         ],
         "type": "centre"
@@ -125,6 +130,7 @@
     {
         "name": "docker-course",
         "text": [
+            "Docker for beginners: virtualization, containers and cloud orchestration. Cibernarium. Barcelona Activa. June 2025. (16h)",
             "Tema 1 - Introducció i instal·lació de Docker",
             "Tema 2 - Imatges i contenidors",
             "Tema 3 - Empaquetant aplicacions amb Docker",
@@ -133,8 +139,7 @@
             "Tema 6 - Emmagatzematge en Docker",
             "Tema 7 - Orquestrant sistemes amb Docker",
             "Tema 8 - Docker i el cloud",
-            "Tema 9 - Exercicis pràctics",
-            "Cibernarium. Barcelona Activa. Docker for beginners: virtualization, containers and cloud orchestration. June 2025. (16h)"
+            "Tema 9 - Exercicis pràctics"
         ],
         "type": "course"
     },
@@ -155,14 +160,14 @@
     {
         "name": "github-course",
         "text": [
+            "GIT and GITHUB for programming persons. Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)",
             "Tema 1 - Introducció a Git i Github",
             "Tema 2 - Treballant amb Github Repository",
             "Tema 3 - Funcions de col·laboració",
             "Tema 4 - Desenvolupament modern",
             "Tema 5 - Project Management",
             "Tema 6 - Privacitat, Seguretat i Administració",
-            "Tema 7 - Beneficis de GitHub Community",
-            "GIT and GITHUB for programming persons - Preparation for the official Github Foundation certificate. Cibernarium of Barcelona Activa. April 2025. (28h)"
+            "Tema 7 - Beneficis de GitHub Community"
         ],
         "type": "course"
     },
@@ -174,7 +179,7 @@
     {
         "name": "it-academy",
         "text": [
-            "Angular 17: Bootcamp of Angular at the IT Academy of Barcelona Activa. Angular Material 17, Bootstrap 5, Flex-Layout, Grid-Layout, Signals, Rxjs, etc. June-January 2023-2024. 100% final note (excellent)."
+            "IT Academy is a technological training program promoted by Barcelona Activa (Barcelona City Council), designed to train people in high-demand digital profiles such as web development, data analysis and cybersecurity"
         ],
         "type": "centre"
     },
@@ -198,7 +203,7 @@
     {
         "name": "lopdgdd-course",
         "text": [
-            "LOPDGDD - Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
+            "LOPDGDD. Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
         "type": "course"
     },
@@ -212,7 +217,7 @@
     {
         "name": "mysql-course",
         "text": [
-            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
+            "Advanced MySQL. Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
         "type": "course"
     },
@@ -247,7 +252,7 @@
     {
         "name": "seo-asedem-course",
         "text": [
-            "SEO/SEM Positioning course” taught by ASEDEM in Barcelona. Organic and payment positioning. Google Analytics, Gogle ADS, etc. September-October 2020. (60h) Final note 83.9% "
+            "SEO/SEM Positioning. Organic and payment positioning. Google Analytics, Gogle ADS, etc. ASEDEM in Barcelona. September-October 2020. (60h) Final note 83.9% "
         ],
         "type": "course"
     },

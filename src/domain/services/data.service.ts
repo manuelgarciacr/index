@@ -1,9 +1,7 @@
 import { inject, Injectable, signal } from "@angular/core";
-import { JoinJsonRequestsService } from "./micro/join-json-requests.service";
 import { catchError, map, of, Subject, tap } from "rxjs";
-import { UndefinedTopicsService } from "./micro/undefined-topics.service";
-import { GetTopicDataService, IOrder, IRepo, ITopic } from "@domain";
-import { PipeifService } from "./micro/pipeif.service";
+//import { UndefinedTopicsService } from "./micro/undefined-topics.service";
+import { IOrder, IRepo, ITopic, JoinJsonRequestsService, PipeifService, SetTopicDataService, TextToArrayService } from "@domain";
 //import { GetRepoTopicsBreakdownService } from "./get-repo-topics-breakdown.service";
 
 @Injectable({
@@ -11,9 +9,10 @@ import { PipeifService } from "./micro/pipeif.service";
 })
 export class DataService {
     private readonly joinReq = inject(JoinJsonRequestsService).call;
-    private readonly udefTopicsService = inject(UndefinedTopicsService).call;
+    // private readonly udefTopicsService = inject(UndefinedTopicsService).call;
+    private readonly textToArray = inject(TextToArrayService).call;
     private readonly pipeif = inject(PipeifService).call;
-    private readonly getBreakdown = inject(GetTopicDataService).call;
+    private readonly setTopicData = inject(SetTopicDataService).call;
     private _repos = signal<IRepo[]>([]);
     private _topics = signal<ITopic[]>([]);
     private _subtopics = signal<ITopic[]>([]);
@@ -35,76 +34,99 @@ export class DataService {
     constructor() {
         this.joinReq("data", "topics", "subtopics")
             .pipe(
-                this.pipeif(
-                    v => Array.isArray(v[0]),
-                    tap(v => this._repos.set(v[0])),
-                ),
+                // this.pipeif(
+                //     v => Array.isArray(v[0]),
+                //     tap(v => this._repos.set(v[0])),
+                // ),
                 this.pipeif(
                     v =>
                         Array.isArray(v[0]) &&
                         Array.isArray(v[1]) &&
                         Array.isArray(v[2]),
+                    map(v => {
+                        (v[0] as IRepo[]).forEach(r => {
+                            r.topics2 = [];
+                            r.topics.forEach(tName => {
+                                const topic = (v[1] as ITopic[]).find(
+                                    t => t.name == tName,
+                                );
+                                r.topics2.push(topic ?? tName);
+                            });
+                        });
+                        return v;
+                    }),
                     // converts "text": string to "text": string[]
                     map(v => {
                         (v[1] as ITopic[]).forEach(
-                            t =>
-                                (t.text = Array.isArray(t.text)
-                                    ? t.text
-                                    : [t.text]),
+                            t => (t.text = this.textToArray(t.text)),
                         );
                         (v[2] as ITopic[]).forEach(
-                            t =>
-                                (t.text = Array.isArray(t.text)
-                                    ? t.text
-                                    : [t.text]),
+                            t => (t.text = this.textToArray(t.text)),
                         );
-                        return [v[0], v[1], v[2], [], []];
+                        //return [v[0], v[1], v[2], [], []];
+                        return v
                     }),
                     map(v => {
-                        (v[1] as ITopic[]).forEach(t => {
-                            t.breakdown = this.getBreakdown(t, v[1]).breakdown
-                        });
-                        return v;
-                    }),
-                    map(v => {
-                        (v[0] as IRepo[]).forEach(r => {
-                            r.breakdown = [];
-                            r.topics.forEach(
-                                t =>{
-                                    const uniqueSet = new Set<string>([...r.breakdown, ...this.getBreakdown(t, v[1]).breakdown]);
-                                    r.breakdown = Array.from(uniqueSet)
-                                }
-                            );
-                        });
-                        return v;
-                    }),
-                    map(v => {
-                        (v[0] as IRepo[]).forEach(r => {
-                            this.udefTopicsService(r.topics, v[1], v[3]);
-                        });
-                        return v;
-                    }),
-                    map(v => {
-                        (v[0] as IRepo[]).forEach(r =>
-                            this.udefTopicsService(r.subtopics, v[2], v[4]),
+                        // (v[1] as ITopic[]).forEach(t => {
+                        //     ({ breakdown: t.breakdown, text: t.text } =
+                        //         // The repos and topics arrays must be
+                        //         //  up to date before calling setTopicData.
+                        //         this.getBreakdown(t, v[1]));
+                        // });
+                        (v[1] as ITopic[]).forEach(t =>
+                            // The repos and topics arrays must be
+                            //  up to date before calling setTopicData.
+                            this.setTopicData(
+                                t,
+                                v[1] as ITopic[],
+                                v[0] as IRepo[],
+                            ),
                         );
                         return v;
                     }),
+
+                    // map(v => {
+                    //     (v[0] as IRepo[]).forEach(r => {
+                    //         r.breakdown = [];
+                    //         r.topics.forEach(tName => {
+                    //             const topic = (v[1] as ITopic[]).find(t => t.name == tName)
+                    //             const uniqueSet = new Set<string>([
+                    //                 ...r.breakdown,
+                    //                 ...topic?.breakdown ?? [tName],
+                    //             ]);
+                    //             r.breakdown = Array.from(uniqueSet);
+                    //         });
+                    //     });
+                    //     return v;
+                    // }),
+                    // map(v => {
+                    //     (v[0] as IRepo[]).forEach(r => {
+                    //         this.udefTopicsService(r.topics, v[1], v[3]);
+                    //     });
+                    //     return v;
+                    // }),
+                    // map(v => {
+                    //     (v[0] as IRepo[]).forEach(r =>
+                    //         this.udefTopicsService(r.subtopics, v[2], v[4]),
+                    //     );
+                    //     return v;
+                    // }),
                     tap(v => {
-                        (v[0] as IRepo[]).forEach(r => {
-                            r.topics.forEach(t => {
-                                const some = (v[1] as ITopic[]).some(
-                                    v => v.name === t,
-                                );
-                                if (!some) {
-                                    v[1].push({ name: t, text: [], type: "" });
-                                }
-                            });
-                        });
+                        // (v[0] as IRepo[]).forEach(r => {
+                        //     r.topics.forEach(t => {
+                        //         const some = (v[1] as ITopic[]).some(
+                        //             v => v.name === t,
+                        //         );
+                        //         if (!some) {
+                        //             v[1].push({ name: t, text: [], type: "" });
+                        //         }
+                        //     });
+                        // });
+                        this._repos.set(v[0]);
                         this._topics.set(v[1]);
                         this._subtopics.set(v[2]);
-                        this._udefTopics.set(v[3]);
-                        this._udefSubtopics.set(v[4]);
+                        // this._udefTopics.set(v[3]);
+                        // this._udefSubtopics.set(v[4]);
                     }),
                 ),
                 catchError(err => {

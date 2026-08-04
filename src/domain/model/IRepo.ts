@@ -1,3 +1,5 @@
+import { ITopic } from "./ITopic";
+
 export interface IRepo {
     name: string;
     description: string;
@@ -8,6 +10,7 @@ export interface IRepo {
     pushed: string;
     languages: { [key: string]: number };
     topics: string[];
+    topics2: (ITopic | string)[];
     subtopics: string[];
     breakdown: string[];
     private: boolean;
