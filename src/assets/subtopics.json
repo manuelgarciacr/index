@@ -15,16 +15,16 @@
         "type": "element"
     },
     {
+        "name": "show-private",
+        "text": "",
+        "type": "special"
+    },
+    {
         "name": "update-control",
         "text": [
             "Update html control programmatically.",
             "Sometimes ngModel doesn't works properly."
         ],
         "type": ""
-    },
-    {
-        "name": "show-private",
-        "text": "",
-        "type": "special"
     }
 ]

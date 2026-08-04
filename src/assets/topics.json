@@ -50,10 +50,32 @@
         "type": "course"
     },
     {
+        "name": "angular-library",
+        "text": [
+            "An Angular library is a reusable collection of components, services, directives, and other resources designed to extend Angular's base functionality or solve common problems across multiple applications",
+            "Unlike a standard application, a library cannot run on its own and must be imported and used within an existing Angular application"
+        ],
+        "type": "subject"
+    },
+    {
         "name": "angular-material",
         "text": [
             "Material Design components for Angular. Internationalized and accessible components for everyone. Well tested to ensure performance and reliability. Straightforward APIs with consistent cross platform behaviour. Provide tools that help developers build their own custom components with common interaction patterns. Customizable within the bounds of the Material Design specification. Built by the Angular team to integrate seamlessly with Angular. Start from scratch or drop into your existing applications."
         ],
+        "type": "subject"
+    },
+    {
+        "name": "angular-schematics",
+        "text": [
+            "Angular Schematics are template-based code generators that act as the engine behind the Angular CLI's ng generate and ng add commands",
+            "They are essentially a set of instructions for transforming a software project by generating, modifying, or deleting files and updating configuration"
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "angularjs",
+        "text": "AngularJS (Angular version 1.x) is an open source JavaScript framework, originally maintained by Google, designed to facilitate the development of single page web applications (SPA)",
+        "topics": "angular",
         "type": "subject"
     },
     {
@@ -184,6 +206,11 @@
         "type": "centre"
     },
     {
+        "name": "javascript",
+        "text": "JavaScript (commonly abbreviated as JS) is a lightweight, interpreted, high-level programming language, recognized as the universal standard for adding interactivity, logic, and dynamic behavior to web pages and digital applications",
+        "type": "subject"
+    },
+    {
         "name": "linux",
         "text": "Linux is a free, open source, Unix-like operating system created by Linus Torvalds in 1991.",
         "type": "subject"
@@ -236,6 +263,22 @@
             "Nodejs course repository fork"
         ],
         "type": "course"
+    },
+    {
+        "name": "npm",
+        "text": "npm (Node Package Manager) is the default package manager for the Node.js runtime.  It serves as an essential tool in the JavaScript ecosystem, allowing developers to easily install, share and manage reusable code libraries (packages)",
+        "topics": "javascript",
+        "type": "subject"
+    },
+    {
+        "name": "npm-publish",
+        "text": "npm publish is the command used to upload and distribute a package (library or module) to the npm registry (public or private), allowing other developers to install it using npm install",
+        "type": "subject"
+    },
+    {
+        "name": "sass",
+        "text": "",
+        "type": "subject"
     },
     {
         "name": "scss",
@@ -292,49 +335,6 @@
             "You can integrate your own plugins inside the tmux2k framework"
         ],
         "topics": "tmux",
-        "type": "subject"
-    },
-    {
-        "name": "angular-library",
-        "text": [
-            "An Angular library is a reusable collection of components, services, directives, and other resources designed to extend Angular's base functionality or solve common problems across multiple applications",
-            "Unlike a standard application, a library cannot run on its own and must be imported and used within an existing Angular application"
-        ],
-        "type": "subject"
-    },
-    {
-        "name": "angular-schematics",
-        "text": [
-            "Angular Schematics are template-based code generators that act as the engine behind the Angular CLI's ng generate and ng add commands",
-            "They are essentially a set of instructions for transforming a software project by generating, modifying, or deleting files and updating configuration"
-        ],
-        "type": "subject"
-    },
-    {
-        "name": "sass",
-        "text": "",
-        "type": "subject"
-    },
-    {
-        "name": "angularjs",
-        "text": "AngularJS (Angular version 1.x) is an open source JavaScript framework, originally maintained by Google, designed to facilitate the development of single page web applications (SPA)",
-        "topics": "angular",
-        "type": "subject"
-    },
-    {
-        "name": "javascript",
-        "text": "JavaScript (commonly abbreviated as JS) is a lightweight, interpreted, high-level programming language, recognized as the universal standard for adding interactivity, logic, and dynamic behavior to web pages and digital applications",
-        "type": "subject"
-    },
-    {
-        "name": "npm",
-        "text": "npm (Node Package Manager) is the default package manager for the Node.js runtime.  It serves as an essential tool in the JavaScript ecosystem, allowing developers to easily install, share and manage reusable code libraries (packages)",
-        "topics": "javascript",
-        "type": "subject"
-    },
-    {
-        "name": "npm-publish",
-        "text": "npm publish is the command used to upload and distribute a package (library or module) to the npm registry (public or private), allowing other developers to install it using npm install",
         "type": "subject"
     }
 ]
