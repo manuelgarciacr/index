@@ -38,9 +38,11 @@ import {
     IOrder,
     //GetTopicDataService,
     CokiesConfigurationService,
+    ITopic,
 } from "@domain";
 import { filter, take } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
+import { environment } from "environments/environment";
 
 @Component({
     selector: "app-root",
@@ -94,7 +96,9 @@ export class AppComponent implements OnInit {
         )
         .subscribe(() => {
             this.getSortConfiguration();
-            /* if (this.showAll())*/ this.logUndefinedTopics();
+            if (!environment.production) {
+                this.logUndefinedTopics();
+            }
         });
     // Topics selected for filter the repos on the screen
     protected readonly selectedTopics = signal<string[]>([]);
@@ -358,15 +362,24 @@ export class AppComponent implements OnInit {
             .filter((t): t is string => typeof t == "string");
         const udefSubTopics = this.filteredRepos()
             .flatMap(r => r.subtopics)
-            .filter(st => !this.subtopics().some(t => t.name == st));
+            .filter(stName => !this.subtopics().some(t => t.name == stName));
+        const noTextTopics = this.filteredRepos()
+            .flatMap(r => r.topics2)
+            .filter((t): t is ITopic => typeof t != "string")
+            .filter(t => !t.text.length)
+            .map(t => t.name + " (blank text)");
+        const noTextSubTopics = this.filteredRepos()
+            .flatMap(r => r.subtopics)
+            .filter(stName => this.subtopics().find(st => st.name == stName)?.text.length == 0 )
+            .map(stName => stName + " (blank text)");
 
         if (udefTopics.length) {
             console.error("Undefined topics:");
-            console.log([...new Set(udefTopics)].sort());
+            console.log([...new Set([...udefTopics, ...noTextTopics])].sort());
         }
         if (udefSubTopics.length) {
             console.error("Undefined subtopics:");
-            console.log([...new Set(udefSubTopics)].sort());
+            console.log([...new Set([...udefSubTopics, ...noTextSubTopics])].sort());
         }
     };
 

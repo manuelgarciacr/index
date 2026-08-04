@@ -21,5 +21,10 @@
             "Sometimes ngModel doesn't works properly."
         ],
         "type": ""
+    },
+    {
+        "name": "show-private",
+        "text": "",
+        "type": "special"
     }
 ]
