@@ -270,13 +270,15 @@
         "webpage": "",
         "created": "2025/07-28T18:25:21Z",
         "pushed": "2025/10-24T17:20:58Z",
-        "topics": [],
+        "topics": [
+            "tmux2k"
+        ],
         "private": false,
         "languages": {
             "Shell": 100
         },
         "subtopics": [],
-        "show": false
+        "show": true
     },
     {
         "name": "Bootstrap",
@@ -362,7 +364,7 @@
         "created": "2025/10-07T14:28:20Z",
         "pushed": "2025/10-07T16:52:18Z",
         "topics": [],
-        "private": false,
+        "private": true,
         "languages": {},
         "subtopics": [],
         "show": false
@@ -666,7 +668,7 @@
         "fork": false,
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/08-03T03:26:24Z",
+        "pushed": "2026/08-04T15:36:27Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -1114,7 +1116,6 @@
         "created": "2025/07-24T07:02:15Z",
         "pushed": "2025/10-24T18:15:42Z",
         "topics": [
-            "tmux",
             "tmux2k"
         ],
         "private": false,
@@ -1132,7 +1133,14 @@
         "webpage": "https://manuelgarciacr.github.io/ngx-oauth2-oidc",
         "created": "2024/06-03T06:18:24Z",
         "pushed": "2025/06-07T15:02:34Z",
-        "topics": [],
+        "topics": [
+            "angular-18",
+            "angular-library",
+            "angular-material",
+            "angular-schematics",
+            "npm-publish",
+            "testing"
+        ],
         "private": false,
         "languages": {
             "TypeScript": 84,
@@ -1142,7 +1150,7 @@
             "CSS": 0.1
         },
         "subtopics": [],
-        "show": false,
+        "show": true,
         "page": "https://manuelgarciacr.github.io/ngx-oauth2-oidc"
     },
     {
@@ -1496,19 +1504,21 @@
     },
     {
         "name": "tmux-netspeed",
-        "description": "",
+        "description": "tmux plugin test",
         "repository": "https://github.com/manuelgarciacr/tmux-netspeed",
         "fork": false,
         "webpage": "",
         "created": "2025/07-19T01:09:33Z",
         "pushed": "2025/07-21T16:49:50Z",
-        "topics": [],
+        "topics": [
+            "tmux"
+        ],
         "private": false,
         "languages": {
             "Shell": 100
         },
         "subtopics": [],
-        "show": false
+        "show": true
     },
     {
         "name": "vite-gift-list",
