@@ -107,11 +107,22 @@
         "type": "course"
     },
     {
+        "name": "bcryptjs",
+        "text": "bcryptjs is a JavaScript library optimized for hashing passwords using the bcrypt algorithm, standing out for having zero native dependencies and working in both Node.js and the browser",
+        "type": "subject"
+    },
+    {
         "name": "cibernarium",
         "text": [
             "Cibernàrium is a technological training center of Barcelona Activa (Barcelona City Council), designed to improve the digital skills of professionals, companies and citizens"
         ],
         "type": "centre"
+    },
+    {
+        "name": "cibersecurity-course",
+        "text": "Cybersecurity course. Preparation for CISCO certifications. IT Academy of Barcelona Activa in collaboration with SIRT and the CISCO Networking Academy. October 2025-July 2026",
+        "topics": "it-academy",
+        "type": "course"
     },
     {
         "name": "cifo-la-violeta",
@@ -167,6 +178,11 @@
         "type": "course"
     },
     {
+        "name": "express",
+        "text": "Express.js is a minimalist, flexible and fast web framework for Node.js, designed to build web applications and backend APIs efficiently.",
+        "type": "subject"
+    },
+    {
         "name": "github",
         "text": [
             "GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code. It uses Git to provide distributed version control, and GitHub itself provides access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project."
@@ -194,6 +210,14 @@
         ],
         "topics": "cibernarium",
         "type": "course"
+    },
+    {
+        "name": "googleapis",
+        "text": [
+            "Googleapis refers to the APIs (Application Programming Interfaces) developed by Google, which allow the communication and integration of Google services with other applications or websites",
+            "These tools provide access to functionalities such as maps, authentication, data analysis and calendar management or cloud storage"
+        ],
+        "type": "subject"
     },
     {
         "name": "html5",
@@ -239,6 +263,11 @@
         "type": "course"
     },
     {
+        "name": "mongodb",
+        "text": "MongoDB is an open source, document-oriented NoSQL database designed to manage large volumes of structured, semi-structured and unstructured data.",
+        "type": "subject"
+    },
+    {
         "name": "mysql",
         "text": [
             "MySQL is an open source relational database management system developed under dual license: General Public License/Commercial License by Oracle Corporation"
@@ -270,6 +299,14 @@
         "type": "course"
     },
     {
+        "name": "nodemailer",
+        "text": [
+            "Nodemailer is a popular Node.js module designed to make it easy to send emails from backend applications",
+            "It is characterized by being a library with zero runtime dependencies, which guarantees lightweight and secure packaging"
+        ],
+        "type": "subject"
+    },
+    {
         "name": "npm",
         "text": "npm (Node Package Manager) is the default package manager for the Node.js runtime.  It serves as an essential tool in the JavaScript ecosystem, allowing developers to easily install, share and manage reusable code libraries (packages)",
         "topics": "javascript",
@@ -278,6 +315,11 @@
     {
         "name": "npm-publish",
         "text": "npm publish is the command used to upload and distribute a package (library or module) to the npm registry (public or private), allowing other developers to install it using npm install",
+        "type": "subject"
+    },
+    {
+        "name": "passport",
+        "text": "Passport.js is an Express-compatible authentication middleware for Node.js that integrates non-intrusively into any web application",
         "type": "subject"
     },
     {
@@ -342,48 +384,6 @@
             "You can integrate your own plugins inside the tmux2k framework"
         ],
         "topics": "tmux",
-        "type": "subject"
-    },
-    {
-        "name": "cibersecurity-course",
-        "text": "Cybersecurity course. Preparation for CISCO certifications. IT Academy of Barcelona Activa in collaboration with SIRT and the CISCO Networking Academy. October 2025-July 2026",
-        "topics": "it-academy",
-        "type": "course"
-    },
-    {
-        "name": "express",
-        "text": "Express.js is a minimalist, flexible and fast web framework for Node.js, designed to build web applications and backend APIs efficiently.",
-        "type": "subject"
-    },
-    {
-        "name": "mongodb",
-        "text": "MongoDB is an open source, document-oriented NoSQL database designed to manage large volumes of structured, semi-structured and unstructured data.",
-        "type": "subject"
-    },
-    {
-        "name": "nodemailer",
-        "text": [
-            "Nodemailer is a popular Node.js module designed to make it easy to send emails from backend applications",
-            "It is characterized by being a library with zero runtime dependencies, which guarantees lightweight and secure packaging"
-        ],
-        "type": "subject"
-    },
-    {
-        "name": "passport",
-        "text": "Passport.js is an Express-compatible authentication middleware for Node.js that integrates non-intrusively into any web application",
-        "type": "subject"
-    },
-    {
-        "name": "bcryptjs",
-        "text": "bcryptjs is a JavaScript library optimized for hashing passwords using the bcrypt algorithm, standing out for having zero native dependencies and working in both Node.js and the browser",
-        "type": "subject"
-    },
-    {
-        "name": "googleapis",
-        "text": [
-            "Googleapis refers to the APIs (Application Programming Interfaces) developed by Google, which allow the communication and integration of Google services with other applications or websites",
-            "These tools provide access to functionalities such as maps, authentication, data analysis and calendar management or cloud storage"
-        ],
         "type": "subject"
     }
 ]
