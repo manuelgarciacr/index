@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetTopicDataService } from './get-topic-data.service';
+import { GetTopicDataService } from './ELIMINAR-get-topic-data.service';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 

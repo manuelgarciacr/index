@@ -17,24 +17,13 @@ export class SetTopicDataService {
         const subjects = [
             ...words.slice(0, length),
             ...this.textToArray(topic.topics ?? [])
-        ];
+        ].filter(sb => (topics.find(t => t.name == sb)?.type ?? "subject") == "subject");
         const topics2 = subjects
             .map(s => topics.find(t => t.name === s))
             .filter((t): t is ITopic => t !== undefined);
 
-        // if (topic.topics)
-        //     subjects.push(
-        //         ...(typeof topic.topics === "string"
-        //             ? [topic.topics]
-        //             : topic.topics),
-        //     );
 //console.log(`DEBUG ${++this.cnt}`, topic, subjects);
 
-        // topic.type == "course" ? breakdown.unshift("course") : "";
-        // breakdown.unshift(...subjects);
-
-        // const text = Array.isArray(topic.text) ? [...topic.text] : [topic.text];
-        // text.push(...topics2.flatMap(t => t.text));
         topic.breakdown = [...subjects, ...(topic.type == "course" ? ["course"] : []), topic.name]
 
         if (topic.type === "centre") {

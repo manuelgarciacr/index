@@ -47,6 +47,7 @@
             " - Signals",
             " - RxJS, etc."
         ],
+        "topics": "it-academy",
         "type": "course"
     },
     {
@@ -88,7 +89,7 @@
     {
         "name": "aws",
         "text": [
-            "Amazon Web Services. Cloud computing"
+            "Amazon Web Services, Inc. (AWS) is a subsidiary of Amazon that provides on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered, pay-as-you-go basis"
         ],
         "type": "subject"
     },
@@ -102,14 +103,13 @@
             "Tema 4 - CI\\CD i DevOps amb AWS",
             "Pràctica - CRUD API"
         ],
+        "topics": "cibernarium",
         "type": "course"
     },
     {
         "name": "cibernarium",
         "text": [
-            "Cibernàrium is a technological training center of Barcelona Activa (Barcelona City Council), designed to improve the digital skills of professionals, companies and citizens.",
-            "Advanced MySQL - Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)",
-            "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)"
+            "Cibernàrium is a technological training center of Barcelona Activa (Barcelona City Council), designed to improve the digital skills of professionals, companies and citizens"
         ],
         "type": "centre"
     },
@@ -163,6 +163,7 @@
             "Tema 8 - Docker i el cloud",
             "Tema 9 - Exercicis pràctics"
         ],
+        "topics": "cibernarium",
         "type": "course"
     },
     {
@@ -191,6 +192,7 @@
             "Tema 6 - Privacitat, Seguretat i Administració",
             "Tema 7 - Beneficis de GitHub Community"
         ],
+        "topics": "cibernarium",
         "type": "course"
     },
     {
@@ -217,7 +219,8 @@
     },
     {
         "name": "linux-course",
-        "text": "Linux for programmers. Environment, tools and development. Preparation for the Linux Foundation LFCA Certificate. July 2025. (27h)",
+        "text": "Linux for programmers. Environment, tools and development. Preparation for the Linux Foundation LFCA Certificate. Cibernarium of Barcelona Activa. July 2025. (27h)",
+        "topics": "cibernarium",
         "type": "course"
     },
     {
@@ -232,6 +235,7 @@
         "text": [
             "LOPDGDD. Data protection regulation for ICT professionals. CIFO La Violeta. July 2024. (25h)"
         ],
+        "topics": "cifo-la-violeta",
         "type": "course"
     },
     {
@@ -246,6 +250,7 @@
         "text": [
             "Advanced MySQL. Preparation for Oracle's 1Z0-909 MySQL 8.0 Database Developer certificate. Cibernarium of Barcelona Activa. March 2025. (16h)"
         ],
+        "topics": "cibernarium",
         "type": "course"
     },
     {
@@ -297,6 +302,7 @@
         "text": [
             "SEO/SEM Positioning. Organic and payment positioning. Google Analytics, Gogle ADS, etc. ASEDEM in Barcelona. September-October 2020. (60h) Final note 83.9% "
         ],
+        "topics": "asedem",
         "type": "course"
     },
     {
@@ -304,6 +310,7 @@
         "text": [
             "SEO architect analysis. Cibernarium of Barcelona Activa. September 2023. (6h)"
         ],
+        "topics": "cibernarium",
         "type": "course"
     },
     {
@@ -323,7 +330,7 @@
     {
         "name": "tmux",
         "text": [
-            "Is an open-source terminal multiplexer (ISC license) developed by Nicholas Marriott, designed to allow the creation, access, and control of multiple terminal sessions from a single screen.",
+            "Tmux is an open-source terminal multiplexer (ISC license) developed by Nicholas Marriott, designed to allow the creation, access, and control of multiple terminal sessions from a single screen.",
             "It is an essential tool for system administrators and developers, as it allows you to divide the console into panels, manage separate windows, and keep processes running in the background"
         ],
         "type": "subject"
@@ -331,10 +338,52 @@
     {
         "name": "tmux2k",
         "text": [
-            "Is a highly customizable framework designed to enhance the tmux status bar",
+            "Tmux2k is a highly customizable framework designed to enhance the tmux status bar",
             "You can integrate your own plugins inside the tmux2k framework"
         ],
         "topics": "tmux",
+        "type": "subject"
+    },
+    {
+        "name": "cibersecurity-course",
+        "text": "Cybersecurity course. Preparation for CISCO certifications. IT Academy of Barcelona Activa in collaboration with SIRT and the CISCO Networking Academy. October 2025-July 2026",
+        "topics": "it-academy",
+        "type": "course"
+    },
+    {
+        "name": "express",
+        "text": "Express.js is a minimalist, flexible and fast web framework for Node.js, designed to build web applications and backend APIs efficiently.",
+        "type": "subject"
+    },
+    {
+        "name": "mongodb",
+        "text": "MongoDB is an open source, document-oriented NoSQL database designed to manage large volumes of structured, semi-structured and unstructured data.",
+        "type": "subject"
+    },
+    {
+        "name": "nodemailer",
+        "text": [
+            "Nodemailer is a popular Node.js module designed to make it easy to send emails from backend applications",
+            "It is characterized by being a library with zero runtime dependencies, which guarantees lightweight and secure packaging"
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "passport",
+        "text": "Passport.js is an Express-compatible authentication middleware for Node.js that integrates non-intrusively into any web application",
+        "type": "subject"
+    },
+    {
+        "name": "bcryptjs",
+        "text": "bcryptjs is a JavaScript library optimized for hashing passwords using the bcrypt algorithm, standing out for having zero native dependencies and working in both Node.js and the browser",
+        "type": "subject"
+    },
+    {
+        "name": "googleapis",
+        "text": [
+            "Googleapis refers to the APIs (Application Programming Interfaces) developed by Google, which allow the communication and integration of Google services with other applications or websites",
+            "These tools provide access to functionalities such as maps, authentication, data analysis and calendar management or cloud storage"
+        ],
         "type": "subject"
     }
 ]

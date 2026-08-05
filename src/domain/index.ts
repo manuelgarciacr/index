@@ -8,7 +8,7 @@ export * from "./services/storage-configuration.service";
 export * from "./services/data.service";
 export * from "./services/set-centre-text.service";
 export * from "./services/cokies-configuration.service";
-export * from "./services/get-topic-data.service";
+export * from "./services/ELIMINAR-get-topic-data.service";
 export * from "./services/set-topic-data.service";
 
 // model

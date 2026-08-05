@@ -34,6 +34,13 @@ button.display-none {
         mat-card-title {
             border-bottom: 1px solid var(--mat-app-text-color, var(--mat-app-on-background, inherit));
         }
+        mat-card-subtitle {
+            mat-chip {
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
         mat-card-content {
             margin-bottom: 4rem;
         }

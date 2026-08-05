@@ -77,8 +77,10 @@
                         {{item.created.substring(0, 7)}} - {{item.pushed.substring(0, 7)}}
                         <mat-chip-set class="mt-2">
                             @for (topic of item.topics; track $index) {
-                            <mat-chip>
-                                {{topic}}
+                            <mat-chip mat-button (click)="openTopicDialog(topic)">
+                                <span>
+                                    {{topic}}
+                                </span>
                                 <button matChipRemove
                                     [class.display-none]="!notInFilter(topic) && !withDescription(topic)"
                                     (click)="openTopicDialog(topic)"
