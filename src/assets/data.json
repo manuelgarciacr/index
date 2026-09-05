@@ -616,7 +616,7 @@
         "fork": false,
         "webpage": "",
         "created": "2025/04-16T16:15:28Z",
-        "pushed": "2026/08-29T04:30:42Z",
+        "pushed": "2026/09-05T01:39:47Z",
         "topics": [
             "cibernarium",
             "github-actions",
@@ -680,7 +680,7 @@
         "fork": false,
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/09-03T03:48:38Z",
+        "pushed": "2026/09-04T03:52:16Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -1271,6 +1271,22 @@
         "show": false
     },
     {
+        "name": "parseJSON",
+        "description": "",
+        "repository": "https://github.com/manuelgarciacr/parseJSON",
+        "fork": false,
+        "webpage": "",
+        "created": "2026/09-05T01:47:34Z",
+        "pushed": "2026/09-05T01:47:38Z",
+        "topics": [],
+        "private": false,
+        "languages": {
+            "Shell": 100
+        },
+        "subtopics": [],
+        "show": false
+    },
+    {
         "name": "PEC4App",
         "description": "PEC4 UOC Android Course",
         "repository": "https://github.com/manuelgarciacr/PEC4App",
@@ -1393,7 +1409,7 @@
         "fork": false,
         "webpage": "",
         "created": "2026/09-03T12:04:18Z",
-        "pushed": "2026/09-03T21:55:20Z",
+        "pushed": "2026/09-05T01:36:03Z",
         "topics": [],
         "private": false,
         "languages": {
