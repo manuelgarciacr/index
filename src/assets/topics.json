@@ -8,6 +8,13 @@
         "type": "subject"
     },
     {
+        "name": "angular-16",
+        "text": [
+            "Released: 2023-05-03  Active end: 2024-11-08  LTS end: 2025-11-08"
+        ],
+        "type": "version"
+    },
+    {
         "name": "angular-17",
         "text": [
             "Released: 2023-11-08  Active end: 2024-05-08  LTS end: 2025-05-15"
@@ -80,6 +87,16 @@
         "type": "subject"
     },
     {
+        "name": "animations",
+        "text": "Frontend elements animated by CSS, bootstrap, libraries such as Angular animations, etc.",
+        "type": "subject"
+    },
+    {
+        "name": "api",
+        "text": "Creation and/or consumption of APIs, API REST.",
+        "type": "subject"
+    },
+    {
         "name": "asedem",
         "text": [
             "ASEDEM in Barcelona. Training in everything that involves multimedia and digital communications for the company."
@@ -103,7 +120,7 @@
             "Tema 4 - CI\\CD i DevOps amb AWS",
             "Pràctica - CRUD API"
         ],
-        "topics": "cibernarium",
+        "topics": ["cibernarium", "api"],
         "type": "course"
     },
     {
@@ -134,9 +151,7 @@
     },
     {
         "name": "course",
-        "text": [
-            "Course material"
-        ],
+        "text": ["Course material"],
         "type": "special"
     },
     {
@@ -180,6 +195,7 @@
     {
         "name": "express",
         "text": "Express.js is a minimalist, flexible and fast web framework for Node.js, designed to build web applications and backend APIs efficiently.",
+        "topica": "api",
         "type": "subject"
     },
     {
@@ -217,6 +233,7 @@
             "Googleapis refers to the APIs (Application Programming Interfaces) developed by Google, which allow the communication and integration of Google services with other applications or websites",
             "These tools provide access to functionalities such as maps, authentication, data analysis and calendar management or cloud storage"
         ],
+        "topics": "api",
         "type": "subject"
     },
     {
@@ -293,9 +310,7 @@
     },
     {
         "name": "nodejs-course",
-        "text": [
-            "Nodejs course repository fork"
-        ],
+        "text": ["Nodejs course repository fork"],
         "type": "course"
     },
     {
