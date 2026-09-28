@@ -142,7 +142,7 @@
     {
         "name": "bootstrap-5",
         "text": "Released: 2021-05-05  Active end: ?  LTS end: ?",
-        "type":"version"
+        "type": "version"
     },
     {
         "name": "cibernarium",
