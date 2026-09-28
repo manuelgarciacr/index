@@ -120,7 +120,10 @@
             "Tema 4 - CI\\CD i DevOps amb AWS",
             "Pràctica - CRUD API"
         ],
-        "topics": ["cibernarium", "api"],
+        "topics": [
+            "cibernarium",
+            "api"
+        ],
         "type": "course"
     },
     {
@@ -151,7 +154,9 @@
     },
     {
         "name": "course",
-        "text": ["Course material"],
+        "text": [
+            "Course material"
+        ],
         "type": "special"
     },
     {
@@ -310,7 +315,9 @@
     },
     {
         "name": "nodejs-course",
-        "text": ["Nodejs course repository fork"],
+        "text": [
+            "Nodejs course repository fork"
+        ],
         "type": "course"
     },
     {
