@@ -88,7 +88,7 @@
     },
     {
         "name": "animations",
-        "text": "Frontend elements animated by CSS, bootstrap, libraries such as Angular animations, etc.",
+        "text": "Frontend elements animated by CSS, bootstrap, libraries such as @angular/animations, Motion (React), etc.",
         "type": "subject"
     },
     {
@@ -130,6 +130,19 @@
         "name": "bcryptjs",
         "text": "bcryptjs is a JavaScript library optimized for hashing passwords using the bcrypt algorithm, standing out for having zero native dependencies and working in both Node.js and the browser",
         "type": "subject"
+    },
+    {
+        "name": "bootstrap",
+        "text": [
+            "Bootstrap is an open source CSS framework for front-end web development, originally created by Twitter in 2011.",
+            "Its main function is to facilitate the creation of responsive user interfaces (adaptable to mobiles, tablets and desktop) using a structure based on HTML, CSS and JavaScript."
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "bootstrap-5",
+        "text": "Released: 2021-05-05  Active end: ?  LTS end: ?",
+        "type":"version"
     },
     {
         "name": "cibernarium",
@@ -204,6 +217,14 @@
         "type": "subject"
     },
     {
+        "name": "forms",
+        "text": [
+            "Interfaces designed so that the user enters structured data and can interact bidirectionally with the application.",
+            "In the web context, it is implemented through the <form> tag in HTML and libraries such as @angular/forms, React Hook Form, etc."
+        ],
+        "type": "subject"
+    },
+    {
         "name": "github",
         "text": [
             "GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code. It uses Git to provide distributed version control, and GitHub itself provides access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project."
@@ -256,6 +277,15 @@
     {
         "name": "javascript",
         "text": "JavaScript (commonly abbreviated as JS) is a lightweight, interpreted, high-level programming language, recognized as the universal standard for adding interactivity, logic, and dynamic behavior to web pages and digital applications",
+        "type": "subject"
+    },
+    {
+        "name": "jump2digital",
+        "text": [
+            "Jump2Digital was the reference event for digital talent in Barcelona, ​​organized by Mobile World Capital Barcelona. It was expected to reach 5,000 attendees, but it managed to gather more than 7,000 participants.",
+            "The congress, held at Fira Barcelona Montjuïc, had artificial intelligence (AI) and video games as its main themes.",
+            "Its key activities included: Speed ​​Dating, Hackathon with more than 100 participants and 200 mentors, Workshops and Presentations."
+        ],
         "type": "subject"
     },
     {
