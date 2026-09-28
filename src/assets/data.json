@@ -680,7 +680,7 @@
         "fork": false,
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/09-27T04:37:49Z",
+        "pushed": "2026/09-28T04:39:23Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -958,7 +958,15 @@
         "webpage": "https://manuelgarciacr.github.io/j2d-manuel-gc",
         "created": "2023/10-30T05:36:57Z",
         "pushed": "2023/11-05T21:48:59Z",
-        "topics": [],
+        "topics": [
+            "angular-material",
+            "angular16",
+            "animations",
+            "api-rest",
+            "bootstrap5",
+            "forms",
+            "jump2digital"
+        ],
         "private": false,
         "languages": {
             "TypeScript": 68.8,
@@ -966,7 +974,7 @@
             "HTML": 10.7
         },
         "subtopics": [],
-        "show": false,
+        "show": true,
         "page": "https://manuelgarciacr.github.io/j2d-manuel-gc"
     },
     {
