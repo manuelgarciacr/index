@@ -664,7 +664,7 @@
         "fork": false,
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/09-29T08:35:00Z",
+        "pushed": "2026/09-29T09:30:53Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -693,50 +693,6 @@
             "testing-protected-elements"
         ],
         "show": true
-    },
-    {
-        "name": "ita-ang-jsts",
-        "description": "Sprint 3. JavaScript / TypeScript",
-        "repository": "https://github.com/manuelgarciacr/ita-ang-jsts",
-        "fork": false,
-        "webpage": "",
-        "created": "2023/07-03T07:39:44Z",
-        "pushed": "2023/07-06T11:03:00Z",
-        "topics": [],
-        "private": false,
-        "languages": {
-            "CSS": 87.1,
-            "HTML": 7.7,
-            "JavaScript": 5.2
-        },
-        "subtopics": [],
-        "show": false
-    },
-    {
-        "name": "ITA-angular-first-delivery",
-        "description": "IT Academy. Angular bootcamp. First delivery. HTML5, SCSS.",
-        "repository": "https://github.com/manuelgarciacr/ITA-angular-first-delivery",
-        "fork": false,
-        "webpage": "https://manuelgarciacr.github.io/ITA-angular-first-delivery",
-        "created": "2023/06-17T18:47:32Z",
-        "pushed": "2026/09-28T18:43:46Z",
-        "topics": [
-            "angular-bootcamp",
-            "animations",
-            "css",
-            "html5",
-            "it-academy",
-            "scss"
-        ],
-        "private": false,
-        "languages": {
-            "SCSS": 39,
-            "HTML": 30.8,
-            "CSS": 30.1
-        },
-        "subtopics": [],
-        "show": true,
-        "page": "https://manuelgarciacr.github.io/ITA-angular-first-delivery"
     },
     {
         "name": "ITA-Angular-First-deliveryOLD",
@@ -775,24 +731,6 @@
         "show": false
     },
     {
-        "name": "ita-angular-js",
-        "description": "IT Academy. Angular course. Third sprint",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-js",
-        "fork": false,
-        "webpage": "",
-        "created": "2023/07-06T19:18:10Z",
-        "pushed": "2023/07-10T14:51:33Z",
-        "topics": [],
-        "private": false,
-        "languages": {
-            "HTML": 56.7,
-            "JavaScript": 41,
-            "CSS": 2.4
-        },
-        "subtopics": [],
-        "show": false
-    },
-    {
         "name": "ita-angular-jses6",
         "description": "Sprint 4. JavaScript ECMA6 - 13",
         "repository": "https://github.com/manuelgarciacr/ita-angular-jses6",
@@ -810,25 +748,91 @@
         "show": false
     },
     {
+        "name": "ITA-angular-s1",
+        "description": "IT Academy. Angular bootcamp. Sprint 1. HTML5, SCSS.",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s1",
+        "fork": false,
+        "webpage": "https://manuelgarciacr.github.io/ITA-angular-s1",
+        "created": "2023/06-17T18:47:32Z",
+        "pushed": "2026/09-28T18:43:46Z",
+        "topics": [
+            "angular-bootcamp",
+            "animations",
+            "css",
+            "html5",
+            "it-academy",
+            "scss"
+        ],
+        "private": false,
+        "languages": {
+            "SCSS": 39,
+            "HTML": 30.8,
+            "CSS": 30.1
+        },
+        "subtopics": [],
+        "show": true,
+        "page": "https://manuelgarciacr.github.io/ITA-angular-s1"
+    },
+    {
         "name": "ITA-angular-s2",
         "description": "IT Academy. Angular bootcamp. Sprint 2. Bootstrap5.",
         "repository": "https://github.com/manuelgarciacr/ITA-angular-s2",
         "fork": false,
         "webpage": "https://manuelgarciacr.github.io/ITA-angular-s2",
         "created": "2023/06-19T10:42:18Z",
-        "pushed": "2023/06-30T15:37:56Z",
+        "pushed": "2026/09-29T14:17:35Z",
         "topics": [
             "bootstrap-5",
             "scss"
         ],
         "private": false,
         "languages": {
-            "HTML": 78.3,
-            "SCSS": 21.7
+            "CSS": 86.1,
+            "HTML": 10.9,
+            "SCSS": 3
         },
         "subtopics": [],
         "show": true,
         "page": "https://manuelgarciacr.github.io/ITA-angular-s2"
+    },
+    {
+        "name": "ITA-angular-s3",
+        "description": "IT Academy. Angular bootcamp. Sprint 3. Javascript.",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s3",
+        "fork": false,
+        "webpage": "",
+        "created": "2023/07-06T19:18:10Z",
+        "pushed": "2026/09-29T19:51:41Z",
+        "topics": [
+            "css",
+            "javascript"
+        ],
+        "private": false,
+        "languages": {
+            "HTML": 56.7,
+            "JavaScript": 40.9,
+            "CSS": 2.4
+        },
+        "subtopics": [],
+        "show": true
+    },
+    {
+        "name": "ITA-angular-s3-old",
+        "description": "IT Academy. Angular bootcamp. Sprint 3. JavaScript & TypeScript",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s3-old",
+        "fork": false,
+        "webpage": "",
+        "created": "2023/07-03T07:39:44Z",
+        "pushed": "2023/07-06T11:03:00Z",
+        "topics": [],
+        "private": false,
+        "languages": {
+            "CSS": 87.1,
+            "HTML": 7.7,
+            "JavaScript": 5.2
+        },
+        "subtopics": [],
+        "show": false
     },
     {
         "name": "ita-angular-s7",
