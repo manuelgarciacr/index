@@ -387,7 +387,8 @@
     },
     {
         "name": "scss",
-        "text": ["SCSS stands for Sassy CSS and is a superset of CSS that serves as the default syntax for the Sass preprocessor.",
+        "text": [
+            "SCSS stands for Sassy CSS and is a superset of CSS that serves as the default syntax for the Sass preprocessor.",
             "It allows developers to write standard CSS code while adding advanced programming features like variables, nesting, mixins, and inheritance.",
             "Because SCSS is a preprocessor, it must be compiled into standard CSS before a web browser can interpret it."
         ],
