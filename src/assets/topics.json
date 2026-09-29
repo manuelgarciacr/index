@@ -182,7 +182,10 @@
     },
     {
         "name": "css",
-        "text": [],
+        "text": [
+            "CSS (Cascading Style Sheets) is the stylesheet language used to describe the visual presentation of a document written in HTML.",
+            "It controls layout, colors, fonts, spacing, and more."
+        ],
         "type": "subject"
     },
     {
@@ -213,7 +216,7 @@
     {
         "name": "express",
         "text": "Express.js is a minimalist, flexible and fast web framework for Node.js, designed to build web applications and backend APIs efficiently.",
-        "topica": "api",
+        "topics": "api",
         "type": "subject"
     },
     {
@@ -264,7 +267,10 @@
     },
     {
         "name": "html5",
-        "text": [],
+        "text": [
+            "HTML5 is the fifth major revision of HTML (HyperText Markup Language), the standard language used to structure and present content on the World Wide Web.",
+            "Officially published by the W3C on October 28, 2014, it serves as the foundational technology for modern web development."
+        ],
         "type": "subject"
     },
     {
@@ -381,7 +387,11 @@
     },
     {
         "name": "scss",
-        "text": [],
+        "text": ["SCSS stands for Sassy CSS and is a superset of CSS that serves as the default syntax for the Sass preprocessor.",
+            "It allows developers to write standard CSS code while adding advanced programming features like variables, nesting, mixins, and inheritance.",
+            "Because SCSS is a preprocessor, it must be compiled into standard CSS before a web browser can interpret it."
+        ],
+        "topics": "css",
         "type": "subject"
     },
     {
@@ -436,6 +446,14 @@
             "You can integrate your own plugins inside the tmux2k framework"
         ],
         "topics": "tmux",
+        "type": "subject"
+    },
+    {
+        "name": "vue",
+        "text": [
+            "Vue.js (commonly known as Vue) is an open-source progressive JavaScript framework used for building user interfaces and single-page applications (SPAs).",
+            "Created by Evan You and released in 2014, it is designed to be adopted incrementally, with its core library focused on the view layer to allow easy integration with other libraries or existing projects."
+        ],
         "type": "subject"
     }
 ]
