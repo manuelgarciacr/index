@@ -664,7 +664,7 @@
         "fork": false,
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/09-29T21:24:18Z",
+        "pushed": "2026/09-29T21:33:56Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -726,23 +726,6 @@
             "TypeScript": 79.7,
             "SCSS": 14.1,
             "HTML": 6.2
-        },
-        "subtopics": [],
-        "show": false
-    },
-    {
-        "name": "ita-angular-jses6",
-        "description": "Sprint 4. JavaScript ECMA6 - 13",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-jses6",
-        "fork": false,
-        "webpage": "",
-        "created": "2023/07-10T10:02:04Z",
-        "pushed": "2023/07-11T08:07:14Z",
-        "topics": [],
-        "private": false,
-        "languages": {
-            "JavaScript": 99.1,
-            "HTML": 0.9
         },
         "subtopics": [],
         "show": false
@@ -831,6 +814,23 @@
             "CSS": 87.1,
             "HTML": 7.7,
             "JavaScript": 5.2
+        },
+        "subtopics": [],
+        "show": false
+    },
+    {
+        "name": "ITA-angular-s4",
+        "description": "IT Academy. Angular bootcamp. Sprint 4. Javascript ES6 (ECMAScript 2015)",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s4",
+        "fork": false,
+        "webpage": "",
+        "created": "2023/07-10T10:02:04Z",
+        "pushed": "2023/07-11T08:07:14Z",
+        "topics": [],
+        "private": false,
+        "languages": {
+            "JavaScript": 99.1,
+            "HTML": 0.9
         },
         "subtopics": [],
         "show": false
