@@ -105,6 +105,7 @@ jobs:
                     git pull --rebase https://x-access-token:${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git main
                     git push https://x-access-token:${{ secrets.PAT_GITHUB_TOKEN }}@github.com/manuelgarciacr/index.git HEAD:main
                 else
+                    git pull --rebase origin main
                     git push
                 fi
 
