@@ -421,7 +421,7 @@
     {
         "name": "testing",
         "text": [
-            "Test an application with a testing framework as Jasmine and a test runner as Karma ."
+            "Test an application with a testing framework as Jasmine or Jest and a test runner as Karma ."
         ],
         "type": "subject"
     },
