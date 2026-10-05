@@ -692,7 +692,7 @@
         "page": "",
         "webpage": "https://manuelgc.eu/index",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/10-05T02:34:54Z",
+        "pushed": "2026/10-05T04:21:46Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -737,25 +737,6 @@
             "SCSS": 40.3,
             "CSS": 30.4,
             "HTML": 29.3
-        },
-        "subtopics": [],
-        "show": false
-    },
-    {
-        "name": "ita-angular-intro",
-        "description": "IT Academy Angular. Sprint 6 Intro Angular",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-intro",
-        "fork": false,
-        "page": "",
-        "webpage": "",
-        "created": "2023/07-27T09:50:45Z",
-        "pushed": "2023/07-28T15:50:38Z",
-        "topics": [],
-        "private": false,
-        "languages": {
-            "TypeScript": 79.7,
-            "SCSS": 14.1,
-            "HTML": 6.2
         },
         "subtopics": [],
         "show": false
@@ -880,6 +861,7 @@
         "created": "2023/07-13T11:11:33Z",
         "pushed": "2026/10-05T01:33:02Z",
         "topics": [
+            "animations",
             "api",
             "axios",
             "bootstrap-5",
@@ -890,6 +872,27 @@
         "languages": {
             "TypeScript": 53.9,
             "HTML": 46.1
+        },
+        "subtopics": [],
+        "show": true
+    },
+    {
+        "name": "ITA-angular-s6",
+        "description": "IT Academy. Angular bootcamp. Sprint 6. Angular introduction",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s6",
+        "fork": false,
+        "page": "",
+        "webpage": "https://manuelgc.eu/ita-angular-s6",
+        "created": "2023/07-27T09:50:45Z",
+        "pushed": "2026/10-05T04:01:34Z",
+        "topics": [
+            "angular-16"
+        ],
+        "private": false,
+        "languages": {
+            "TypeScript": 79.7,
+            "SCSS": 14.1,
+            "HTML": 6.2
         },
         "subtopics": [],
         "show": true
