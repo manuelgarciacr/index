@@ -664,7 +664,7 @@
         "fork": false,
         "webpage": "",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/10-03T04:39:27Z",
+        "pushed": "2026/10-04T05:10:33Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -840,6 +840,29 @@
         "page": "https://manuelgarciacr.github.io/ITA-angular-s4"
     },
     {
+        "name": "ITA-angular-s5",
+        "description": "IT Academy. Angular bootcamp. Sprint 5. TypeScript & API",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s5",
+        "fork": false,
+        "webpage": "",
+        "created": "2023/07-13T11:11:33Z",
+        "pushed": "2026/10-05T01:33:02Z",
+        "topics": [
+            "api",
+            "axios",
+            "bootstrap-5",
+            "scss",
+            "typescript"
+        ],
+        "private": false,
+        "languages": {
+            "TypeScript": 53.9,
+            "HTML": 46.1
+        },
+        "subtopics": [],
+        "show": true
+    },
+    {
         "name": "ita-angular-s7",
         "description": "IT Academy Angular. Sprint 7 Pressupost",
         "repository": "https://github.com/manuelgarciacr/ita-angular-s7",
@@ -945,23 +968,6 @@
             "CSS": 8.4,
             "Handlebars": 2.5,
             "Batchfile": 0
-        },
-        "subtopics": [],
-        "show": false
-    },
-    {
-        "name": "ita-angular-ts-apirest",
-        "description": "IT Academy Angular. Sprint 5 TypeScript & API",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-ts-apirest",
-        "fork": false,
-        "webpage": "",
-        "created": "2023/07-13T11:11:33Z",
-        "pushed": "2023/07-23T15:52:20Z",
-        "topics": [],
-        "private": false,
-        "languages": {
-            "HTML": 50.7,
-            "TypeScript": 49.3
         },
         "subtopics": [],
         "show": false
