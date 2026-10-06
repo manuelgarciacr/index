@@ -692,7 +692,7 @@
         "page": "",
         "webpage": "https://manuelgc.eu/index",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/10-05T04:22:35Z",
+        "pushed": "2026/10-05T04:55:11Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -859,7 +859,7 @@
         "page": "",
         "webpage": "https://manuelgc.eu/ita-angular-s5",
         "created": "2023/07-13T11:11:33Z",
-        "pushed": "2026/10-05T01:33:02Z",
+        "pushed": "2026/10-05T06:17:21Z",
         "topics": [
             "animations",
             "api",
@@ -884,29 +884,33 @@
         "page": "",
         "webpage": "https://manuelgc.eu/ita-angular-s6",
         "created": "2023/07-27T09:50:45Z",
-        "pushed": "2026/10-05T04:34:21Z",
+        "pushed": "2026/10-05T10:54:21Z",
         "topics": [
             "angular-16"
         ],
         "private": false,
         "languages": {
-            "TypeScript": 79.7,
+            "TypeScript": 79.6,
             "SCSS": 14.1,
-            "HTML": 6.2
+            "HTML": 6.3
         },
         "subtopics": [],
         "show": true
     },
     {
-        "name": "ita-angular-s7",
-        "description": "IT Academy Angular. Sprint 7 Pressupost",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-s7",
+        "name": "ITA-angular-s7",
+        "description": "IT Academy. Angular bootcamp. Sprint 7. Forms & routing",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s7",
         "fork": false,
         "page": "",
-        "webpage": "",
+        "webpage": "https://manuelgc.eu/ita-angular-s7",
         "created": "2023/07-29T20:56:58Z",
         "pushed": "2023/08-10T07:50:44Z",
-        "topics": [],
+        "topics": [
+            "angular-16",
+            "forms",
+            "routing"
+        ],
         "private": false,
         "languages": {
             "TypeScript": 60.4,
@@ -914,7 +918,7 @@
             "SCSS": 4.9
         },
         "subtopics": [],
-        "show": false
+        "show": true
     },
     {
         "name": "ita-angular-s8-ng-3",
