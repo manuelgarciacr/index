@@ -381,6 +381,12 @@
         "type": "subject"
     },
     {
+        "name": "routing",
+        "text": ["Routing is the mechanism that allows a web application to navigate between different views or pages without requiring a full server reload or complete page refresh.",
+        "In a traditional website, each URL corresponds to a distinct HTML file; in a Single Page Application (SPA) as angular, the browser loads a single index.html file initially, and the client-side router manages navigation by swapping components dynamically as the URL changes."],
+        "type": "subject"
+    },
+    {
         "name": "sass",
         "text": "",
         "type": "subject"
