@@ -692,7 +692,7 @@
         "page": "",
         "webpage": "https://manuelgc.eu/index",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/10-06T13:21:05Z",
+        "pushed": "2026/10-07T01:13:24Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -749,7 +749,7 @@
         "page": "https://manuelgarciacr.github.io/ITA-angular-s1",
         "webpage": "",
         "created": "2023/06-17T18:47:32Z",
-        "pushed": "2026/09-28T18:43:46Z",
+        "pushed": "2026/10-07T00:27:36Z",
         "topics": [
             "angular-bootcamp",
             "animations",
@@ -762,7 +762,7 @@
         "languages": {
             "SCSS": 39,
             "HTML": 30.8,
-            "CSS": 30.1
+            "CSS": 30.2
         },
         "subtopics": [],
         "show": true
@@ -777,6 +777,7 @@
         "created": "2023/06-19T10:42:18Z",
         "pushed": "2026/09-29T14:17:35Z",
         "topics": [
+            "angular-bootcamp",
             "bootstrap-5",
             "scss"
         ],
@@ -799,6 +800,7 @@
         "created": "2023/07-06T19:18:10Z",
         "pushed": "2026/09-29T19:51:41Z",
         "topics": [
+            "angular-bootcamp",
             "css",
             "javascript"
         ],
@@ -840,6 +842,7 @@
         "created": "2023/07-10T10:02:04Z",
         "pushed": "2026/09-30T09:54:16Z",
         "topics": [
+            "angular-bootcamp",
             "javascript",
             "testing"
         ],
@@ -861,6 +864,7 @@
         "created": "2023/07-13T11:11:33Z",
         "pushed": "2026/10-05T06:17:21Z",
         "topics": [
+            "angular-bootcamp",
             "animations",
             "api",
             "axios",
@@ -886,7 +890,8 @@
         "created": "2023/07-27T09:50:45Z",
         "pushed": "2026/10-05T10:54:21Z",
         "topics": [
-            "angular-16"
+            "angular-16",
+            "angular-bootcamp"
         ],
         "private": false,
         "languages": {
@@ -905,31 +910,40 @@
         "page": "",
         "webpage": "https://manuelgc.eu/ita-angular-s7",
         "created": "2023/07-29T20:56:58Z",
-        "pushed": "2023/08-10T07:50:44Z",
+        "pushed": "2026/10-06T13:38:06Z",
         "topics": [
             "angular-16",
+            "angular-bootcamp",
             "forms",
             "routing"
         ],
         "private": false,
         "languages": {
-            "TypeScript": 60.4,
-            "HTML": 34.7,
-            "SCSS": 4.9
+            "TypeScript": 59.8,
+            "HTML": 34.3,
+            "SCSS": 5.9
         },
         "subtopics": [],
         "show": true
     },
     {
-        "name": "ita-angular-s8-ng-3",
-        "description": "IT Academy Angular. Sprint 8 Angular III. Star Wars",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-s8-ng-3",
+        "name": "ITA-angular-s8",
+        "description": "IT Academy. Angular bootcamp. Sprint 8. Star Wars",
+        "repository": "https://github.com/manuelgarciacr/ITA-angular-s8",
         "fork": false,
         "page": "",
-        "webpage": "",
+        "webpage": "https://manuelgc.eu/ita-angular-s8",
         "created": "2023/09-18T05:35:26Z",
         "pushed": "2023/10-08T05:37:12Z",
-        "topics": [],
+        "topics": [
+            "angular-16",
+            "angular-bootcamp",
+            "animations",
+            "api",
+            "forms",
+            "routing",
+            "testing"
+        ],
         "private": false,
         "languages": {
             "TypeScript": 69.7,
@@ -937,7 +951,7 @@
             "SCSS": 5
         },
         "subtopics": [],
-        "show": false
+        "show": true
     },
     {
         "name": "ita-angular-s8-ng-4",
