@@ -692,7 +692,7 @@
         "page": "",
         "webpage": "https://manuelgc.eu/index",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/10-07T05:13:46Z",
+        "pushed": "2026/10-08T05:23:51Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -954,9 +954,9 @@
         "show": true
     },
     {
-        "name": "ita-angular-s8-ng-4",
-        "description": "IT Academy Angular. Sprint 8 Angular IV. Inprocode",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-s8-ng-4",
+        "name": "ita-angular-s8-v2",
+        "description": "IT Academy. Angular bootcamp. Sprint 8 v2. Inprocode",
+        "repository": "https://github.com/manuelgarciacr/ita-angular-s8-v2",
         "fork": false,
         "page": "",
         "webpage": "",
@@ -974,23 +974,31 @@
         "show": false
     },
     {
-        "name": "ita-angular-s8-ng-4-backend",
-        "description": "About IT Academy Angular. Sprint 8 Angular IV. Inprocode. Backend.",
-        "repository": "https://github.com/manuelgarciacr/ita-angular-s8-ng-4-backend",
+        "name": "ita-angular-s8-v2-backend",
+        "description": "IT Academy. Angular bootcamp. Sprint 8 v2. Inprocode. Backend.",
+        "repository": "https://github.com/manuelgarciacr/ita-angular-s8-v2-backend",
         "fork": false,
         "page": "",
         "webpage": "",
         "created": "2023/10-18T09:55:45Z",
-        "pushed": "2023/11-26T18:06:02Z",
-        "topics": [],
+        "pushed": "2026/10-09T00:21:08Z",
+        "topics": [
+            "angular-bootcamp",
+            "api",
+            "bcryptjs",
+            "express",
+            "mongodb",
+            "nodejs"
+        ],
         "private": false,
         "languages": {
-            "JavaScript": 96.9,
-            "Shell": 2.4,
-            "Batchfile": 0.8
+            "JavaScript": 77.8,
+            "TypeScript": 14.2,
+            "Shell": 7.3,
+            "Batchfile": 0.7
         },
         "subtopics": [],
-        "show": false
+        "show": true
     },
     {
         "name": "ita-angular-s9",
