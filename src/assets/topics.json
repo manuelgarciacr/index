@@ -120,7 +120,10 @@
             "Tema 4 - CI\\CD i DevOps amb AWS",
             "Pràctica - CRUD API"
         ],
-        "topics": ["cibernarium", "api"],
+        "topics": [
+            "cibernarium",
+            "api"
+        ],
         "type": "course"
     },
     {
@@ -163,6 +166,14 @@
         "type": "course"
     },
     {
+        "name": "cicd",
+        "text": [
+            "CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous Deployment).",
+            "It is a software development practice that uses automation to integrate code changes frequently and reliably, ensuring that software can be released to production quickly and with minimal manual intervention."
+        ],
+        "type": "subject"
+    },
+    {
         "name": "cifo-la-violeta",
         "text": [
             "Center for Innovation and Occupational Training (CIFO) La Violeta in Barcelona",
@@ -172,7 +183,9 @@
     },
     {
         "name": "course",
-        "text": ["Course material"],
+        "text": [
+            "Course material"
+        ],
         "type": "special"
     },
     {
@@ -188,14 +201,6 @@
         "text": [
             "CSS (Cascading Style Sheets) is the stylesheet language used to describe the visual presentation of a document written in HTML.",
             "It controls layout, colors, fonts, spacing, and more."
-        ],
-        "type": "subject"
-    },
-    {
-        "name": "cicd",
-        "text": [
-            "CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous Deployment).",
-            "It is a software development practice that uses automation to integrate code changes frequently and reliably, ensuring that software can be released to production quickly and with minimal manual intervention."
         ],
         "type": "subject"
     },
@@ -386,7 +391,9 @@
     },
     {
         "name": "nodejs-course",
-        "text": ["Nodejs course repository fork"],
+        "text": [
+            "Nodejs course repository fork"
+        ],
         "type": "course"
     },
     {
