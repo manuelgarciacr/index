@@ -692,7 +692,7 @@
         "page": "",
         "webpage": "https://manuelgc.eu/index",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/10-31T04:53:05Z",
+        "pushed": "2026/11-01T05:18:18Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -961,13 +961,13 @@
         "page": "",
         "webpage": "",
         "created": "2023/10-08T16:33:46Z",
-        "pushed": "2026/10-18T02:19:05Z",
+        "pushed": "2026/11-02T04:24:23Z",
         "topics": [],
         "private": false,
         "languages": {
-            "TypeScript": 78.3,
-            "HTML": 16.3,
-            "SCSS": 5.2,
+            "TypeScript": 79.9,
+            "HTML": 15.1,
+            "SCSS": 4.8,
             "Shell": 0.1,
             "CSS": 0.1
         },
