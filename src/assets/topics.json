@@ -120,10 +120,7 @@
             "Tema 4 - CI\\CD i DevOps amb AWS",
             "Pràctica - CRUD API"
         ],
-        "topics": [
-            "cibernarium",
-            "api"
-        ],
+        "topics": ["cibernarium", "api"],
         "type": "course"
     },
     {
@@ -143,6 +140,14 @@
         "name": "bootstrap-5",
         "text": "Released: 2021-05-05  Active end: ?  LTS end: ?",
         "type": "version"
+    },
+    {
+        "name": "calendar",
+        "text": [
+            "Graphic component to display calendars, agendas and date selectors on the screen that respond to user events.",
+            "Among others we find VCalendar for Vue, react-calendar, FullCalendar, etc."
+        ],
+        "type": "subject"
     },
     {
         "name": "cibernarium",
@@ -167,9 +172,7 @@
     },
     {
         "name": "course",
-        "text": [
-            "Course material"
-        ],
+        "text": ["Course material"],
         "type": "special"
     },
     {
@@ -185,6 +188,14 @@
         "text": [
             "CSS (Cascading Style Sheets) is the stylesheet language used to describe the visual presentation of a document written in HTML.",
             "It controls layout, colors, fonts, spacing, and more."
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "cicd",
+        "text": [
+            "CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous Deployment).",
+            "It is a software development practice that uses automation to integrate code changes frequently and reliably, ensuring that software can be released to production quickly and with minimal manual intervention."
         ],
         "type": "subject"
     },
@@ -214,6 +225,14 @@
         "type": "course"
     },
     {
+        "name": "excel",
+        "text": [
+            "Microsoft Excel is a widely used spreadsheet software developed by Microsoft.",
+            "It allows users to organize, format, and calculate data using rows and columns, featuring powerful tools for mathematical formulas, data analysis, and graphical visualization."
+        ],
+        "type": "subject"
+    },
+    {
         "name": "express",
         "text": "Express.js is a minimalist, flexible and fast web framework for Node.js, designed to build web applications and backend APIs efficiently.",
         "topics": "api",
@@ -224,6 +243,14 @@
         "text": [
             "Interfaces designed so that the user enters structured data and can interact bidirectionally with the application.",
             "In the web context, it is implemented through the <form> tag in HTML and libraries such as @angular/forms, React Hook Form, etc."
+        ],
+        "type": "subject"
+    },
+    {
+        "name": "geolocation",
+        "text": [
+            "Geolocation is a technology that allows web and mobile applications to determine a user's geographical location using device data like GPS, Wi-Fi, or IP addresses.",
+            "It requires explicit user permission and is commonly used for map displays, location-based services, and personalized content. "
         ],
         "type": "subject"
     },
@@ -321,6 +348,14 @@
         "type": "course"
     },
     {
+        "name": "map",
+        "text": [
+            "Graphic component to display maps on the screen that can respond to user events.",
+            "Among others we find Mapbox, Leaflet, MapLibre, etc."
+        ],
+        "type": "subject"
+    },
+    {
         "name": "mongodb",
         "text": "MongoDB is an open source, document-oriented NoSQL database designed to manage large volumes of structured, semi-structured and unstructured data.",
         "type": "subject"
@@ -351,9 +386,7 @@
     },
     {
         "name": "nodejs-course",
-        "text": [
-            "Nodejs course repository fork"
-        ],
+        "text": ["Nodejs course repository fork"],
         "type": "course"
     },
     {
