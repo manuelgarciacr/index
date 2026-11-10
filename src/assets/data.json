@@ -692,7 +692,7 @@
         "page": "",
         "webpage": "https://manuelgc.eu/index",
         "created": "2025/05-03T15:21:42Z",
-        "pushed": "2026/11-08T05:22:53Z",
+        "pushed": "2026/11-09T05:32:56Z",
         "topics": [
             "angular-20",
             "angular-material",
@@ -1373,6 +1373,25 @@
             "TypeScript": 93.8,
             "HTML": 5.2,
             "CSS": 1
+        },
+        "subtopics": [],
+        "show": false
+    },
+    {
+        "name": "oauth2",
+        "description": "Angular Service for Oauth2.0 + PKCE + OIDC",
+        "repository": "https://github.com/manuelgarciacr/oauth2",
+        "fork": false,
+        "page": "",
+        "webpage": "",
+        "created": "2026/11-09T21:33:03Z",
+        "pushed": "2026/11-10T00:53:13Z",
+        "topics": [],
+        "private": false,
+        "languages": {
+            "HTML": 79,
+            "TypeScript": 20.7,
+            "SCSS": 0.3
         },
         "subtopics": [],
         "show": false
